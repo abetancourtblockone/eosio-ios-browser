@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		677B765924525382004B27CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B765824525382004B27CB /* AppDelegate.swift */; };
+		677B765B24525382004B27CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B765A24525382004B27CB /* SceneDelegate.swift */; };
+		677B766024525382004B27CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677B765E24525382004B27CB /* Main.storyboard */; };
+		677B766224525385004B27CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 677B766124525385004B27CB /* Assets.xcassets */; };
+		677B766524525385004B27CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677B766324525385004B27CB /* LaunchScreen.storyboard */; };
+		677B767024525385004B27CB /* Eos_BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B766F24525385004B27CB /* Eos_BrowserTests.swift */; };
+		677B767E2453A3A1004B27CB /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B767D2453A3A1004B27CB /* Dynamic.swift */; };
+		677B76842453A414004B27CB /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76832453A414004B27CB /* Block.swift */; };
+		677B76862453A457004B27CB /* BlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76852453A457004B27CB /* BlockListViewModel.swift */; };
+		677B76882453A462004B27CB /* BlockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76872453A462004B27CB /* BlockListViewController.swift */; };
+		677B768A2453A46B004B27CB /* BlockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76892453A46B004B27CB /* BlockListView.swift */; };
+		677B768D2453A590004B27CB /* BlockListMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B768C2453A590004B27CB /* BlockListMVVMViewModel.swift */; };
+		677B76912453AD77004B27CB /* RetrieveBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76902453AD77004B27CB /* RetrieveBlocks.swift */; };
+		677B76942453ADEF004B27CB /* RetrieveBlocksAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76932453ADEF004B27CB /* RetrieveBlocksAdapter.swift */; };
+		677B76962453AE09004B27CB /* BlocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76952453AE09004B27CB /* BlocksService.swift */; };
+		677B76992453AE83004B27CB /* BlocksServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76982453AE83004B27CB /* BlocksServiceAdapter.swift */; };
+		677B769B2453B023004B27CB /* Blockchain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B769A2453B023004B27CB /* Blockchain.swift */; };
+		677B76A22454A816004B27CB /* URLRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76A12454A816004B27CB /* URLRequester.swift */; };
+		677B76A42454BE79004B27CB /* URLRequesterAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76A32454BE79004B27CB /* URLRequesterAdapter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		677B766C24525385004B27CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 677B764D24525382004B27CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 677B765424525382004B27CB;
+			remoteInfo = "Eos Browser";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		677B765524525382004B27CB /* Eos Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eos Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		677B765824525382004B27CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		677B765A24525382004B27CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		677B765F24525382004B27CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		677B766124525385004B27CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		677B766424525385004B27CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		677B766624525385004B27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		677B766B24525385004B27CB /* Eos BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eos BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		677B766F24525385004B27CB /* Eos_BrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eos_BrowserTests.swift; sourceTree = "<group>"; };
+		677B767124525385004B27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		677B767D2453A3A1004B27CB /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		677B76832453A414004B27CB /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		677B76852453A457004B27CB /* BlockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewModel.swift; sourceTree = "<group>"; };
+		677B76872453A462004B27CB /* BlockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewController.swift; sourceTree = "<group>"; };
+		677B76892453A46B004B27CB /* BlockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListView.swift; sourceTree = "<group>"; };
+		677B768C2453A590004B27CB /* BlockListMVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListMVVMViewModel.swift; sourceTree = "<group>"; };
+		677B76902453AD77004B27CB /* RetrieveBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveBlocks.swift; sourceTree = "<group>"; };
+		677B76932453ADEF004B27CB /* RetrieveBlocksAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveBlocksAdapter.swift; sourceTree = "<group>"; };
+		677B76952453AE09004B27CB /* BlocksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksService.swift; sourceTree = "<group>"; };
+		677B76982453AE83004B27CB /* BlocksServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksServiceAdapter.swift; sourceTree = "<group>"; };
+		677B769A2453B023004B27CB /* Blockchain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blockchain.swift; sourceTree = "<group>"; };
+		677B76A12454A816004B27CB /* URLRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequester.swift; sourceTree = "<group>"; };
+		677B76A32454BE79004B27CB /* URLRequesterAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequesterAdapter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		677B765224525382004B27CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		677B766824525385004B27CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		677B764C24525382004B27CB = {
+			isa = PBXGroup;
+			children = (
+				677B765724525382004B27CB /* Eos Browser */,
+				677B766E24525385004B27CB /* Eos BrowserTests */,
+				677B765624525382004B27CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		677B765624525382004B27CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				677B765524525382004B27CB /* Eos Browser.app */,
+				677B766B24525385004B27CB /* Eos BrowserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		677B765724525382004B27CB /* Eos Browser */ = {
+			isa = PBXGroup;
+			children = (
+				677B768F2453AD5C004B27CB /* Services */,
+				677B768E2453AD51004B27CB /* UseCases */,
+				677B76822453A409004B27CB /* Entities */,
+				677B767F2453A3DF004B27CB /* Scenes */,
+				677B767C24539394004B27CB /* Utils */,
+				677B765824525382004B27CB /* AppDelegate.swift */,
+				677B765A24525382004B27CB /* SceneDelegate.swift */,
+				677B765E24525382004B27CB /* Main.storyboard */,
+				677B766124525385004B27CB /* Assets.xcassets */,
+				677B766324525385004B27CB /* LaunchScreen.storyboard */,
+				677B766624525385004B27CB /* Info.plist */,
+			);
+			path = "Eos Browser";
+			sourceTree = "<group>";
+		};
+		677B766E24525385004B27CB /* Eos BrowserTests */ = {
+			isa = PBXGroup;
+			children = (
+				677B766F24525385004B27CB /* Eos_BrowserTests.swift */,
+				677B767124525385004B27CB /* Info.plist */,
+			);
+			path = "Eos BrowserTests";
+			sourceTree = "<group>";
+		};
+		677B767C24539394004B27CB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				677B767D2453A3A1004B27CB /* Dynamic.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		677B767F2453A3DF004B27CB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				677B76812453A400004B27CB /* BlockDetail */,
+				677B76802453A3EA004B27CB /* BlockList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		677B76802453A3EA004B27CB /* BlockList */ = {
+			isa = PBXGroup;
+			children = (
+				677B768B2453A474004B27CB /* ViewModel */,
+				677B76872453A462004B27CB /* BlockListViewController.swift */,
+			);
+			path = BlockList;
+			sourceTree = "<group>";
+		};
+		677B76812453A400004B27CB /* BlockDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BlockDetail;
+			sourceTree = "<group>";
+		};
+		677B76822453A409004B27CB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				677B76832453A414004B27CB /* Block.swift */,
+				677B769A2453B023004B27CB /* Blockchain.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		677B768B2453A474004B27CB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				677B76892453A46B004B27CB /* BlockListView.swift */,
+				677B76852453A457004B27CB /* BlockListViewModel.swift */,
+				677B768C2453A590004B27CB /* BlockListMVVMViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		677B768E2453AD51004B27CB /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				677B76922453ADE5004B27CB /* Adapters */,
+				677B76902453AD77004B27CB /* RetrieveBlocks.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		677B768F2453AD5C004B27CB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				677B76972453AE61004B27CB /* Adapters */,
+				677B76952453AE09004B27CB /* BlocksService.swift */,
+				677B76A12454A816004B27CB /* URLRequester.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		677B76922453ADE5004B27CB /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				677B76932453ADEF004B27CB /* RetrieveBlocksAdapter.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		677B76972453AE61004B27CB /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				677B76982453AE83004B27CB /* BlocksServiceAdapter.swift */,
+				677B76A32454BE79004B27CB /* URLRequesterAdapter.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		677B765424525382004B27CB /* Eos Browser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 677B767424525385004B27CB /* Build configuration list for PBXNativeTarget "Eos Browser" */;
+			buildPhases = (
+				677B765124525382004B27CB /* Sources */,
+				677B765224525382004B27CB /* Frameworks */,
+				677B765324525382004B27CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Eos Browser";
+			productName = "Eos Browser";
+			productReference = 677B765524525382004B27CB /* Eos Browser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		677B766A24525385004B27CB /* Eos BrowserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 677B767724525385004B27CB /* Build configuration list for PBXNativeTarget "Eos BrowserTests" */;
+			buildPhases = (
+				677B766724525385004B27CB /* Sources */,
+				677B766824525385004B27CB /* Frameworks */,
+				677B766924525385004B27CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				677B766D24525385004B27CB /* PBXTargetDependency */,
+			);
+			name = "Eos BrowserTests";
+			productName = "Eos BrowserTests";
+			productReference = 677B766B24525385004B27CB /* Eos BrowserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		677B764D24525382004B27CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = EOSIOS;
+				TargetAttributes = {
+					677B765424525382004B27CB = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					677B766A24525385004B27CB = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 677B765424525382004B27CB;
+					};
+				};
+			};
+			buildConfigurationList = 677B765024525382004B27CB /* Build configuration list for PBXProject "Eos Browser" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 677B764C24525382004B27CB;
+			productRefGroup = 677B765624525382004B27CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				677B765424525382004B27CB /* Eos Browser */,
+				677B766A24525385004B27CB /* Eos BrowserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		677B765324525382004B27CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				677B766524525385004B27CB /* LaunchScreen.storyboard in Resources */,
+				677B766224525385004B27CB /* Assets.xcassets in Resources */,
+				677B766024525382004B27CB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		677B766924525385004B27CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		677B765124525382004B27CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				677B76A22454A816004B27CB /* URLRequester.swift in Sources */,
+				677B76962453AE09004B27CB /* BlocksService.swift in Sources */,
+				677B768D2453A590004B27CB /* BlockListMVVMViewModel.swift in Sources */,
+				677B768A2453A46B004B27CB /* BlockListView.swift in Sources */,
+				677B76A42454BE79004B27CB /* URLRequesterAdapter.swift in Sources */,
+				677B767E2453A3A1004B27CB /* Dynamic.swift in Sources */,
+				677B76862453A457004B27CB /* BlockListViewModel.swift in Sources */,
+				677B76912453AD77004B27CB /* RetrieveBlocks.swift in Sources */,
+				677B76942453ADEF004B27CB /* RetrieveBlocksAdapter.swift in Sources */,
+				677B769B2453B023004B27CB /* Blockchain.swift in Sources */,
+				677B76842453A414004B27CB /* Block.swift in Sources */,
+				677B765924525382004B27CB /* AppDelegate.swift in Sources */,
+				677B76992453AE83004B27CB /* BlocksServiceAdapter.swift in Sources */,
+				677B76882453A462004B27CB /* BlockListViewController.swift in Sources */,
+				677B765B24525382004B27CB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		677B766724525385004B27CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				677B767024525385004B27CB /* Eos_BrowserTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		677B766D24525385004B27CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 677B765424525382004B27CB /* Eos Browser */;
+			targetProxy = 677B766C24525385004B27CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		677B765E24525382004B27CB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				677B765F24525382004B27CB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		677B766324525385004B27CB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				677B766424525385004B27CB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		677B767224525385004B27CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		677B767324525385004B27CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		677B767524525385004B27CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 86PMDM3J26;
+				INFOPLIST_FILE = "Eos Browser/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.io.eos.Eos-Browser";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		677B767624525385004B27CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 86PMDM3J26;
+				INFOPLIST_FILE = "Eos Browser/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.io.eos.Eos-Browser";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		677B767824525385004B27CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 86PMDM3J26;
+				INFOPLIST_FILE = "Eos BrowserTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.io.eos.Eos-BrowserTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eos Browser.app/Eos Browser";
+			};
+			name = Debug;
+		};
+		677B767924525385004B27CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 86PMDM3J26;
+				INFOPLIST_FILE = "Eos BrowserTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.io.eos.Eos-BrowserTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eos Browser.app/Eos Browser";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		677B765024525382004B27CB /* Build configuration list for PBXProject "Eos Browser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				677B767224525385004B27CB /* Debug */,
+				677B767324525385004B27CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		677B767424525385004B27CB /* Build configuration list for PBXNativeTarget "Eos Browser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				677B767524525385004B27CB /* Debug */,
+				677B767624525385004B27CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		677B767724525385004B27CB /* Build configuration list for PBXNativeTarget "Eos BrowserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				677B767824525385004B27CB /* Debug */,
+				677B767924525385004B27CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 677B764D24525382004B27CB /* Project object */;
+}
