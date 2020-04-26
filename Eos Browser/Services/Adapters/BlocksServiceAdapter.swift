@@ -71,5 +71,6 @@ private extension Block {
         self.producerSignature = dictionary["producer_signature"] as? String ?? ""
         self.transactionsCount = (dictionary["transactions"] as? [[String: Any]])?.count ?? 0
         self.previousBlockId = dictionary["previous"] as? String ?? ""
+        self.json = dictionary.description
     }
 }

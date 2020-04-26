@@ -15,7 +15,6 @@
 		677B766024525382004B27CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677B765E24525382004B27CB /* Main.storyboard */; };
 		677B766224525385004B27CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 677B766124525385004B27CB /* Assets.xcassets */; };
 		677B766524525385004B27CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677B766324525385004B27CB /* LaunchScreen.storyboard */; };
-		677B767024525385004B27CB /* Eos_BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B766F24525385004B27CB /* Eos_BrowserTests.swift */; };
 		677B767E2453A3A1004B27CB /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B767D2453A3A1004B27CB /* Dynamic.swift */; };
 		677B76842453A414004B27CB /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76832453A414004B27CB /* Block.swift */; };
 		677B76862453A457004B27CB /* BlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76852453A457004B27CB /* BlockListViewModel.swift */; };
@@ -29,6 +28,11 @@
 		677B769B2453B023004B27CB /* Blockchain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B769A2453B023004B27CB /* Blockchain.swift */; };
 		677B76A22454A816004B27CB /* URLRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76A12454A816004B27CB /* URLRequester.swift */; };
 		677B76A42454BE79004B27CB /* URLRequesterAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76A32454BE79004B27CB /* URLRequesterAdapter.swift */; };
+		67AFC13724562F4D006E020F /* BlockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AFC13624562F4D006E020F /* BlockDetailViewController.swift */; };
+		67AFC13A24563A66006E020F /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AFC13924563A66006E020F /* Scene.swift */; };
+		67AFC13C24563A96006E020F /* BlockDetailMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AFC13B24563A96006E020F /* BlockDetailMVVMViewModel.swift */; };
+		67AFC13E24563AB2006E020F /* BlockDetailScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AFC13D24563AB2006E020F /* BlockDetailScene.swift */; };
+		67AFC140245640DD006E020F /* DynamicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AFC13F245640DD006E020F /* DynamicTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +57,6 @@
 		677B766424525385004B27CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		677B766624525385004B27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		677B766B24525385004B27CB /* Eos BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eos BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		677B766F24525385004B27CB /* Eos_BrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eos_BrowserTests.swift; sourceTree = "<group>"; };
 		677B767124525385004B27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		677B767D2453A3A1004B27CB /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		677B76832453A414004B27CB /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
@@ -68,6 +71,11 @@
 		677B769A2453B023004B27CB /* Blockchain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blockchain.swift; sourceTree = "<group>"; };
 		677B76A12454A816004B27CB /* URLRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequester.swift; sourceTree = "<group>"; };
 		677B76A32454BE79004B27CB /* URLRequesterAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequesterAdapter.swift; sourceTree = "<group>"; };
+		67AFC13624562F4D006E020F /* BlockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailViewController.swift; sourceTree = "<group>"; };
+		67AFC13924563A66006E020F /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		67AFC13B24563A96006E020F /* BlockDetailMVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailMVVMViewModel.swift; sourceTree = "<group>"; };
+		67AFC13D24563AB2006E020F /* BlockDetailScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailScene.swift; sourceTree = "<group>"; };
+		67AFC13F245640DD006E020F /* DynamicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +154,8 @@
 			children = (
 				6764C26B2454E29E003C3A29 /* Mocks */,
 				6764C2652454D888003C3A29 /* Usecases */,
-				677B766F24525385004B27CB /* Eos_BrowserTests.swift */,
 				677B767124525385004B27CB /* Info.plist */,
+				67AFC13F245640DD006E020F /* DynamicTests.swift */,
 			);
 			path = "Eos BrowserTests";
 			sourceTree = "<group>";
@@ -163,6 +171,7 @@
 		677B767F2453A3DF004B27CB /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				67AFC13824563A5C006E020F /* Shared */,
 				677B76812453A400004B27CB /* BlockDetail */,
 				677B76802453A3EA004B27CB /* BlockList */,
 			);
@@ -181,6 +190,9 @@
 		677B76812453A400004B27CB /* BlockDetail */ = {
 			isa = PBXGroup;
 			children = (
+				67AFC13624562F4D006E020F /* BlockDetailViewController.swift */,
+				67AFC13B24563A96006E020F /* BlockDetailMVVMViewModel.swift */,
+				67AFC13D24563AB2006E020F /* BlockDetailScene.swift */,
 			);
 			path = BlockDetail;
 			sourceTree = "<group>";
@@ -238,6 +250,14 @@
 				677B76A32454BE79004B27CB /* URLRequesterAdapter.swift */,
 			);
 			path = Adapters;
+			sourceTree = "<group>";
+		};
+		67AFC13824563A5C006E020F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				67AFC13924563A66006E020F /* Scene.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,13 +368,17 @@
 				677B76A42454BE79004B27CB /* URLRequesterAdapter.swift in Sources */,
 				677B767E2453A3A1004B27CB /* Dynamic.swift in Sources */,
 				677B76862453A457004B27CB /* BlockListViewModel.swift in Sources */,
+				67AFC13C24563A96006E020F /* BlockDetailMVVMViewModel.swift in Sources */,
+				67AFC13724562F4D006E020F /* BlockDetailViewController.swift in Sources */,
 				677B76912453AD77004B27CB /* RetrieveBlocks.swift in Sources */,
 				677B76942453ADEF004B27CB /* RetrieveBlocksAdapter.swift in Sources */,
+				67AFC13A24563A66006E020F /* Scene.swift in Sources */,
 				677B769B2453B023004B27CB /* Blockchain.swift in Sources */,
 				677B76842453A414004B27CB /* Block.swift in Sources */,
 				677B765924525382004B27CB /* AppDelegate.swift in Sources */,
 				677B76992453AE83004B27CB /* BlocksServiceAdapter.swift in Sources */,
 				677B76882453A462004B27CB /* BlockListViewController.swift in Sources */,
+				67AFC13E24563AB2006E020F /* BlockDetailScene.swift in Sources */,
 				677B765B24525382004B27CB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,7 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6764C2672454D8A3003C3A29 /* RetrieveBlocksAdapterTests.swift in Sources */,
-				677B767024525385004B27CB /* Eos_BrowserTests.swift in Sources */,
+				67AFC140245640DD006E020F /* DynamicTests.swift in Sources */,
 				6764C26A2454E284003C3A29 /* MockBlocksService.swift in Sources */,
 				6764C26D2454E3C9003C3A29 /* MockBlock.swift in Sources */,
 			);

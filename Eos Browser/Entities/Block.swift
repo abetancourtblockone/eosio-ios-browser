@@ -14,6 +14,7 @@ struct Block {
     let producerSignature: String
     let transactionsCount: Int
     let previousBlockId: String
+    let json: String
 }
 
 extension Block {

@@ -15,6 +15,7 @@ extension Block {
               producer: "Producer",
               producerSignature: UUID().uuidString,
               transactionsCount: (1...100).randomElement() ?? 0,
-              previousBlockId: previousBlockId)
+              previousBlockId: previousBlockId,
+              json: "")
     }
 }

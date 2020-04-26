@@ -13,7 +13,7 @@ final class BlockListMVVMViewModel {
     enum State {
         case refreshing
         case idle
-        case pushing
+        case showing(scene: BlockDetailScene)
     }
     struct Dependencies {
         let retrieveBlocks: RetrieveBlocks = RetrieveBlocksAdapter()
@@ -22,6 +22,8 @@ final class BlockListMVVMViewModel {
     var state = Dynamic<State>(.idle)
     var titleLabel = Dynamic<String>("")
     var blocks = Dynamic<[BlockViewModel]>([])
+    
+    private var blockEntities: [Block] = []
     
     let dependencies: Dependencies
     
@@ -42,7 +44,8 @@ extension BlockListMVVMViewModel {
     }
     
     func handleSelectedBlock(at indexPath: IndexPath) {
-        print("show block at: \(indexPath.row)")
+        let scene = BlockDetailScene(viewModel: .init(block: blockEntities[indexPath.row]))
+        self.state.value = .showing(scene: scene)
     }
 }
 
@@ -65,16 +68,13 @@ private extension BlockListMVVMViewModel {
     }
     
     func handle(blocksRetrievingInfo: BlocksRetrievingInfo) {
-        blocks.value.append(.init(block: blocksRetrievingInfo.lastRetrievedBlock))
+        let block = blocksRetrievingInfo.lastRetrievedBlock
+        blockEntities.append(block)
+        blocks.value.append(.init(block: block))
         if blocksRetrievingInfo.status == .finished {
             self.state.value = .idle
         }
     }
-}
-
-extension Dynamic where Value: Collection {
-    var count: Int { value.count }
-    subscript(index: Value.Index) -> Value.Element { return value[index] }
 }
 
 private extension BlockViewModel {

@@ -69,12 +69,10 @@ private extension BlockListViewController {
             switch state {
             case .refreshing:
                 self.refreshControl.beginRefreshing()
-                
-
             case .idle:
                 self.refreshControl.endRefreshing()
-            case .pushing:
-                print("Push to ")
+            case .showing(let scene):
+                self.show(scene: scene)
             }
         }
     }

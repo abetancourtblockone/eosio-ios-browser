@@ -17,20 +17,9 @@ final class Dynamic<Value> {
         self.listener = listener
     }
     
-    func bindAndFire(_ listener: Listener?) {
-        self.listener = listener
-        notify()
-    }
-    
     var value: Value {
         didSet {
             notify()
-        }
-    }
-    
-    private func notify() {
-        queue.async {
-            self.listener?(self.value)
         }
     }
     
@@ -38,4 +27,15 @@ final class Dynamic<Value> {
         self.value = value
         self.queue = queue
     }
+    
+    private func notify() {
+        queue.async {
+            self.listener?(self.value)
+        }
+    }
+}
+
+extension Dynamic where Value: Collection {
+    var count: Int { value.count }
+    subscript(index: Value.Index) -> Value.Element { return value[index] }
 }
