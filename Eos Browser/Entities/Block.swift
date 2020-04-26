@@ -18,5 +18,5 @@ struct Block {
 }
 
 extension Block {
-    var shortId: String { String(id.prefix(4)) }
+    var shortId: String { .init(id.suffix(4)) }
 }

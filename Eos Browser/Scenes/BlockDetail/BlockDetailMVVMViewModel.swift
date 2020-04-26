@@ -12,6 +12,7 @@ final class BlockDetailMVVMViewModel: MVVMViewModel {
     
     private let block: Block
     
+    var titleLabel = Dynamic<String>("")
     var producerLabel = Dynamic<String>("")
     var producerSignatureLabel = Dynamic<String>("")
     var numberOfTransactionsLabel = Dynamic<String>("")
@@ -24,8 +25,7 @@ final class BlockDetailMVVMViewModel: MVVMViewModel {
     }
     
     func sceneDidLoad() {
-        print(block)
-        
+        titleLabel.value = block.shortId
         producerLabel.value = block.producer
         producerSignatureLabel.value = block.producerSignature
         numberOfTransactionsLabel.value = "\(block.transactionsCount)"
@@ -36,5 +36,6 @@ final class BlockDetailMVVMViewModel: MVVMViewModel {
     
     func handleSwitchJsonVisibility() {
         jsonIsVisible.value = jsonIsVisible.value ? false : true
+        switchJsonVisibilityButtonTitle.value = jsonIsVisible.value ? "Hide Json" : "Show Json"
     }
 }

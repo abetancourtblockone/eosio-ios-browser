@@ -34,8 +34,7 @@ final class BlockListMVVMViewModel {
 
 extension BlockListMVVMViewModel {
     func sceneDidLoad() {
-        titleLabel.value = "EOSIO Blocchain"
-        
+        titleLabel.value = "Blocks"
     }
     
     func handleRefresh() {

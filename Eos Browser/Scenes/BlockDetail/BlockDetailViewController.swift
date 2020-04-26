@@ -28,6 +28,10 @@ final class BlockDetailViewController: UIViewController, MVVMView {
     }
     
     func bind() {
+        viewModel?.titleLabel.bind { [weak self] label in
+            self?.title = label
+        }
+        
         viewModel?.producerLabel.bind { [weak self] label in
             self?.producerLabel.text = label
         }
