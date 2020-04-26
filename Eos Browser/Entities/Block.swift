@@ -15,3 +15,7 @@ struct Block {
     let transactionsCount: Int
     let previousBlockId: String
 }
+
+extension Block {
+    var shortId: String { String(id.prefix(4)) }
+}

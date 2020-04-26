@@ -10,7 +10,7 @@ import Foundation
 
 final class RetrieveBlocksAdapter: RetrieveBlocks {
     struct Dependencies {
-        let blocksService: BlocksService = BlocksServiceAdapter()
+        var blocksService: BlocksService = BlocksServiceAdapter()
     }
     
     private var pendingBlocksToBeRetrived: UInt = 0
