@@ -29,6 +29,7 @@
 		677B76A42454BE79004B27CB /* URLRequesterAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76A32454BE79004B27CB /* URLRequesterAdapter.swift */; };
 		677B8241245747AF0045B483 /* BlockListMVVMViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B8240245747AF0045B483 /* BlockListMVVMViewModelTests.swift */; };
 		677B8243245747F50045B483 /* MockRetrieveBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B8242245747F50045B483 /* MockRetrieveBlocks.swift */; };
+		677B824624575B7E0045B483 /* UIKit+Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B824524575B7E0045B483 /* UIKit+Scene.swift */; };
 		67AFC13724562F4D006E020F /* BlockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AFC13624562F4D006E020F /* BlockDetailViewController.swift */; };
 		67AFC13A24563A66006E020F /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AFC13924563A66006E020F /* Scene.swift */; };
 		67AFC13C24563A96006E020F /* BlockDetailMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AFC13B24563A96006E020F /* BlockDetailMVVMViewModel.swift */; };
@@ -73,6 +74,7 @@
 		677B76A32454BE79004B27CB /* URLRequesterAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequesterAdapter.swift; sourceTree = "<group>"; };
 		677B8240245747AF0045B483 /* BlockListMVVMViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListMVVMViewModelTests.swift; sourceTree = "<group>"; };
 		677B8242245747F50045B483 /* MockRetrieveBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRetrieveBlocks.swift; sourceTree = "<group>"; };
+		677B824524575B7E0045B483 /* UIKit+Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Scene.swift"; sourceTree = "<group>"; };
 		67AFC13624562F4D006E020F /* BlockDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailViewController.swift; sourceTree = "<group>"; };
 		67AFC13924563A66006E020F /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		67AFC13B24563A96006E020F /* BlockDetailMVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailMVVMViewModel.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		677B765724525382004B27CB /* Eos Browser */ = {
 			isa = PBXGroup;
 			children = (
+				677B824424575B690045B483 /* Views */,
 				677B768F2453AD5C004B27CB /* Services */,
 				677B768E2453AD51004B27CB /* UseCases */,
 				677B76822453A409004B27CB /* Entities */,
@@ -186,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				677B768B2453A474004B27CB /* ViewModel */,
-				677B76872453A462004B27CB /* BlockListViewController.swift */,
 			);
 			path = BlockList;
 			sourceTree = "<group>";
@@ -194,7 +196,6 @@
 		677B76812453A400004B27CB /* BlockDetail */ = {
 			isa = PBXGroup;
 			children = (
-				67AFC13624562F4D006E020F /* BlockDetailViewController.swift */,
 				67AFC13B24563A96006E020F /* BlockDetailMVVMViewModel.swift */,
 				67AFC13D24563AB2006E020F /* BlockDetailScene.swift */,
 			);
@@ -269,6 +270,16 @@
 				677B8240245747AF0045B483 /* BlockListMVVMViewModelTests.swift */,
 			);
 			path = BlockList;
+			sourceTree = "<group>";
+		};
+		677B824424575B690045B483 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				677B824524575B7E0045B483 /* UIKit+Scene.swift */,
+				677B76872453A462004B27CB /* BlockListViewController.swift */,
+				67AFC13624562F4D006E020F /* BlockDetailViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		67AFC13824563A5C006E020F /* Shared */ = {
@@ -384,6 +395,7 @@
 				677B76962453AE09004B27CB /* BlocksService.swift in Sources */,
 				677B768D2453A590004B27CB /* BlockListMVVMViewModel.swift in Sources */,
 				677B76A42454BE79004B27CB /* URLRequesterAdapter.swift in Sources */,
+				677B824624575B7E0045B483 /* UIKit+Scene.swift in Sources */,
 				677B767E2453A3A1004B27CB /* Observable.swift in Sources */,
 				677B76862453A457004B27CB /* BlockListViewModel.swift in Sources */,
 				67AFC13C24563A96006E020F /* BlockDetailMVVMViewModel.swift in Sources */,
