@@ -18,3 +18,10 @@ final class BlockDetailScene: Scene {
         self.viewModel = viewModel
     }
 }
+
+extension BlockDetailScene: Equatable {
+    static func == (lhs: BlockDetailScene, rhs: BlockDetailScene) -> Bool {
+        lhs.viewModel == rhs.viewModel
+    }
+}
+ 

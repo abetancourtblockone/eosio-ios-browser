@@ -7,11 +7,11 @@
 //
 
 
-protocol MVVMViewModel {
+protocol MVVMViewModel: Equatable {
     func sceneDidLoad()
 }
 
-protocol MVVMView {
+protocol MVVMView: Equatable {
     associatedtype ViewModel: MVVMViewModel
     var viewModel: ViewModel? { get set }
 }

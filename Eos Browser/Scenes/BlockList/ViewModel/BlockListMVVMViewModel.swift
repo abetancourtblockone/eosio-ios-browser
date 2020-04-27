@@ -9,23 +9,24 @@
 import Foundation
 
 final class BlockListMVVMViewModel {
-    enum State {
+    enum State: Equatable {
         case refreshing
         case idle
         case showing(scene: BlockDetailScene)
     }
     
     struct Dependencies {
+        var stringsProvider: StringsProviding = StringsProvider()
         var retrieveBlocks: RetrieveBlocks = RetrieveBlocksAdapter()
     }
     
     var state = Observable<State>(.idle)
-    var titleLabel = Observable<String>()
+    var titleLabel = Observable<String>("")
     var blocks = Observable<[BlockViewModel]>([])
     
     private var blockEntities: [Block] = []
     
-    let dependencies: Dependencies
+    private let dependencies: Dependencies
     
     init(dependencies: Dependencies = .init()) {
         self.dependencies = dependencies
@@ -34,7 +35,7 @@ final class BlockListMVVMViewModel {
 
 extension BlockListMVVMViewModel {
     func sceneDidLoad() {
-        titleLabel.value = "Blocks"
+        titleLabel.value = dependencies.stringsProvider.blockListTitle
     }
     
     func handleRefresh() {

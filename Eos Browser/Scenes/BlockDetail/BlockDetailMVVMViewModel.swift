@@ -9,15 +9,14 @@
 import Foundation
 
 final class BlockDetailMVVMViewModel: MVVMViewModel {
-    
     private let block: Block
     
-    var titleLabel = Observable<String>()
-    var producerLabel = Observable<String>()
-    var producerSignatureLabel = Observable<String>()
-    var numberOfTransactionsLabel = Observable<String>()
-    var switchJsonVisibilityButtonTitle = Observable<String>()
-    var jsonText = Observable<String>()
+    var titleLabel = Observable<String>("")
+    var producerLabel = Observable<String>("")
+    var producerSignatureLabel = Observable<String>("")
+    var numberOfTransactionsLabel = Observable<String>("")
+    var switchJsonVisibilityButtonTitle = Observable<String>("")
+    var jsonText = Observable<String>("")
     var jsonIsVisible = Observable<Bool>(false)
     
     init(block: Block) {
@@ -43,5 +42,11 @@ private extension BlockDetailMVVMViewModel {
         switchJsonVisibilityButtonTitle.value = "Show Json"
         jsonIsVisible.value = false
         jsonText.value = block.json
+    }
+}
+
+extension BlockDetailMVVMViewModel: Equatable {
+    static func == (lhs: BlockDetailMVVMViewModel, rhs: BlockDetailMVVMViewModel) -> Bool {
+        lhs.block == rhs.block
     }
 }

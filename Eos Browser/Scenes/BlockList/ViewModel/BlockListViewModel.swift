@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BlockViewModel {
+struct BlockViewModel: Equatable {
     let id: String
     let producer: String
 }

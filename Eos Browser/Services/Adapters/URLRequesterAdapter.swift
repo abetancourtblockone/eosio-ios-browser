@@ -9,12 +9,24 @@
 import Foundation
 
 final class URLRequesterAdapter: URLRequester {
-    struct RequestResponseError: Error { let statusCode: Int? }
+    struct Dependencies {
+        var uslSession: URLSession = .shared
+        var responseQueue: DispatchQueue = .main
+    }
+        
+    private let dependencies: Dependencies
+    
+    init(dependencies: Dependencies = .init()) {
+        self.dependencies = dependencies
+    }
     
     func request(urlRequest: URLRequest, completion: @escaping URLRequestHandler) {
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        let task = dependencies.uslSession.dataTask(with: urlRequest) {[weak self] (data, response, error) in
+            guard let self = self else {
+                return
+            }
             if let error = error {
-                completion(.failure(error))
+                self.notify(response: .failure(error), to: completion)
                 return
             }
             guard
@@ -23,11 +35,20 @@ final class URLRequesterAdapter: URLRequester {
                 let dictionary = json as? [String: Any]
             else {
                 struct NotDataError: Error { }
-                completion(.failure(NotDataError()))
+                self.notify(response: .failure(NotDataError()), to: completion)
                 return
             }
-            completion(.success(dictionary))
+            self.notify(response: .success(dictionary), to: completion)
         }
         task.resume()
+    }
+    
+    func handle(response: (Data?, URLResponse?, Error?)) {
+        
+    }
+    func notify(response: URLRequestResponse, to handler: @escaping URLRequestHandler) {
+        dependencies.responseQueue.async {
+            handler(response)
+        }
     }
 }

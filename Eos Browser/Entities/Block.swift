@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Block {
+struct Block: Equatable {
     let id: String
     let producer: String
     let producerSignature: String

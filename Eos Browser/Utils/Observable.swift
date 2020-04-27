@@ -8,10 +8,9 @@
 
 import Foundation
 
-final class Observable<Value> {
+final class Observable<Value: Equatable> {
     typealias Handler = (Value) -> ()
-    var handler: Handler?
-    let queue: DispatchQueue
+    private var handler: Handler?
     
     func observe(_ handler: Handler?) {
         self.handler = handler
@@ -23,21 +22,18 @@ final class Observable<Value> {
         }
     }
     
-    init(_ value: Value, queue: DispatchQueue = .main) {
+    init(_ value: Value) {
         self.value = value
-        self.queue = queue
     }
     
     private func notify() {
-        queue.async {
-            self.handler?(self.value)
-        }
+        self.handler?(self.value)
     }
 }
 
-extension Observable where Value == String {
-    convenience init(_ value: Value = "") {
-        self.init(value, queue: .main)
+extension Observable: Equatable {
+    static func == (lhs: Observable<Value>, rhs: Observable<Value>) -> Bool {
+        lhs.value == lhs.value
     }
 }
 

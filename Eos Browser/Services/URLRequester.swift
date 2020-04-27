@@ -8,7 +8,9 @@
 
 import Foundation
 
-typealias URLRequestHandler = ((Result<[String: Any], Error>) -> Void)
+typealias URLRequestResponse = Result<[String: Any], Error>
+typealias URLRequestHandler = ((URLRequestResponse) -> Void)
+
 protocol URLRequester {
     func request(urlRequest: URLRequest, completion: @escaping URLRequestHandler)
 }
