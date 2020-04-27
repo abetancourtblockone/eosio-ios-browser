@@ -9,7 +9,12 @@
 import Foundation
 
 final class BlockDetailMVVMViewModel: MVVMViewModel {
+    struct Dependencies {
+        var stringsProvider: StringsProviding = StringsProvider()
+    }
+    
     private let block: Block
+    private let dependencies: Dependencies
     
     var titleLabel = Observable<String>("")
     var producerLabel = Observable<String>("")
@@ -19,8 +24,9 @@ final class BlockDetailMVVMViewModel: MVVMViewModel {
     var jsonText = Observable<String>("")
     var jsonIsVisible = Observable<Bool>(false)
     
-    init(block: Block) {
+    init(block: Block, dependencies: Dependencies = .init()) {
         self.block = block
+        self.dependencies = dependencies
     }
     
     func sceneDidLoad() {
@@ -29,7 +35,7 @@ final class BlockDetailMVVMViewModel: MVVMViewModel {
     
     func handleSwitchJsonVisibility() {
         jsonIsVisible.value = jsonIsVisible.value ? false : true
-        switchJsonVisibilityButtonTitle.value = jsonIsVisible.value ? "Hide Json" : "Show Json"
+        switchJsonVisibilityButtonTitle.value = jsonIsVisible.value ? dependencies.stringsProvider.hideJsonButtonTitle : dependencies.stringsProvider.showJsonButtonTitle
     }
 }
 
@@ -39,7 +45,7 @@ private extension BlockDetailMVVMViewModel {
         producerLabel.value = block.producer
         producerSignatureLabel.value = block.producerSignature
         numberOfTransactionsLabel.value = "\(block.transactionsCount)"
-        switchJsonVisibilityButtonTitle.value = "Show Json"
+        switchJsonVisibilityButtonTitle.value = dependencies.stringsProvider.showJsonButtonTitle
         jsonIsVisible.value = false
         jsonText.value = block.json
     }

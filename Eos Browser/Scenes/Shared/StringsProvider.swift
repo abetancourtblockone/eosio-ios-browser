@@ -10,10 +10,12 @@ import Foundation
 
 protocol StringsProviding {
     var blockListTitle: String { get }
+     var showJsonButtonTitle: String { get }
+     var hideJsonButtonTitle: String { get }
 }
 
 final class StringsProvider: StringsProviding {
     var blockListTitle: String = "Blocks"
-    
-    
+    var showJsonButtonTitle: String = "Show Json"
+    var hideJsonButtonTitle: String = "Hide Json"
 }

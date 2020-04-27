@@ -10,8 +10,17 @@
 
 final class MockStringsProvider: StringsProviding {
     var mock_blockListTitle = ""
+    var mock_showJsonButtonTitle = ""
+    var mock_hideJsonButtonTitle = ""
     
     var blockListTitle: String {
         mock_blockListTitle
     }
+    var showJsonButtonTitle: String {
+        mock_showJsonButtonTitle
+    }
+    var hideJsonButtonTitle: String {
+        mock_hideJsonButtonTitle
+    }
 }
+
