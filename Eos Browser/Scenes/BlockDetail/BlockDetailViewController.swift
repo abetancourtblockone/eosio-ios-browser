@@ -28,31 +28,31 @@ final class BlockDetailViewController: UIViewController, MVVMView {
     }
     
     func bind() {
-        viewModel?.titleLabel.bind { [weak self] label in
+        viewModel?.titleLabel.observe { [weak self] label in
             self?.title = label
         }
         
-        viewModel?.producerLabel.bind { [weak self] label in
+        viewModel?.producerLabel.observe { [weak self] label in
             self?.producerLabel.text = label
         }
         
-        viewModel?.producerSignatureLabel.bind { [weak self] label in
+        viewModel?.producerSignatureLabel.observe { [weak self] label in
             self?.producerSignatureLabel.text = label
         }
         
-        viewModel?.numberOfTransactionsLabel.bind { [weak self] label in
+        viewModel?.numberOfTransactionsLabel.observe { [weak self] label in
             self?.numberOfTransactionsLabel.text = label
         }
         
-        viewModel?.switchJsonVisibilityButtonTitle.bind { [weak self] label in
+        viewModel?.switchJsonVisibilityButtonTitle.observe { [weak self] label in
             self?.switchJsonVisibilityButton.setTitle(label, for: .normal)
         }
         
-        viewModel?.jsonText.bind { [weak self] text in
+        viewModel?.jsonText.observe { [weak self] text in
             self?.jsonTextView.text = text
         }
         
-        viewModel?.jsonIsVisible.bind { [weak self] isVisible in
+        viewModel?.jsonIsVisible.observe { [weak self] isVisible in
             self?.jsonTextView.isHidden = !isVisible
         }
     }

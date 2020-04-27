@@ -8,20 +8,20 @@
 
 import Foundation
 
-
 final class BlockListMVVMViewModel {
     enum State {
         case refreshing
         case idle
         case showing(scene: BlockDetailScene)
     }
+    
     struct Dependencies {
-        let retrieveBlocks: RetrieveBlocks = RetrieveBlocksAdapter()
+        var retrieveBlocks: RetrieveBlocks = RetrieveBlocksAdapter()
     }
     
-    var state = Dynamic<State>(.idle)
-    var titleLabel = Dynamic<String>("")
-    var blocks = Dynamic<[BlockViewModel]>([])
+    var state = Observable<State>(.idle)
+    var titleLabel = Observable<String>()
+    var blocks = Observable<[BlockViewModel]>([])
     
     private var blockEntities: [Block] = []
     

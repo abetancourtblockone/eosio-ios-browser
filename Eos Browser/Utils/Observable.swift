@@ -1,5 +1,5 @@
 //
-//  Dynamic.swift
+//  Observable.swift
 //  Eos Browser
 //
 //  Created by Angel Betancourt on 24/04/20.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-final class Dynamic<Value> {
-    typealias Listener = (Value) -> ()
-    var listener: Listener?
+final class Observable<Value> {
+    typealias Handler = (Value) -> ()
+    var handler: Handler?
     let queue: DispatchQueue
     
-    func bind(_ listener: Listener?) {
-        self.listener = listener
+    func observe(_ handler: Handler?) {
+        self.handler = handler
     }
     
     var value: Value {
@@ -30,12 +30,18 @@ final class Dynamic<Value> {
     
     private func notify() {
         queue.async {
-            self.listener?(self.value)
+            self.handler?(self.value)
         }
     }
 }
 
-extension Dynamic where Value: Collection {
+extension Observable where Value == String {
+    convenience init(_ value: Value = "") {
+        self.init(value, queue: .main)
+    }
+}
+
+extension Observable where Value: Collection {
     var count: Int { value.count }
     subscript(index: Value.Index) -> Value.Element { return value[index] }
 }

@@ -12,19 +12,30 @@ final class BlockDetailMVVMViewModel: MVVMViewModel {
     
     private let block: Block
     
-    var titleLabel = Dynamic<String>("")
-    var producerLabel = Dynamic<String>("")
-    var producerSignatureLabel = Dynamic<String>("")
-    var numberOfTransactionsLabel = Dynamic<String>("")
-    var switchJsonVisibilityButtonTitle = Dynamic<String>("")
-    var jsonText = Dynamic<String>("")
-    var jsonIsVisible = Dynamic<Bool>(false)
+    var titleLabel = Observable<String>()
+    var producerLabel = Observable<String>()
+    var producerSignatureLabel = Observable<String>()
+    var numberOfTransactionsLabel = Observable<String>()
+    var switchJsonVisibilityButtonTitle = Observable<String>()
+    var jsonText = Observable<String>()
+    var jsonIsVisible = Observable<Bool>(false)
     
     init(block: Block) {
         self.block = block
     }
     
     func sceneDidLoad() {
+        setup()
+    }
+    
+    func handleSwitchJsonVisibility() {
+        jsonIsVisible.value = jsonIsVisible.value ? false : true
+        switchJsonVisibilityButtonTitle.value = jsonIsVisible.value ? "Hide Json" : "Show Json"
+    }
+}
+
+private extension BlockDetailMVVMViewModel {
+    func setup() {
         titleLabel.value = block.shortId
         producerLabel.value = block.producer
         producerSignatureLabel.value = block.producerSignature
@@ -32,10 +43,5 @@ final class BlockDetailMVVMViewModel: MVVMViewModel {
         switchJsonVisibilityButtonTitle.value = "Show Json"
         jsonIsVisible.value = false
         jsonText.value = block.json
-    }
-    
-    func handleSwitchJsonVisibility() {
-        jsonIsVisible.value = jsonIsVisible.value ? false : true
-        switchJsonVisibilityButtonTitle.value = jsonIsVisible.value ? "Hide Json" : "Show Json"
     }
 }

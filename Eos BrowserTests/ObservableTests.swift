@@ -1,5 +1,5 @@
 //
-//  DynamicTests.swift
+//  ObservableTests.swift
 //  Eos BrowserTests
 //
 //  Created by Angel Betancourt on 26/04/20.
@@ -9,9 +9,9 @@
 import XCTest
 @testable import Eos_Browser
 
-final class DynamicTests: XCTestCase {
+final class ObservableTests: XCTestCase {
     
-    var sut: Dynamic<Bool>!
+    var sut: Observable<Bool>!
 
     override func setUpWithError() throws {
         sut = .init(false)
@@ -21,10 +21,10 @@ final class DynamicTests: XCTestCase {
         sut = nil
     }
 
-    func test_Bind_Notify() throws {
+    func test_Observe_Notify() throws {
         // Given
         let receiveChangeExpectation = expectation(description: "receiveChangeExpectation")
-        sut.bind { if $0 { receiveChangeExpectation.fulfill() } }
+        sut.observe { if $0 { receiveChangeExpectation.fulfill() } }
         
         // When
         sut.value = true

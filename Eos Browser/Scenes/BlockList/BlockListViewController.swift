@@ -54,15 +54,15 @@ extension BlockListViewController: UITableViewDelegate {
 
 private extension BlockListViewController {
     func bind() {
-        viewModel.blocks.bind { [weak self] blocks in
+        viewModel.blocks.observe { [weak self] blocks in
             self?.tableView.reloadData()
         }
         
-        viewModel.titleLabel.bind { [weak self] title in
+        viewModel.titleLabel.observe { [weak self] title in
             self?.title = title
         }
         
-        viewModel.state.bind { [weak self] state in
+        viewModel.state.observe { [weak self] state in
             guard let self = self else {
                 return
             }
