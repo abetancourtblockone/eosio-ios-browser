@@ -29,15 +29,15 @@ final class URLSessionURLRequester: URLRequester {
                 self.notify(response: .failure(error), to: completion)
                 return
             }
-            guard
-                let data = data,
+            if  let data = data,
                 let json = try? JSONSerialization.jsonObject(with: data, options: [.allowFragments]),
                 let dictionary = json as? [String: Any]
-            else {
+            {
+                self.notify(response: .success(dictionary), to: completion)
+            } else {
                 self.notify(response: .success([:]), to: completion)
-                return
             }
-            self.notify(response: .success(dictionary), to: completion)
+            
         }
         task.resume()
     }

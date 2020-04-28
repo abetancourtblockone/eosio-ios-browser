@@ -14,8 +14,7 @@ final class RetrieveBlocksAdapter: RetrieveBlocks {
     }
     
     private var pendingBlocksToBeRetrived: UInt = 0
-    
-    let dependencies: Dependencies
+    private let dependencies: Dependencies
     
     init(dependencies: Dependencies = .init()) {
         self.dependencies = dependencies
@@ -52,7 +51,7 @@ private extension RetrieveBlocksAdapter {
     func handleRetrievedBlock(result: RetrieveBlockResult, completion: @escaping RetrieveBlocksHandler) {
         switch result {
         case .success(let block):
-            print("Retrieved block: \(block.id.suffix(4))")
+            print("Retrieved block: \(block.shortId)")
             pendingBlocksToBeRetrived -= 1
             handleRetrievedBlock(block, completion: completion)
             

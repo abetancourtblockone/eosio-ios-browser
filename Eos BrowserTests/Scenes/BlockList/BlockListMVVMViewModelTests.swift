@@ -49,8 +49,8 @@ final class BlockListMVVMViewModelTests: XCTestCase {
     
     func test_HandleRefresh_RetrieveBlocks() throws {
         // Given
-        let mockHandler = MockRetrieveBlocksHandler()
-        retrieveBlocks.mock_execute = mockHandler.execute
+        let mockCompletion: MockInvocation<(UInt, RetrieveBlocksHandler), Void> = .init({ _ in })
+        retrieveBlocks.mock_execute = .init(mockCompletion.execute)
         
         let observable = MockObservable<[BlockViewModel]>()
         sut.blocks.observe(observable.handler)
@@ -58,8 +58,12 @@ final class BlockListMVVMViewModelTests: XCTestCase {
         // When
         sut.handleRefresh()
         
+        guard let receivedBlocksQuantity = mockCompletion.popFirstInvocationInput()?.0 else {
+            XCTFail("It must call the retrieve blocks usecase")
+            return
+        }
         // Then
-        XCTAssertEqual(mockHandler.receivedBlocksQuantity, 20,
+        XCTAssertEqual(receivedBlocksQuantity, 20,
                        "It must call the retrieve blocks usecase with 20 as quantity argument")
     }
     
@@ -139,6 +143,6 @@ private extension BlockListMVVMViewModelTests {
     func mockRetrieveBlocksSuccess(block: Block = .mock(), refreshingStatus: BlocksRetrievingInfo.Status = .fetchingPrevious) {
         let blocksRetrievingInfo: BlocksRetrievingInfo = .init(status: refreshingStatus,
                                                                lastRetrievedBlock: block)
-        retrieveBlocks.mock_execute = { $1(.success(blocksRetrievingInfo)) }
+        retrieveBlocks.mock_execute = .init({ $1(.success(blocksRetrievingInfo)) })
     }
 }

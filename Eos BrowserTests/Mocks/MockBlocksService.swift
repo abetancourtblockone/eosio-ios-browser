@@ -9,15 +9,14 @@
 @testable import Eos_Browser
 
 final class MockBlocksService: BlocksService {
-    
-    var retrieveBlock: (String, RetrieveBlockHandler) -> () = { _,_  in }
-    var retrieveBlockchain: (RetrieveBlockchainHandler) -> () = { _  in }
+    var mock_retrieveBlock: MockInvocation<(String, RetrieveBlockHandler), Void> = .init({ _,_ in  })
+    var mock_retrieveBlockchain: MockInvocation<RetrieveBlockchainHandler, Void> = .init({ _ in })
     
     func retrieve(blockId: String, completion: @escaping RetrieveBlockHandler) {
-        retrieveBlock(blockId, completion)
+        mock_retrieveBlock.execute((blockId, completion))
     }
     
     func retrieveBlockchain(completion: @escaping RetrieveBlockchainHandler) {
-        retrieveBlockchain(completion)
+        mock_retrieveBlockchain.execute(completion)
     }
 }

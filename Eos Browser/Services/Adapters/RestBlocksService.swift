@@ -10,14 +10,14 @@ import Foundation
 
 final class RestBlocksService: BlocksService {
     struct Dependencies {
-        let urlRequester: URLRequester = URLSessionURLRequester()
+        var urlRequester: URLRequester = URLSessionURLRequester()
         var endpointProvider: EndpointProvider = ClassEndpointProvider()
     }
     
     private lazy var getBlockchainInfoURL = URL(string: dependencies.endpointProvider.getBlockchainInfo)
     private lazy var getBlockcURL = URL(string: dependencies.endpointProvider.getBlock)
 
-    let dependencies: Dependencies
+    private let dependencies: Dependencies
     
     init(dependencies: Dependencies = .init()) {
         self.dependencies = dependencies

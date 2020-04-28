@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Blockchain {
+struct Blockchain: Equatable {
     let headBlockId: String
 }

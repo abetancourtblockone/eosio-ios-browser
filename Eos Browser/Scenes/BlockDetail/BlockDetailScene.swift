@@ -20,4 +20,3 @@ final class BlockDetailScene: Scene {
         self.dependencies = dependencies
     }
 }
- 

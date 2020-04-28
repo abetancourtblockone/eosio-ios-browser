@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BlocksRetrievingInfo {
+struct BlocksRetrievingInfo: Equatable {
     enum Status {
         case fetchingPrevious
         case finished

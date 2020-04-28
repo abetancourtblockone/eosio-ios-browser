@@ -23,46 +23,58 @@ final class RetrieveBlocksAdapterTests: XCTestCase {
         sut = nil
         blocksService = nil
     }
-
+    
     func test_BlockchainServiceSucceed_Execute_CallsGetBlockService() throws {
         // Given
-        let mockHeadBlockId = UUID().uuidString
-        let mockBlcokchain: Blockchain = .init(headBlockId: mockHeadBlockId)
-        blocksService.retrieveBlockchain = { $0(.success(mockBlcokchain)) }
-        
-        let blockServiceExpectation = expectation(description: "firstBlockExpectation")
-        blocksService.retrieveBlock = { _,_ in blockServiceExpectation.fulfill() }
+        let mockBlock: Block = .mock()
+        let mockBlcokchain: Blockchain = .init(headBlockId: mockBlock.id)
+        blocksService.mock_retrieveBlockchain = .init({ $0(.success(mockBlcokchain)) })
+        blocksService.mock_retrieveBlock = .init({ $1(.success(mockBlock)) })
         
         // When
-        sut.execute(quantityOfBlocksToBeRetrieved: 1, completion: { _ in })
+        let mockCompletion: MockInvocation<RetrieveBlocksResult, Void> = .init({ _ in })
+        sut.execute(quantityOfBlocksToBeRetrieved: 1, completion: mockCompletion.execute)
         
         // Then
-        wait(for: [blockServiceExpectation], timeout: 0.1)
+        guard case .success(let receivedRetrievingInfo) = mockCompletion.popFirstInvocationInput() else {
+            XCTFail("The result must be a success response if both service calls succeed")
+            return
+        }
+        
+        XCTAssertEqual(receivedRetrievingInfo.status, .finished,
+                       "The received status must be finished if the number of block is 1")
+        XCTAssertEqual(receivedRetrievingInfo.lastRetrievedBlock, mockBlock,
+                       "It must return the block returned by the service")
     }
     
     func test_BlockServiceSucceed_Execute_CallsBlockServiceInOrder() throws {
         // Given
-        let mockBlocks = chainedBlocks(quantity: 20)
-        let blockCallsOrderedExpectations = mockBlocks.map { expectation(description: $0.id) }
+        let givenNumberOfBlocksToBeRetrieved = 20
+        let mockBlocks = chainedBlocks(quantity: UInt(givenNumberOfBlocksToBeRetrieved))
         
         let headBlock = mockBlocks.first!
         let mockBlcokchain: Blockchain = .init(headBlockId: headBlock.id)
-        blocksService.retrieveBlockchain = { $0(.success(mockBlcokchain)) }
+        blocksService.mock_retrieveBlockchain = .init({ $0(.success(mockBlcokchain)) })
         
-        blocksService.retrieveBlock = { id, completion in
-            blockCallsOrderedExpectations.first(where: {$0.description == id})?.fulfill()
+        blocksService.mock_retrieveBlock = .init({ id, completion in
             guard let block = mockBlocks.first(where: { $0.id == id }) else {
-                XCTFail("The requested block does no exists for id: \"\(id)\", make sure you are using the blovkchain headBlockId or the previousBlockId of a given block")
+                XCTFail("The requested block does no exists for id: \"\(id)\", make sure you are using the blockchain headBlockId or the previousBlockId of a given block")
                 return
             }
             completion(.success(block))
-        }
+        })
         
         // When
         sut.execute(quantityOfBlocksToBeRetrieved: UInt(mockBlocks.count), completion: { _ in })
         
         // Then
-        wait(for: blockCallsOrderedExpectations, timeout: 1, enforceOrder: true)
+        XCTAssertEqual(blocksService.mock_retrieveBlock.receivedInvocations.count, givenNumberOfBlocksToBeRetrieved,
+                       "The number of invocations of the retrieve block service must be equal to the given number of blocks to be retrieved")
+        
+        let invokedBlockIds = blocksService.mock_retrieveBlock.receivedInvocations.map { $0.0 }
+        let expectedInvokedBlockIds = mockBlocks.map { $0.id }
+        XCTAssertEqual(invokedBlockIds, expectedInvokedBlockIds,
+                       "The invoked block ids are either different or are not in the expected order")
     }
 }
 

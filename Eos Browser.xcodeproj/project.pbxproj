@@ -14,6 +14,10 @@
 		67674AFF24577A040098A8B2 /* BlockDetailMVVMViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674AFE24577A040098A8B2 /* BlockDetailMVVMViewModelTests.swift */; };
 		67674B01245897F70098A8B2 /* EndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B00245897F70098A8B2 /* EndpointProvider.swift */; };
 		67674B03245898DA0098A8B2 /* ClassEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B02245898DA0098A8B2 /* ClassEndpointProvider.swift */; };
+		67674B062458CE5B0098A8B2 /* RestBlocksServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B052458CE5B0098A8B2 /* RestBlocksServiceTests.swift */; };
+		67674B082458CE6F0098A8B2 /* MockURLRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B072458CE6F0098A8B2 /* MockURLRequester.swift */; };
+		67674B0A2458CE7A0098A8B2 /* MockEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B092458CE7A0098A8B2 /* MockEndpointProvider.swift */; };
+		67674B0C2458D8B30098A8B2 /* MockInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B0B2458D8B30098A8B2 /* MockInvocation.swift */; };
 		677B765924525382004B27CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B765824525382004B27CB /* AppDelegate.swift */; };
 		677B765B24525382004B27CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B765A24525382004B27CB /* SceneDelegate.swift */; };
 		677B766024525382004B27CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677B765E24525382004B27CB /* Main.storyboard */; };
@@ -61,6 +65,10 @@
 		67674AFE24577A040098A8B2 /* BlockDetailMVVMViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailMVVMViewModelTests.swift; sourceTree = "<group>"; };
 		67674B00245897F70098A8B2 /* EndpointProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProvider.swift; sourceTree = "<group>"; };
 		67674B02245898DA0098A8B2 /* ClassEndpointProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEndpointProvider.swift; sourceTree = "<group>"; };
+		67674B052458CE5B0098A8B2 /* RestBlocksServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestBlocksServiceTests.swift; sourceTree = "<group>"; };
+		67674B072458CE6F0098A8B2 /* MockURLRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLRequester.swift; sourceTree = "<group>"; };
+		67674B092458CE7A0098A8B2 /* MockEndpointProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEndpointProvider.swift; sourceTree = "<group>"; };
+		67674B0B2458D8B30098A8B2 /* MockInvocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInvocation.swift; sourceTree = "<group>"; };
 		677B765524525382004B27CB /* Eos Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eos Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		677B765824525382004B27CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		677B765A24525382004B27CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +136,9 @@
 				677B8242245747F50045B483 /* MockRetrieveBlocks.swift */,
 				677B824924575E2B0045B483 /* MockStringsProvider.swift */,
 				67674AFA24576B450098A8B2 /* MockObservable.swift */,
+				67674B072458CE6F0098A8B2 /* MockURLRequester.swift */,
+				67674B092458CE7A0098A8B2 /* MockEndpointProvider.swift */,
+				67674B0B2458D8B30098A8B2 /* MockInvocation.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -138,6 +149,14 @@
 				67674AFE24577A040098A8B2 /* BlockDetailMVVMViewModelTests.swift */,
 			);
 			path = BlockDetail;
+			sourceTree = "<group>";
+		};
+		67674B042458CE390098A8B2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				67674B052458CE5B0098A8B2 /* RestBlocksServiceTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		677B764C24525382004B27CB = {
@@ -180,6 +199,7 @@
 		677B766E24525385004B27CB /* Eos BrowserTests */ = {
 			isa = PBXGroup;
 			children = (
+				67674B042458CE390098A8B2 /* Services */,
 				677B823E2457468A0045B483 /* Scenes */,
 				6764C26B2454E29E003C3A29 /* Mocks */,
 				6764C2652454D888003C3A29 /* Usecases */,
@@ -447,13 +467,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				6764C2672454D8A3003C3A29 /* RetrieveBlocksAdapterTests.swift in Sources */,
+				67674B062458CE5B0098A8B2 /* RestBlocksServiceTests.swift in Sources */,
 				677B824A24575E2B0045B483 /* MockStringsProvider.swift in Sources */,
+				67674B0A2458CE7A0098A8B2 /* MockEndpointProvider.swift in Sources */,
 				67AFC140245640DD006E020F /* ObservableTests.swift in Sources */,
 				6764C26A2454E284003C3A29 /* MockBlocksService.swift in Sources */,
 				677B8241245747AF0045B483 /* BlockListMVVMViewModelTests.swift in Sources */,
+				67674B0C2458D8B30098A8B2 /* MockInvocation.swift in Sources */,
 				6764C26D2454E3C9003C3A29 /* MockBlock.swift in Sources */,
 				67674AFB24576B450098A8B2 /* MockObservable.swift in Sources */,
 				677B8243245747F50045B483 /* MockRetrieveBlocks.swift in Sources */,
+				67674B082458CE6F0098A8B2 /* MockURLRequester.swift in Sources */,
 				67674AFF24577A040098A8B2 /* BlockDetailMVVMViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
