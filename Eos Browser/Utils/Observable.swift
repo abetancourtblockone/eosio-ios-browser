@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class Observable<Value: Equatable> {
+final class Observable<Value> {
     typealias Handler = (Value) -> ()
     private var handler: Handler?
     
@@ -28,12 +28,6 @@ final class Observable<Value: Equatable> {
     
     private func notify() {
         self.handler?(self.value)
-    }
-}
-
-extension Observable: Equatable {
-    static func == (lhs: Observable<Value>, rhs: Observable<Value>) -> Bool {
-        lhs.value == lhs.value
     }
 }
 

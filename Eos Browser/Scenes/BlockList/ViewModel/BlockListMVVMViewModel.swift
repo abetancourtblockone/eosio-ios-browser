@@ -8,12 +8,15 @@
 
 import Foundation
 
-final class BlockListMVVMViewModel {
-    enum State: Equatable {
+final class BlockListMVVMViewModel: MVVMViewModel {
+    typealias Configuration = Void
+    
+    enum State {
         case refreshing
         case idle
         case showing(scene: BlockDetailScene)
     }
+    
     
     struct Dependencies {
         var stringsProvider: StringsProviding = StringsProvider()
@@ -29,7 +32,7 @@ final class BlockListMVVMViewModel {
     
     private let dependencies: Dependencies
     
-    init(dependencies: Dependencies = .init()) {
+    init(configuration: Configuration = (), dependencies: Dependencies = .init()) {
         self.dependencies = dependencies
     }
 }

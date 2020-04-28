@@ -20,10 +20,4 @@ final class BlockDetailScene: Scene {
         self.dependencies = dependencies
     }
 }
-
-extension BlockDetailScene: Equatable {
-    static func == (lhs: BlockDetailScene, rhs: BlockDetailScene) -> Bool {
-        lhs.configuration == rhs.configuration
-    }
-}
  

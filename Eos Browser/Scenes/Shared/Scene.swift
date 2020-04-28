@@ -7,12 +7,18 @@
 //
 
 
-protocol MVVMViewModel: Equatable {
-    associatedtype Configuration: Equatable
+protocol MVVMViewModel {
+    associatedtype Configuration
     associatedtype Dependencies
     
     init(configuration: Configuration, dependencies: Dependencies)
     func sceneDidLoad()
+}
+
+extension MVVMViewModel where Configuration == Void {
+    init(dependencies: Dependencies) {
+        self.init(configuration: (), dependencies: dependencies)
+    }
 }
 
 protocol MVVMView: Equatable {

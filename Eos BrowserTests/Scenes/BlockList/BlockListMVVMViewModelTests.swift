@@ -90,8 +90,10 @@ final class BlockListMVVMViewModelTests: XCTestCase {
         sut.handleRefresh()
         
         // Then
-        XCTAssertEqual(observable.receivedValue, .refreshing,
-                       "When refrshing, the state must be updated to refreshing")
+        guard case .refreshing = observable.receivedValue else {
+            XCTFail("When refrshing, the state must be updated to refreshing")
+            return
+        }
     }
     
     func test_HandleBlockSelection_UpdatesSceneStateToShowingDetail() throws {
@@ -126,8 +128,10 @@ final class BlockListMVVMViewModelTests: XCTestCase {
         sut.handleRefresh()
         
         // Then
-        XCTAssertEqual(observable.receivedValue, .idle,
-                       "When refrshing finishes, the state must be updated to idle")
+        guard case .idle = observable.receivedValue else {
+            XCTFail("When refrshing finishes, the state must be updated to idle")
+            return
+        }
     }
 }
 
