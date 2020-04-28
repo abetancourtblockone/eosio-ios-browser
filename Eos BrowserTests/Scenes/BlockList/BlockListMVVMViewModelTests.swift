@@ -10,17 +10,24 @@ import XCTest
 @testable import Eos_Browser
 
 final class BlockListMVVMViewModelTests: XCTestCase {
-    var stringsProvider = MockStringsProvider()
+    var stringsProvider: MockStringsProvider!
     var retrieveBlocks: MockRetrieveBlocks!
+    var blockDetailSceneDependencies: BlockDetailScene.Dependencies!
     var sut: BlockListMVVMViewModel!
 
     override func setUpWithError() throws {
+        stringsProvider = .init()
         retrieveBlocks = .init()
+        blockDetailSceneDependencies = .init(stringsProvider: stringsProvider)
         sut = .init(dependencies: .init(stringsProvider: stringsProvider,
-                                        retrieveBlocks: retrieveBlocks))
+                                        retrieveBlocks: retrieveBlocks,
+                                        blockDetailSceneDependencies: blockDetailSceneDependencies))
     }
 
     override func tearDownWithError() throws {
+        blockDetailSceneDependencies = nil
+        stringsProvider = nil
+        retrieveBlocks = nil
         sut = nil
     }
 
@@ -52,7 +59,6 @@ final class BlockListMVVMViewModelTests: XCTestCase {
         sut.handleRefresh()
         
         // Then
-
         XCTAssertEqual(mockHandler.receivedBlocksQuantity, 20,
                        "It must call the retrieve blocks usecase with 20 as quantity argument")
     }
@@ -75,7 +81,7 @@ final class BlockListMVVMViewModelTests: XCTestCase {
                        "The received viewModel is not valid")
     }
     
-    func test_HandleRefresh_UpdatesStatus() throws {
+    func test_HandleRefresh_UpdatesSceneStateToRefreshing() throws {
         // Given
         let observable = MockObservable<BlockListMVVMViewModel.State>()
         sut.state.observe(observable.handler)
@@ -88,7 +94,29 @@ final class BlockListMVVMViewModelTests: XCTestCase {
                        "When refrshing, the state must be updated to refreshing")
     }
     
-    func test_FinishedRefreshing_HandleRefresh_UpdatesStatus() throws {
+    func test_HandleBlockSelection_UpdatesSceneStateToShowingDetail() throws {
+        // Given
+        let givenBlock: Block = .mock()
+        mockRetrieveBlocksSuccess(block: givenBlock)
+        
+        let observable = MockObservable<BlockListMVVMViewModel.State>()
+        sut.state.observe(observable.handler)
+        
+        sut.handleRefresh()
+        
+        // When
+        sut.handleSelectedBlock(at: .init(row: 0, section: 0))
+        
+        // Then
+        guard case .showing(let scene) = observable.receivedValue else {
+            XCTFail("The received state must be showing an scene")
+            return
+        }
+        XCTAssertEqual(scene.configuration, .init(block: givenBlock),
+                       "The received scene configuration must containt the seelcted block")
+    }
+    
+    func test_FinishedRefreshing_HandleRefresh_UpdatesSceneStateToIdle() throws {
         // Given
         mockRetrieveBlocksSuccess(refreshingStatus: .finished)
         let observable = MockObservable<BlockListMVVMViewModel.State>()

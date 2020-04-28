@@ -18,6 +18,7 @@ final class BlockListMVVMViewModel {
     struct Dependencies {
         var stringsProvider: StringsProviding = StringsProvider()
         var retrieveBlocks: RetrieveBlocks = RetrieveBlocksAdapter()
+        var blockDetailSceneDependencies: BlockDetailScene.ViewModel.Dependencies = .init()
     }
     
     var state = Observable<State>(.idle)
@@ -44,7 +45,8 @@ extension BlockListMVVMViewModel {
     }
     
     func handleSelectedBlock(at indexPath: IndexPath) {
-        let scene = BlockDetailScene(viewModel: .init(block: blockEntities[indexPath.row]))
+        let scene = BlockDetailScene(configuration: .init(block: blockEntities[indexPath.row]),
+                                     dependencies: self.dependencies.blockDetailSceneDependencies)
         self.state.value = .showing(scene: scene)
     }
 }

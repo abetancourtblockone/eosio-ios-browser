@@ -12,16 +12,18 @@ final class BlockDetailScene: Scene {
     typealias View = BlockDetailViewController
     typealias ViewModel = BlockDetailMVVMViewModel
     
-    var viewModel: ViewModel
+    var configuration: Configuration
+    var dependencies: Dependencies
     
-    init(viewModel: ViewModel) {
-        self.viewModel = viewModel
+    init(configuration: Configuration, dependencies: Dependencies) {
+        self.configuration = configuration
+        self.dependencies = dependencies
     }
 }
 
 extension BlockDetailScene: Equatable {
     static func == (lhs: BlockDetailScene, rhs: BlockDetailScene) -> Bool {
-        lhs.viewModel == rhs.viewModel
+        lhs.configuration == rhs.configuration
     }
 }
  

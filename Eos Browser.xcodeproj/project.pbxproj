@@ -12,6 +12,8 @@
 		6764C26D2454E3C9003C3A29 /* MockBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6764C26C2454E3C9003C3A29 /* MockBlock.swift */; };
 		67674AFB24576B450098A8B2 /* MockObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674AFA24576B450098A8B2 /* MockObservable.swift */; };
 		67674AFF24577A040098A8B2 /* BlockDetailMVVMViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674AFE24577A040098A8B2 /* BlockDetailMVVMViewModelTests.swift */; };
+		67674B01245897F70098A8B2 /* EndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B00245897F70098A8B2 /* EndpointProvider.swift */; };
+		67674B03245898DA0098A8B2 /* ClassEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B02245898DA0098A8B2 /* ClassEndpointProvider.swift */; };
 		677B765924525382004B27CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B765824525382004B27CB /* AppDelegate.swift */; };
 		677B765B24525382004B27CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B765A24525382004B27CB /* SceneDelegate.swift */; };
 		677B766024525382004B27CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677B765E24525382004B27CB /* Main.storyboard */; };
@@ -25,10 +27,10 @@
 		677B76912453AD77004B27CB /* RetrieveBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76902453AD77004B27CB /* RetrieveBlocks.swift */; };
 		677B76942453ADEF004B27CB /* RetrieveBlocksAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76932453ADEF004B27CB /* RetrieveBlocksAdapter.swift */; };
 		677B76962453AE09004B27CB /* BlocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76952453AE09004B27CB /* BlocksService.swift */; };
-		677B76992453AE83004B27CB /* BlocksServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76982453AE83004B27CB /* BlocksServiceAdapter.swift */; };
+		677B76992453AE83004B27CB /* RestBlocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76982453AE83004B27CB /* RestBlocksService.swift */; };
 		677B769B2453B023004B27CB /* Blockchain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B769A2453B023004B27CB /* Blockchain.swift */; };
 		677B76A22454A816004B27CB /* URLRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76A12454A816004B27CB /* URLRequester.swift */; };
-		677B76A42454BE79004B27CB /* URLRequesterAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76A32454BE79004B27CB /* URLRequesterAdapter.swift */; };
+		677B76A42454BE79004B27CB /* URLSessionURLRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76A32454BE79004B27CB /* URLSessionURLRequester.swift */; };
 		677B8241245747AF0045B483 /* BlockListMVVMViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B8240245747AF0045B483 /* BlockListMVVMViewModelTests.swift */; };
 		677B8243245747F50045B483 /* MockRetrieveBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B8242245747F50045B483 /* MockRetrieveBlocks.swift */; };
 		677B824624575B7E0045B483 /* UIKit+Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B824524575B7E0045B483 /* UIKit+Scene.swift */; };
@@ -57,6 +59,8 @@
 		6764C26C2454E3C9003C3A29 /* MockBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBlock.swift; sourceTree = "<group>"; };
 		67674AFA24576B450098A8B2 /* MockObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockObservable.swift; sourceTree = "<group>"; };
 		67674AFE24577A040098A8B2 /* BlockDetailMVVMViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailMVVMViewModelTests.swift; sourceTree = "<group>"; };
+		67674B00245897F70098A8B2 /* EndpointProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProvider.swift; sourceTree = "<group>"; };
+		67674B02245898DA0098A8B2 /* ClassEndpointProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEndpointProvider.swift; sourceTree = "<group>"; };
 		677B765524525382004B27CB /* Eos Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eos Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		677B765824525382004B27CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		677B765A24525382004B27CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,10 +78,10 @@
 		677B76902453AD77004B27CB /* RetrieveBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveBlocks.swift; sourceTree = "<group>"; };
 		677B76932453ADEF004B27CB /* RetrieveBlocksAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveBlocksAdapter.swift; sourceTree = "<group>"; };
 		677B76952453AE09004B27CB /* BlocksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksService.swift; sourceTree = "<group>"; };
-		677B76982453AE83004B27CB /* BlocksServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksServiceAdapter.swift; sourceTree = "<group>"; };
+		677B76982453AE83004B27CB /* RestBlocksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestBlocksService.swift; sourceTree = "<group>"; };
 		677B769A2453B023004B27CB /* Blockchain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blockchain.swift; sourceTree = "<group>"; };
 		677B76A12454A816004B27CB /* URLRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequester.swift; sourceTree = "<group>"; };
-		677B76A32454BE79004B27CB /* URLRequesterAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequesterAdapter.swift; sourceTree = "<group>"; };
+		677B76A32454BE79004B27CB /* URLSessionURLRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionURLRequester.swift; sourceTree = "<group>"; };
 		677B8240245747AF0045B483 /* BlockListMVVMViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListMVVMViewModelTests.swift; sourceTree = "<group>"; };
 		677B8242245747F50045B483 /* MockRetrieveBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRetrieveBlocks.swift; sourceTree = "<group>"; };
 		677B824524575B7E0045B483 /* UIKit+Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Scene.swift"; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 				677B76972453AE61004B27CB /* Adapters */,
 				677B76952453AE09004B27CB /* BlocksService.swift */,
 				677B76A12454A816004B27CB /* URLRequester.swift */,
+				67674B00245897F70098A8B2 /* EndpointProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -268,8 +273,9 @@
 		677B76972453AE61004B27CB /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
-				677B76982453AE83004B27CB /* BlocksServiceAdapter.swift */,
-				677B76A32454BE79004B27CB /* URLRequesterAdapter.swift */,
+				677B76982453AE83004B27CB /* RestBlocksService.swift */,
+				677B76A32454BE79004B27CB /* URLSessionURLRequester.swift */,
+				67674B02245898DA0098A8B2 /* ClassEndpointProvider.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -415,19 +421,21 @@
 				677B824824575DA20045B483 /* StringsProvider.swift in Sources */,
 				677B76962453AE09004B27CB /* BlocksService.swift in Sources */,
 				677B768D2453A590004B27CB /* BlockListMVVMViewModel.swift in Sources */,
-				677B76A42454BE79004B27CB /* URLRequesterAdapter.swift in Sources */,
+				677B76A42454BE79004B27CB /* URLSessionURLRequester.swift in Sources */,
 				677B824624575B7E0045B483 /* UIKit+Scene.swift in Sources */,
 				677B767E2453A3A1004B27CB /* Observable.swift in Sources */,
 				677B76862453A457004B27CB /* BlockListViewModel.swift in Sources */,
 				67AFC13C24563A96006E020F /* BlockDetailMVVMViewModel.swift in Sources */,
 				67AFC13724562F4D006E020F /* BlockDetailViewController.swift in Sources */,
+				67674B01245897F70098A8B2 /* EndpointProvider.swift in Sources */,
 				677B76912453AD77004B27CB /* RetrieveBlocks.swift in Sources */,
 				677B76942453ADEF004B27CB /* RetrieveBlocksAdapter.swift in Sources */,
 				67AFC13A24563A66006E020F /* Scene.swift in Sources */,
 				677B769B2453B023004B27CB /* Blockchain.swift in Sources */,
 				677B76842453A414004B27CB /* Block.swift in Sources */,
 				677B765924525382004B27CB /* AppDelegate.swift in Sources */,
-				677B76992453AE83004B27CB /* BlocksServiceAdapter.swift in Sources */,
+				677B76992453AE83004B27CB /* RestBlocksService.swift in Sources */,
+				67674B03245898DA0098A8B2 /* ClassEndpointProvider.swift in Sources */,
 				677B76882453A462004B27CB /* BlockListViewController.swift in Sources */,
 				67AFC13E24563AB2006E020F /* BlockDetailScene.swift in Sources */,
 				677B765B24525382004B27CB /* SceneDelegate.swift in Sources */,

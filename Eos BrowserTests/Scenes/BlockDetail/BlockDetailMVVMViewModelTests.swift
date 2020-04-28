@@ -17,7 +17,7 @@ final class BlockDetailMVVMViewModelTests: XCTestCase {
     override func setUpWithError() throws {
         block = .mock()
         stringsProvider = .init()
-        sut = .init(block: block,
+        sut = .init(configuration: .init(block: block),
                     dependencies: .init(stringsProvider: stringsProvider))
     }
 
@@ -136,7 +136,4 @@ final class BlockDetailMVVMViewModelTests: XCTestCase {
         XCTAssertEqual(observable.receivedValue, !givenCurrentVisibilityStatus,
                        "The received JsonVisibility status must be the negation of the current status")
     }
-}
-
-private extension BlockDetailMVVMViewModelTests {
 }

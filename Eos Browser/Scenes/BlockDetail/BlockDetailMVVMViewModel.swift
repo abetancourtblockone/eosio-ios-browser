@@ -9,11 +9,15 @@
 import Foundation
 
 final class BlockDetailMVVMViewModel: MVVMViewModel {
+    struct Configuration: Equatable {
+        var block: Block
+    }
+    
     struct Dependencies {
         var stringsProvider: StringsProviding = StringsProvider()
     }
-    
-    private let block: Block
+        
+    private let configuration: Configuration
     private let dependencies: Dependencies
     
     var titleLabel = Observable<String>("")
@@ -24,8 +28,8 @@ final class BlockDetailMVVMViewModel: MVVMViewModel {
     var jsonText = Observable<String>("")
     var jsonIsVisible = Observable<Bool>(false)
     
-    init(block: Block, dependencies: Dependencies = .init()) {
-        self.block = block
+    init(configuration: Configuration, dependencies: Dependencies = .init()) {
+        self.configuration = configuration
         self.dependencies = dependencies
     }
     
@@ -41,18 +45,18 @@ final class BlockDetailMVVMViewModel: MVVMViewModel {
 
 private extension BlockDetailMVVMViewModel {
     func setup() {
-        titleLabel.value = block.shortId
-        producerLabel.value = block.producer
-        producerSignatureLabel.value = block.producerSignature
-        numberOfTransactionsLabel.value = "\(block.transactionsCount)"
+        titleLabel.value = configuration.block.shortId
+        producerLabel.value = configuration.block.producer
+        producerSignatureLabel.value = configuration.block.producerSignature
+        numberOfTransactionsLabel.value = "\(configuration.block.transactionsCount)"
         switchJsonVisibilityButtonTitle.value = dependencies.stringsProvider.showJsonButtonTitle
         jsonIsVisible.value = false
-        jsonText.value = block.json
+        jsonText.value = configuration.block.json
     }
 }
 
 extension BlockDetailMVVMViewModel: Equatable {
     static func == (lhs: BlockDetailMVVMViewModel, rhs: BlockDetailMVVMViewModel) -> Bool {
-        lhs.block == rhs.block
+        lhs.configuration == rhs.configuration
     }
 }

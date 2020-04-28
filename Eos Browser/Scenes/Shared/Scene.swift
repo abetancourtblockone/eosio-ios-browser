@@ -8,6 +8,10 @@
 
 
 protocol MVVMViewModel: Equatable {
+    associatedtype Configuration: Equatable
+    associatedtype Dependencies
+    
+    init(configuration: Configuration, dependencies: Dependencies)
     func sceneDidLoad()
 }
 
@@ -20,8 +24,13 @@ protocol Scene {
     associatedtype View: MVVMView
     associatedtype ViewModel: MVVMViewModel
     
-    var viewModel: ViewModel { get set }
-    init(viewModel: ViewModel)
+    typealias Dependencies = ViewModel.Dependencies
+    typealias Configuration = ViewModel.Configuration
+    
+    var configuration: Configuration { get set }
+    var dependencies: Dependencies { get set }
+    
+    init(configuration: Configuration, dependencies: Dependencies)
 }
 
 

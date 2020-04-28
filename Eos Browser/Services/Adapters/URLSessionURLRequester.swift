@@ -1,5 +1,5 @@
 //
-//  URLRequesterAdapter.swift
+//  URLSessionURLRequester.swift
 //  Eos Browser
 //
 //  Created by Angel Betancourt on 25/04/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class URLRequesterAdapter: URLRequester {
+final class URLSessionURLRequester: URLRequester {
     struct Dependencies {
         var uslSession: URLSession = .shared
         var responseQueue: DispatchQueue = .main
@@ -34,18 +34,16 @@ final class URLRequesterAdapter: URLRequester {
                 let json = try? JSONSerialization.jsonObject(with: data, options: [.allowFragments]),
                 let dictionary = json as? [String: Any]
             else {
-                struct NotDataError: Error { }
-                self.notify(response: .failure(NotDataError()), to: completion)
+                self.notify(response: .success([:]), to: completion)
                 return
             }
             self.notify(response: .success(dictionary), to: completion)
         }
         task.resume()
     }
-    
-    func handle(response: (Data?, URLResponse?, Error?)) {
-        
-    }
+}
+
+private extension URLSessionURLRequester {
     func notify(response: URLRequestResponse, to handler: @escaping URLRequestHandler) {
         dependencies.responseQueue.async {
             handler(response)

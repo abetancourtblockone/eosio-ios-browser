@@ -1,5 +1,5 @@
 //
-//  BlocksServiceAdapter.swift
+//  RestBlocksService.swift
 //  Eos Browser
 //
 //  Created by Angel Betancourt on 24/04/20.
@@ -8,13 +8,14 @@
 
 import Foundation
 
-final class BlocksServiceAdapter: BlocksService {
+final class RestBlocksService: BlocksService {
     struct Dependencies {
-        let urlRequester: URLRequester = URLRequesterAdapter()
+        let urlRequester: URLRequester = URLSessionURLRequester()
+        var endpointProvider: EndpointProvider = ClassEndpointProvider()
     }
     
-    private lazy var getBlockchainInfoURL = URL(string: "https://eos.greymass.com/v1/chain/get_info")
-    private lazy var getBlockcURL = URL(string: "https://eos.greymass.com/v1/chain/get_block")
+    private lazy var getBlockchainInfoURL = URL(string: dependencies.endpointProvider.getBlockchainInfo)
+    private lazy var getBlockcURL = URL(string: dependencies.endpointProvider.getBlock)
 
     let dependencies: Dependencies
     
@@ -24,6 +25,7 @@ final class BlocksServiceAdapter: BlocksService {
     
     func retrieve(blockId: String, completion: @escaping RetrieveBlockHandler) {
         guard let url = getBlockcURL else {
+            print("Couldn't build the url for retrieving a block")
             return
         }
         
@@ -43,6 +45,7 @@ final class BlocksServiceAdapter: BlocksService {
     
     func retrieveBlockchain(completion: @escaping RetrieveBlockchainHandler) {
         guard let url = getBlockchainInfoURL else {
+            print("Couldn't build the url for retrieving a blockchain info")
             return
         }
         
