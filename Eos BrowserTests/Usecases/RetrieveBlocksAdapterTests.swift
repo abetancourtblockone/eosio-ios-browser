@@ -41,7 +41,7 @@ final class RetrieveBlocksAdapterTests: XCTestCase {
         blocksService.mock_retrieveBlock = .init({ $1(.success(mockBlock)) })
         
         // When
-        let mockCompletion: MockFunction<RetrieveBlocksResult, Void> = .init({ _ in })
+        let mockCompletion = MockFunction<RetrieveBlocksResult, Void>()
         sut.execute(quantityOfBlocksToBeRetrieved: 1, completion: mockCompletion.execute)
         
         // Then
@@ -64,7 +64,7 @@ final class RetrieveBlocksAdapterTests: XCTestCase {
         blocksService.mock_retrieveBlock = .init({ $1(.success(mockBlock)) })
         
         // When
-        let mockCompletion: MockFunction<RetrieveBlocksResult, Void> = .init({ _ in })
+        let mockCompletion = MockFunction<RetrieveBlocksResult, Void>()
         sut.execute(quantityOfBlocksToBeRetrieved: 2, completion: mockCompletion.execute)
         
         // Then

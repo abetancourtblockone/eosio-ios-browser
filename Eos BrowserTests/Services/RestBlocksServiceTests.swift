@@ -109,7 +109,7 @@ final class RestBlocksServiceTests: XCTestCase {
         urlRequester.mock_request = .init({ $1(.success(givenValidResponse)) })
         
         // When
-        let mockCompletion: MockFunction<RetrieveBlockchainResult, Void> = .init({ _ in })
+        let mockCompletion = MockFunction<RetrieveBlockchainResult, Void>()
         sut.retrieveBlockchain(completion: mockCompletion.execute)
         
         // Then

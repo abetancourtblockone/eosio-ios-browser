@@ -10,7 +10,6 @@
 		6764C2672454D8A3003C3A29 /* RetrieveBlocksAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6764C2662454D8A3003C3A29 /* RetrieveBlocksAdapterTests.swift */; };
 		6764C26A2454E284003C3A29 /* MockBlocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6764C2692454E284003C3A29 /* MockBlocksService.swift */; };
 		6764C26D2454E3C9003C3A29 /* MockBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6764C26C2454E3C9003C3A29 /* MockBlock.swift */; };
-		67674AFB24576B450098A8B2 /* MockObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674AFA24576B450098A8B2 /* MockObservable.swift */; };
 		67674AFF24577A040098A8B2 /* BlockDetailMVVMViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674AFE24577A040098A8B2 /* BlockDetailMVVMViewModelTests.swift */; };
 		67674B01245897F70098A8B2 /* EndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B00245897F70098A8B2 /* EndpointProvider.swift */; };
 		67674B03245898DA0098A8B2 /* ClassEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B02245898DA0098A8B2 /* ClassEndpointProvider.swift */; };
@@ -61,7 +60,6 @@
 		6764C2662454D8A3003C3A29 /* RetrieveBlocksAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveBlocksAdapterTests.swift; sourceTree = "<group>"; };
 		6764C2692454E284003C3A29 /* MockBlocksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBlocksService.swift; sourceTree = "<group>"; };
 		6764C26C2454E3C9003C3A29 /* MockBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBlock.swift; sourceTree = "<group>"; };
-		67674AFA24576B450098A8B2 /* MockObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockObservable.swift; sourceTree = "<group>"; };
 		67674AFE24577A040098A8B2 /* BlockDetailMVVMViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailMVVMViewModelTests.swift; sourceTree = "<group>"; };
 		67674B00245897F70098A8B2 /* EndpointProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProvider.swift; sourceTree = "<group>"; };
 		67674B02245898DA0098A8B2 /* ClassEndpointProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassEndpointProvider.swift; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 				6764C26C2454E3C9003C3A29 /* MockBlock.swift */,
 				677B8242245747F50045B483 /* MockRetrieveBlocks.swift */,
 				677B824924575E2B0045B483 /* MockStringsProvider.swift */,
-				67674AFA24576B450098A8B2 /* MockObservable.swift */,
 				67674B072458CE6F0098A8B2 /* MockURLRequester.swift */,
 				67674B092458CE7A0098A8B2 /* MockEndpointProvider.swift */,
 				67674B0B2458D8B30098A8B2 /* MockFunction.swift */,
@@ -475,7 +472,6 @@
 				677B8241245747AF0045B483 /* BlockListMVVMViewModelTests.swift in Sources */,
 				67674B0C2458D8B30098A8B2 /* MockFunction.swift in Sources */,
 				6764C26D2454E3C9003C3A29 /* MockBlock.swift in Sources */,
-				67674AFB24576B450098A8B2 /* MockObservable.swift in Sources */,
 				677B8243245747F50045B483 /* MockRetrieveBlocks.swift in Sources */,
 				67674B082458CE6F0098A8B2 /* MockURLRequester.swift in Sources */,
 				67674AFF24577A040098A8B2 /* BlockDetailMVVMViewModelTests.swift in Sources */,
