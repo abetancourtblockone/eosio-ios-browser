@@ -114,11 +114,11 @@ final class RestBlocksServiceTests: XCTestCase {
         
         // Then
         guard case .success(let receivedBlockchain) = mockCompletion.popFirstInvocationInput() else {
-            XCTFail("fssfs")
+            XCTFail("The completion was not called. Make sure the completion is being called passing the blockchain info")
             return
         }
         
         XCTAssertEqual(receivedBlockchain, .init(headBlockId: givenResponseHeadBlockId),
-                       "The received blockchain info is not valid. The received headBlockId must be the returned by the url reuequester response")
+                       "The received blockchain info is not valid. The received headBlockId must be the returned by the url requester response")
     }
 }
