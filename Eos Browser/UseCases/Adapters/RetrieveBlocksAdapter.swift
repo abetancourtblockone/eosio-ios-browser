@@ -21,6 +21,7 @@ final class RetrieveBlocksAdapter: RetrieveBlocks {
     }
     
     func execute(quantityOfBlocksToBeRetrieved: UInt, completion: @escaping RetrieveBlocksHandler) {
+        dependencies.blocksService.cancelRequests()
         pendingBlocksToBeRetrived = quantityOfBlocksToBeRetrieved
         dependencies.blocksService.retrieveBlockchain {[weak self] result in
             self?.handleBlockchainInfo(result: result, completion: completion)

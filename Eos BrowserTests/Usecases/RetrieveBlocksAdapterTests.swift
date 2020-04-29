@@ -24,6 +24,15 @@ final class RetrieveBlocksAdapterTests: XCTestCase {
         blocksService = nil
     }
     
+    func test_Execute_CancelAllRequests() {
+        // When
+        sut.execute(quantityOfBlocksToBeRetrieved: 1, completion: { _ in })
+        
+        // Then
+        XCTAssertNotNil(blocksService.mock_cancelRequests.popFirstInvocationInput(),
+                        "IT must ask the service for cancneling all requets")
+    }
+    
     func test_OneBlockAndBlockchainServiceSucceed_Execute_ReturnsFinishedStatus() throws {
         // Given
         let mockBlock: Block = .mock

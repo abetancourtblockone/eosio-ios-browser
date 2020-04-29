@@ -13,4 +13,5 @@ typealias URLRequestHandler = ((URLRequestResponse) -> Void)
 
 protocol URLRequester {
     func request(urlRequest: URLRequest, completion: @escaping URLRequestHandler)
+    func cancelRequests()
 }

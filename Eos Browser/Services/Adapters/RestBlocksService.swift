@@ -25,7 +25,8 @@ final class RestBlocksService: BlocksService {
     
     func retrieve(blockId: String, completion: @escaping RetrieveBlockHandler) {
         guard let url = getBlockcURL else {
-            print("Couldn't build the url for retrieving a block")
+            let error = ServiceError(message: "Couldn't build the url for retrieving a block")
+            completion(.failure(error))
             return
         }
         
@@ -45,7 +46,8 @@ final class RestBlocksService: BlocksService {
     
     func retrieveBlockchain(completion: @escaping RetrieveBlockchainHandler) {
         guard let url = getBlockchainInfoURL else {
-            print("Couldn't build the url for retrieving a blockchain info")
+            let error = ServiceError(message: "Couldn't build the url for retrieving a blockchain info")
+            completion(.failure(error))
             return
         }
         
@@ -58,6 +60,10 @@ final class RestBlocksService: BlocksService {
                 completion(.failure(error))
             }
         }
+    }
+    
+    func cancelRequests() {
+        dependencies.urlRequester.cancelRequests()
     }
 }
 

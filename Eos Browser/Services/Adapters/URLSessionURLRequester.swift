@@ -15,6 +15,7 @@ final class URLSessionURLRequester: URLRequester {
     }
         
     private let dependencies: Dependencies
+    private var tasks: [URLSessionDataTask] = []
     
     init(dependencies: Dependencies = .init()) {
         self.dependencies = dependencies
@@ -37,9 +38,13 @@ final class URLSessionURLRequester: URLRequester {
             } else {
                 self.notify(response: .success([:]), to: completion)
             }
-            
         }
+        tasks.append(task)
         task.resume()
+    }
+    
+    func cancelRequests() {
+        tasks.forEach { $0.cancel() }
     }
 }
 

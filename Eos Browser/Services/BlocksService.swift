@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct ServiceError: Error {
+    let message: String
+}
+
 typealias RetrieveBlockResult = Result<Block, Error>
 typealias RetrieveBlockHandler = (RetrieveBlockResult) -> ()
 
@@ -17,4 +21,5 @@ typealias RetrieveBlockchainHandler = (RetrieveBlockchainResult) -> ()
 protocol BlocksService {
     func retrieve(blockId: String, completion: @escaping RetrieveBlockHandler)
     func retrieveBlockchain(completion: @escaping RetrieveBlockchainHandler)
+    func cancelRequests()
 }

@@ -27,6 +27,15 @@ final class RestBlocksServiceTests: XCTestCase {
         endpointProvider = nil
         sut = nil
     }
+    
+    func test_CancelAllRequests_CancelAllRequests() {
+        // When
+        sut.cancelRequests()
+        
+        // Then
+        XCTAssertNotNil(urlRequester.mock_cancelRequests.popFirstInvocationInput(),
+                        "IT must ask the urlRequester for cancneling all requets")
+    }
 
     func test_ValidBlockChainInfoEndPoint_RetrieveBlockchain_CallsURLRequester() throws {
         // Given
@@ -34,7 +43,7 @@ final class RestBlocksServiceTests: XCTestCase {
         endpointProvider.mock_getBlockchainInfo = givenURLString
         
         // When
-        sut.retrieveBlockchain(completion: { _ in })
+        sut.retrieveBlockchain(completion: { _ in }) 
         
         // Then
         let receivedRequest = urlRequester.mock_request.popFirstInvocationInput()?.0

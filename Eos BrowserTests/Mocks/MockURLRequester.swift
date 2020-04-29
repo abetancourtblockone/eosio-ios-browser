@@ -11,8 +11,13 @@ import Foundation
 
 final class MockURLRequester: URLRequester {
     var mock_request: MockFunction<(URLRequest, URLRequestHandler), Void> = .init({ _,_ in })
+    var mock_cancelRequests: MockFunction<Void, Void> = .init({ _ in })
     
     func request(urlRequest: URLRequest, completion: @escaping URLRequestHandler) {
         mock_request.execute((urlRequest, completion))
+    }
+    
+    func cancelRequests() {
+        mock_cancelRequests.execute(())
     }
 }
