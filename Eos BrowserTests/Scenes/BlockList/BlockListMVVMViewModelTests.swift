@@ -49,7 +49,7 @@ final class BlockListMVVMViewModelTests: XCTestCase {
     
     func test_HandleRefresh_RetrieveBlocks() throws {
         // Given
-        let mockCompletion: MockInvocation<(UInt, RetrieveBlocksHandler), Void> = .init({ _ in })
+        let mockCompletion: MockFunction<(UInt, RetrieveBlocksHandler), Void> = .init({ _ in })
         retrieveBlocks.mock_execute = .init(mockCompletion.execute)
         
         let observable = MockObservable<[BlockViewModel]>()

@@ -10,7 +10,7 @@
 
 final class MockRetrieveBlocks: RetrieveBlocks {
     
-    var mock_execute: MockInvocation<(UInt, RetrieveBlocksHandler), Void> = .init({ _,_ in  })
+    var mock_execute: MockFunction<(UInt, RetrieveBlocksHandler), Void> = .init({ _,_ in  })
     
     func execute(quantityOfBlocksToBeRetrieved: UInt, completion: @escaping  RetrieveBlocksHandler) {
         mock_execute.execute((quantityOfBlocksToBeRetrieved, completion))

@@ -1,5 +1,5 @@
 //
-//  MockInvocation.swift
+//  MockFunction.swift
 //  Eos BrowserTests
 //
 //  Created by Angel Betancourt on 28/04/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class MockInvocation<Input, Output> {
+final class MockFunction<Input, Output> {
     typealias Function = (Input) -> Output
     
     private(set) var receivedInvocations: [Input] = []
