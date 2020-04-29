@@ -15,7 +15,7 @@ final class BlockDetailMVVMViewModelTests: XCTestCase {
     var sut: BlockDetailMVVMViewModel!
 
     override func setUpWithError() throws {
-        block = .mock()
+        block = .mock
         stringsProvider = .init()
         sut = .init(configuration: .init(block: block),
                     dependencies: .init(stringsProvider: stringsProvider))

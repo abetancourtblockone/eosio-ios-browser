@@ -69,7 +69,7 @@ final class BlockListMVVMViewModelTests: XCTestCase {
     
     func test_RetrieveBlocksSuccess_HandleRefresh_UpdatesBlockViewModels() throws {
         // Given
-        let givenBlock: Block = .mock()
+        let givenBlock: Block = .mock
         mockRetrieveBlocksSuccess(block: givenBlock)
         
         let observable = MockObservable<[BlockViewModel]>()
@@ -102,7 +102,7 @@ final class BlockListMVVMViewModelTests: XCTestCase {
     
     func test_HandleBlockSelection_UpdatesSceneStateToShowingDetail() throws {
         // Given
-        let givenBlock: Block = .mock()
+        let givenBlock: Block = .mock
         mockRetrieveBlocksSuccess(block: givenBlock)
         
         let observable = MockObservable<BlockListMVVMViewModel.State>()
@@ -140,7 +140,8 @@ final class BlockListMVVMViewModelTests: XCTestCase {
 }
 
 private extension BlockListMVVMViewModelTests {
-    func mockRetrieveBlocksSuccess(block: Block = .mock(), refreshingStatus: BlocksRetrievingInfo.Status = .fetchingPrevious) {
+    func mockRetrieveBlocksSuccess(block: Block = .mock,
+                                   refreshingStatus: BlocksRetrievingInfo.Status = .fetchingPrevious) {
         let blocksRetrievingInfo: BlocksRetrievingInfo = .init(status: refreshingStatus,
                                                                lastRetrievedBlock: block)
         retrieveBlocks.mock_execute = .init({ $1(.success(blocksRetrievingInfo)) })

@@ -10,12 +10,12 @@ import Foundation
 @testable import Eos_Browser
 
 extension Block {
-    static func mock(previousBlockId: String = UUID().uuidString) -> Block {
+    static var mock: Block {
         .init(id: UUID().uuidString,
               producer: "Producer",
               producerSignature: UUID().uuidString,
               transactionsCount: (1...100).randomElement() ?? 0,
-              previousBlockId: previousBlockId,
+              previousBlockId: UUID().uuidString,
               json: "")
     }
 }
