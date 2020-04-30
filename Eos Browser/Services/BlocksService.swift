@@ -8,8 +8,11 @@
 
 import Foundation
 
-struct ServiceError: Error {
+struct ServiceError: LocalizedError {
     let message: String
+    var errorDescription: String? {
+        message
+    }
 }
 
 typealias RetrieveBlockResult = Result<Block, Error>
