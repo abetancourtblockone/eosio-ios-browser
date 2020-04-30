@@ -26,7 +26,7 @@ final class BlockListMVVMViewModel: MVVMViewModel {
     
     var state = Observable<State>(.idle)
     var titleLabel = Observable<String>("")
-    var blocks = Observable<[BlockViewModel]>([])
+    var blocks = Observable<[BlockListViewModel.Item]>([])
     
     private var blockEntities: [Block] = []
     
@@ -82,7 +82,7 @@ private extension BlockListMVVMViewModel {
     }
 }
 
-private extension BlockViewModel {
+private extension BlockListViewModel.Item {
     init(block: Block) {
         self.id = block.id
         self.producer = block.producer

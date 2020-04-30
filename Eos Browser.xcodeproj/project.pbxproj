@@ -18,6 +18,7 @@
 		67674B082458CE6F0098A8B2 /* MockURLRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B072458CE6F0098A8B2 /* MockURLRequester.swift */; };
 		67674B0A2458CE7A0098A8B2 /* MockEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B092458CE7A0098A8B2 /* MockEndpointProvider.swift */; };
 		67674B0C2458D8B30098A8B2 /* MockFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B0B2458D8B30098A8B2 /* MockFunction.swift */; };
+		67674B13245B72B00098A8B2 /* BlockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B12245B72B00098A8B2 /* BlockListView.swift */; };
 		677B765924525382004B27CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B765824525382004B27CB /* AppDelegate.swift */; };
 		677B765B24525382004B27CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B765A24525382004B27CB /* SceneDelegate.swift */; };
 		677B766024525382004B27CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677B765E24525382004B27CB /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 		67674B072458CE6F0098A8B2 /* MockURLRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLRequester.swift; sourceTree = "<group>"; };
 		67674B092458CE7A0098A8B2 /* MockEndpointProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEndpointProvider.swift; sourceTree = "<group>"; };
 		67674B0B2458D8B30098A8B2 /* MockFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFunction.swift; sourceTree = "<group>"; };
+		67674B12245B72B00098A8B2 /* BlockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListView.swift; sourceTree = "<group>"; };
 		677B765524525382004B27CB /* Eos Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eos Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		677B765824525382004B27CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		677B765A24525382004B27CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,25 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		67674B10245B72890098A8B2 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				677B765E24525382004B27CB /* Main.storyboard */,
+				677B824524575B7E0045B483 /* UIKit+Scene.swift */,
+				677B76872453A462004B27CB /* BlockListViewController.swift */,
+				67AFC13624562F4D006E020F /* BlockDetailViewController.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		67674B11245B729A0098A8B2 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				67674B12245B72B00098A8B2 /* BlockListView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		677B764C24525382004B27CB = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +209,6 @@
 				677B767C24539394004B27CB /* Utils */,
 				677B765824525382004B27CB /* AppDelegate.swift */,
 				677B765A24525382004B27CB /* SceneDelegate.swift */,
-				677B765E24525382004B27CB /* Main.storyboard */,
 				677B766124525385004B27CB /* Assets.xcassets */,
 				677B766324525385004B27CB /* LaunchScreen.storyboard */,
 				677B766624525385004B27CB /* Info.plist */,
@@ -320,9 +340,8 @@
 		677B824424575B690045B483 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				677B824524575B7E0045B483 /* UIKit+Scene.swift */,
-				677B76872453A462004B27CB /* BlockListViewController.swift */,
-				67AFC13624562F4D006E020F /* BlockDetailViewController.swift */,
+				67674B11245B729A0098A8B2 /* SwiftUI */,
+				67674B10245B72890098A8B2 /* UIKit */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -452,6 +471,7 @@
 				677B76942453ADEF004B27CB /* RetrieveBlocksAdapter.swift in Sources */,
 				67AFC13A24563A66006E020F /* Scene.swift in Sources */,
 				677B769B2453B023004B27CB /* Blockchain.swift in Sources */,
+				67674B13245B72B00098A8B2 /* BlockListView.swift in Sources */,
 				677B76842453A414004B27CB /* Block.swift in Sources */,
 				677B765924525382004B27CB /* AppDelegate.swift in Sources */,
 				677B76992453AE83004B27CB /* RestBlocksService.swift in Sources */,

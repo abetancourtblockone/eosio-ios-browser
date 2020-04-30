@@ -52,7 +52,7 @@ final class BlockListMVVMViewModelTests: XCTestCase {
         let mockCompletion: MockFunction<(UInt, RetrieveBlocksHandler), Void> = .init({ _ in })
         retrieveBlocks.mock_execute = .init(mockCompletion.execute)
         
-        let observable = MockObservable<[BlockViewModel]>()
+        let observable = MockObservable<[BlockListViewModel.Item]>()
         sut.blocks.observe(observable.handler)
         
         // When
@@ -72,14 +72,14 @@ final class BlockListMVVMViewModelTests: XCTestCase {
         let givenBlock: Block = .mock
         mockRetrieveBlocksSuccess(block: givenBlock)
         
-        let observable = MockObservable<[BlockViewModel]>()
+        let observable = MockObservable<[BlockListViewModel.Item]>()
         sut.blocks.observe(observable.handler)
         
         // When
         sut.handleRefresh()
         
         // Then
-        let expectedBlockViewModel: BlockViewModel = .init(id: givenBlock.id,
+        let expectedBlockViewModel: BlockListViewModel.Item = .init(id: givenBlock.id,
                                                            producer: givenBlock.producer)
         XCTAssertEqual(observable.receivedValue, [expectedBlockViewModel],
                        "The received viewModel is not valid")

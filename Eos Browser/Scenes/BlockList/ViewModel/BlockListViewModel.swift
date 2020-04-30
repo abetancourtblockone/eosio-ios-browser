@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct BlockViewModel: Equatable {
-    let id: String
-    let producer: String
+struct BlockListViewModel {
+    enum Section: CaseIterable {
+        case blocks
+    }
+    struct Item: Hashable {
+        let id: String
+        let producer: String
+    }
 }
