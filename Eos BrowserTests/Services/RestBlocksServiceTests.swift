@@ -37,7 +37,7 @@ final class RestBlocksServiceTests: XCTestCase {
                         "IT must ask the urlRequester for cancneling all requets")
     }
 
-    func test_ValidBlockChainInfoEndPoint_RetrieveBlockchain_CallsURLRequester() throws {
+    func test_ValidBlockChainInfoEndpoint_RetrieveBlockchain_CallsURLRequester() throws {
         // Given
         let givenURLString = "https://validendpoint.com"
         endpointProvider.mock_getBlockchainInfo = givenURLString
@@ -51,7 +51,7 @@ final class RestBlocksServiceTests: XCTestCase {
                        "The service must receive the url request using the url given by the enpoints provider")
     }
     
-    func test_InvalidBlockChainInfoEndPoint_RetrieveBlockchain_DoesNotCallsURLRequester() throws {
+    func test_InvalidBlockChainInfoEndpoint_RetrieveBlockchain_DoesNotCallsURLRequester() throws {
         // Given
         endpointProvider.mock_getBlockchainInfo = "malformed endpoint"
         
@@ -63,7 +63,7 @@ final class RestBlocksServiceTests: XCTestCase {
         XCTAssertNil(invocation, "It must not call the url requester if there is not a valid url")
     }
     
-    func test_ValidBlockEndPoint_RetrieveBlock_CallsURLRequester() throws {
+    func test_ValidBlockEndpoint_RetrieveBlock_CallsURLRequester() throws {
         // Given
         let givenURLString = "https://validendpoint.com"
         let givenBlockId = UUID().uuidString
@@ -86,7 +86,7 @@ final class RestBlocksServiceTests: XCTestCase {
         
     }
     
-    func test_InvalidBlockEndPoint_RetrieveBlock_DoesNotCallsURLRequester() throws {
+    func test_InvalidBlockEndpoint_RetrieveBlock_DoesNotCallsURLRequester() throws {
         // Given
         let givenBlockId = UUID().uuidString
         endpointProvider.mock_getBlock = "malformed url"
@@ -99,7 +99,7 @@ final class RestBlocksServiceTests: XCTestCase {
         XCTAssertNil(invocation, "It must not call the url requester if there is not a valid url")
     }
     
-    func test_ValidBlockchainEndPointResponse_RetrieveBlockchain_ReturnsResponseDictionary() throws {
+    func test_ValidBlockchainEndpointResponse_RetrieveBlockchain_ReturnsBlockchain() throws {
         // Given
         let givenURLString = "https://validendpoint.com"
         let givenResponseHeadBlockId = UUID().uuidString
@@ -120,5 +120,43 @@ final class RestBlocksServiceTests: XCTestCase {
         
         XCTAssertEqual(receivedBlockchain, .init(headBlockId: givenResponseHeadBlockId),
                        "The received blockchain info is not valid. The received headBlockId must be the returned by the url requester response")
+    }
+    
+    func test_ValidBlockEndpointResponse_RetrieveBlock_ReturnsBlock() throws {
+        // Given
+        let givenURLString = "https://validendpoint.com"
+        let givenBlockId = UUID().uuidString
+        let givenProducer = UUID().uuidString
+        let givenProducerSignature = UUID().uuidString
+        let givenTransactions = [["": ""]]
+        let givenPreviousBlockId = UUID().uuidString
+        let givenValidResponse: [String: Any] = ["id": givenBlockId,
+                                                 "producer": givenProducer,
+                                                 "producer_signature": givenProducerSignature,
+                                                 "transactions": givenTransactions,
+                                                 "previous": givenPreviousBlockId]
+        
+        endpointProvider.mock_getBlock = givenURLString
+        urlRequester.mock_request = .init({ $1(.success(givenValidResponse)) })
+        
+        // When
+        let mockCompletion = MockFunction<RetrieveBlockResult, Void>()
+        sut.retrieve(blockId: givenBlockId, completion: mockCompletion.execute)
+        
+        // Then
+        guard case .success(let receivedBlock) = mockCompletion.popFirstInvocationInput() else {
+            XCTFail("The completion was not called. Make sure the completion is being called passing the blockchain info")
+            return
+        }
+        
+        let extpectedBlok: Block = .init(id: givenBlockId,
+                                         producer: givenProducer,
+                                         producerSignature: givenProducerSignature,
+                                         transactionsCount: givenTransactions.count,
+                                         previousBlockId: givenPreviousBlockId,
+                                         json: givenValidResponse.description)
+        
+        XCTAssertEqual(receivedBlock, extpectedBlok,
+                       "The received bloxk is not valid. The block attributes must match the service response")
     }
 }
