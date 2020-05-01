@@ -7,12 +7,15 @@
 //
 
 import XCTest
+import Combine
 @testable import Eos_Browser
 
 final class BlockDetailMVVMViewModelTests: XCTestCase {
     var block: Block!
     var stringsProvider: MockStringsProvider!
     var sut: BlockDetailMVVMViewModel!
+    
+    private var subscriptions = [AnyCancellable]()
 
     override func setUpWithError() throws {
         block = .mock
@@ -25,19 +28,20 @@ final class BlockDetailMVVMViewModelTests: XCTestCase {
         block = nil
         stringsProvider = nil
         sut = nil
+        subscriptions.removeAll()
     }
 
     func test_SceneDidLoad_UpdateTitle() throws {
         // Given
         let givenBlock = block
         let observableHandler = MockFunction<String, Void>()
-        sut.titleLabel.observe(observableHandler.execute)
+        sut.titleLabel.sink(receiveValue: observableHandler.execute).store(in: &subscriptions)
         
         // When
         sut.sceneDidLoad()
         
         // Then
-        XCTAssertEqual(observableHandler.popFirstInvocationInput(), givenBlock?.shortId,
+        XCTAssertEqual(observableHandler.popLastInvocationInput(), givenBlock?.shortId,
                        "The received Title must be the given block short id")
     }
     
@@ -45,13 +49,13 @@ final class BlockDetailMVVMViewModelTests: XCTestCase {
         // Given
         let givenBlock = block
         let observableHandler = MockFunction<String, Void>()
-        sut.producerLabel.observe(observableHandler.execute)
+        sut.producerLabel.sink(receiveValue: observableHandler.execute).store(in: &subscriptions)
         
         // When
         sut.sceneDidLoad()
         
         // Then
-        XCTAssertEqual(observableHandler.popFirstInvocationInput(), givenBlock?.producer,
+        XCTAssertEqual(observableHandler.popLastInvocationInput(), givenBlock?.producer,
                        "The received Title must be the given block producer")
     }
     
@@ -59,13 +63,13 @@ final class BlockDetailMVVMViewModelTests: XCTestCase {
         // Given
         let givenBlock = block
         let observableHandler = MockFunction<String, Void>()
-        sut.producerSignatureLabel.observe(observableHandler.execute)
+        sut.producerSignatureLabel.sink(receiveValue: observableHandler.execute).store(in: &subscriptions)
         
         // When
         sut.sceneDidLoad()
         
         // Then
-        XCTAssertEqual(observableHandler.popFirstInvocationInput(), givenBlock?.producerSignature,
+        XCTAssertEqual(observableHandler.popLastInvocationInput(), givenBlock?.producerSignature,
                        "The received Title must be the given block producer signature")
     }
     
@@ -73,20 +77,20 @@ final class BlockDetailMVVMViewModelTests: XCTestCase {
         // Given
         let givenBlock = block!
         let observableHandler = MockFunction<String, Void>()
-        sut.numberOfTransactionsLabel.observe(observableHandler.execute)
+        sut.numberOfTransactionsLabel.sink(receiveValue: observableHandler.execute).store(in: &subscriptions)
         
         // When
         sut.sceneDidLoad()
         
         // Then
-        XCTAssertEqual(observableHandler.popFirstInvocationInput(), "\(givenBlock.transactionsCount)",
+        XCTAssertEqual(observableHandler.popLastInvocationInput(), "\(givenBlock.transactionsCount)",
                        "The received Title must be the given block transactions count")
     }
     
     func test_SceneDidLoad_UpdateJsonVisibility() throws {
         // Given
         let observableHandler = MockFunction<Bool, Void>()
-        sut.jsonIsVisible.observe(observableHandler.execute)
+        sut.jsonIsVisible.sink(receiveValue: observableHandler.execute).store(in: &subscriptions)
         
         // When
         sut.sceneDidLoad()
@@ -99,7 +103,7 @@ final class BlockDetailMVVMViewModelTests: XCTestCase {
     func test_SceneDidLoad_UpdateJsonSwitchButtonTitle() throws {
         // Given
         let observableHandler = MockFunction<String, Void>()
-        sut.switchJsonVisibilityButtonTitle.observe(observableHandler.execute)
+        sut.switchJsonVisibilityButtonTitle.sink(receiveValue: observableHandler.execute).store(in: &subscriptions)
         
         // When
         sut.sceneDidLoad()
@@ -113,7 +117,7 @@ final class BlockDetailMVVMViewModelTests: XCTestCase {
         // Given
         let givenBlock = block
         let observableHandler = MockFunction<String, Void>()
-        sut.jsonText.observe(observableHandler.execute)
+        sut.jsonText.sink(receiveValue: observableHandler.execute).store(in: &subscriptions)
         
         // When
         sut.sceneDidLoad()
@@ -126,14 +130,14 @@ final class BlockDetailMVVMViewModelTests: XCTestCase {
     func test_HandleSwitchJsonVisibility_UpdateJsonVisibility() throws {
         // Given
         let observableHandler = MockFunction<Bool, Void>()
-        sut.jsonIsVisible.observe(observableHandler.execute)
+        sut.jsonIsVisible.sink(receiveValue: observableHandler.execute).store(in: &subscriptions)
         let givenCurrentVisibilityStatus = sut.jsonIsVisible.value
         
         // When
         sut.handleSwitchJsonVisibility()
         
         // Then
-        XCTAssertEqual(observableHandler.popFirstInvocationInput(), !givenCurrentVisibilityStatus,
+        XCTAssertEqual(observableHandler.popLastInvocationInput(), !givenCurrentVisibilityStatus,
                        "The received JsonVisibility status must be the negation of the current status")
     }
 }

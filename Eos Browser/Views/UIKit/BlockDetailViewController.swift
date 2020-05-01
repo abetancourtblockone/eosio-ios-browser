@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 final class BlockDetailViewController: UIViewController, MVVMView {
     @IBOutlet weak var producerLabel: UILabel!
@@ -16,6 +17,7 @@ final class BlockDetailViewController: UIViewController, MVVMView {
     @IBOutlet weak var jsonTextView: UITextView!
     
     var viewModel: BlockDetailMVVMViewModel?
+    private var subscriptions = [AnyCancellable]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,32 +30,32 @@ final class BlockDetailViewController: UIViewController, MVVMView {
     }
     
     func bind() {
-        viewModel?.titleLabel.observe { [weak self] label in
+        viewModel?.titleLabel.sink { [weak self] label in
             self?.title = label
-        }
+        }.store(in: &subscriptions)
         
-        viewModel?.producerLabel.observe { [weak self] label in
+        viewModel?.producerLabel.sink { [weak self] label in
             self?.producerLabel.text = label
-        }
+        }.store(in: &subscriptions)
         
-        viewModel?.producerSignatureLabel.observe { [weak self] label in
+        viewModel?.producerSignatureLabel.sink { [weak self] label in
             self?.producerSignatureLabel.text = label
-        }
+        }.store(in: &subscriptions)
         
-        viewModel?.numberOfTransactionsLabel.observe { [weak self] label in
+        viewModel?.numberOfTransactionsLabel.sink { [weak self] label in
             self?.numberOfTransactionsLabel.text = label
-        }
+        }.store(in: &subscriptions)
         
-        viewModel?.switchJsonVisibilityButtonTitle.observe { [weak self] label in
+        viewModel?.switchJsonVisibilityButtonTitle.sink { [weak self] label in
             self?.switchJsonVisibilityButton.setTitle(label, for: .normal)
-        }
+        }.store(in: &subscriptions)
         
-        viewModel?.jsonText.observe { [weak self] text in
+        viewModel?.jsonText.sink { [weak self] text in
             self?.jsonTextView.text = text
-        }
+        }.store(in: &subscriptions)
         
-        viewModel?.jsonIsVisible.observe { [weak self] isVisible in
+        viewModel?.jsonIsVisible.sink { [weak self] isVisible in
             self?.jsonTextView.isHidden = !isVisible
-        }
+        }.store(in: &subscriptions)
     }
 }

@@ -36,7 +36,7 @@ final class MockFunction<Input, Output> {
     }
     
     @discardableResult
-    func popFLastInvocationInput() -> Input? {
+    func popLastInvocationInput() -> Input? {
         guard !receivedInvocations.isEmpty else {
             return nil
         }

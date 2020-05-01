@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 final class BlockListTableViewDiffableDataSource: UITableViewDiffableDataSource<BlockListViewModel.Section, BlockListViewModel.Item> {
     
@@ -24,10 +25,12 @@ final class BlockListViewController: UIViewController {
     }()
     
     private lazy var viewModel = BlockListMVVMViewModel()
+    private var subscriptions = [AnyCancellable]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+        setupDiffable()
         tableView.refreshControl = refreshControl
         viewModel.sceneDidLoad()
     }
@@ -45,20 +48,21 @@ extension BlockListViewController: UITableViewDelegate {
 
 private extension BlockListViewController {
     func bind() {
-        viewModel.blocks.observe { [weak self] blocks in
+        viewModel.blocks.eraseToAnyPublisher().sink {[weak self] blocks in
+            
             var snapshot = NSDiffableDataSourceSnapshot<BlockListViewModel.Section, BlockListViewModel.Item>()
             snapshot.appendSections(BlockListViewModel.Section.allCases)
             snapshot.appendItems(blocks)
             self?.diffableDataSource?.apply(snapshot,
                                             animatingDifferences: false,
                                             completion: nil)
-        }
-
-        viewModel.titleLabel.observe { [weak self] title in
+        }.store(in: &subscriptions)
+        
+        viewModel.titleLabel.sink {[weak self] title in
             self?.title = title
-        }
-
-        viewModel.state.observe { [weak self] state in
+        }.store(in: &subscriptions)
+        
+        viewModel.state.sink { [weak self] state in
             guard let self = self else {
                 return
             }
@@ -70,7 +74,10 @@ private extension BlockListViewController {
             case .showing(let scene):
                 self.show(scene: scene)
             }
-        }
+        }.store(in: &subscriptions)
+    }
+    
+    func setupDiffable() {
         diffableDataSource = .init(tableView: tableView, cellProvider: { (tableView, indexPath, blockListItem) -> UITableViewCell? in
             let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
             tableViewCell.textLabel?.text = blockListItem.producer

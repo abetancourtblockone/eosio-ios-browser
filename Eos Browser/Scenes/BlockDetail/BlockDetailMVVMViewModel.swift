@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 final class BlockDetailMVVMViewModel: MVVMViewModel {
     struct Configuration: Equatable {
@@ -20,13 +21,13 @@ final class BlockDetailMVVMViewModel: MVVMViewModel {
     private let configuration: Configuration
     private let dependencies: Dependencies
     
-    var titleLabel = Observable<String>("")
-    var producerLabel = Observable<String>("")
-    var producerSignatureLabel = Observable<String>("")
-    var numberOfTransactionsLabel = Observable<String>("")
-    var switchJsonVisibilityButtonTitle = Observable<String>("")
-    var jsonText = Observable<String>("")
-    var jsonIsVisible = Observable<Bool>(false)
+    var titleLabel = CurrentValueSubject<String, Never>("")
+    var producerLabel = CurrentValueSubject<String, Never>("")
+    var producerSignatureLabel = CurrentValueSubject<String, Never>("")
+    var numberOfTransactionsLabel = CurrentValueSubject<String, Never>("")
+    var switchJsonVisibilityButtonTitle = CurrentValueSubject<String, Never>("")
+    var jsonText = CurrentValueSubject<String, Never>("")
+    var jsonIsVisible = CurrentValueSubject<Bool, Never>(false)
     
     init(configuration: Configuration, dependencies: Dependencies = .init()) {
         self.configuration = configuration

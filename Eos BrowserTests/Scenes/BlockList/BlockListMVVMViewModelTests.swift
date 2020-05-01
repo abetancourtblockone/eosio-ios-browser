@@ -7,13 +7,16 @@
 //
 
 import XCTest
+import Combine
 @testable import Eos_Browser
 
 final class BlockListMVVMViewModelTests: XCTestCase {
-    var stringsProvider: MockStringsProvider!
-    var retrieveBlocks: MockRetrieveBlocks!
-    var blockDetailSceneDependencies: BlockDetailScene.Dependencies!
-    var sut: BlockListMVVMViewModel!
+    private var stringsProvider: MockStringsProvider!
+    private var retrieveBlocks: MockRetrieveBlocks!
+    private var blockDetailSceneDependencies: BlockDetailScene.Dependencies!
+    private var sut: BlockListMVVMViewModel!
+    
+    private var subscriptions = [AnyCancellable]()
 
     override func setUpWithError() throws {
         stringsProvider = .init()
@@ -29,6 +32,7 @@ final class BlockListMVVMViewModelTests: XCTestCase {
         stringsProvider = nil
         retrieveBlocks = nil
         sut = nil
+        subscriptions.removeAll()
     }
 
     func test_SceneDidLoad_UpdateTitle() throws {
@@ -37,33 +41,30 @@ final class BlockListMVVMViewModelTests: XCTestCase {
         stringsProvider.mock_blockListTitle = givenTitle
         
         let observableHandler = MockFunction<String, Void>()
-        sut.titleLabel.observe(observableHandler.execute)
+        subscriptions.append(sut.titleLabel.sink(receiveValue: observableHandler.execute))
         
         // When
         sut.sceneDidLoad()
         
         // Then
-        XCTAssertEqual(observableHandler.popFirstInvocationInput(), givenTitle,
+        XCTAssertEqual(observableHandler.popLastInvocationInput(), givenTitle,
                        "The received Title must be the given by the strings provider")
     }
     
-    func test_HandleRefresh_RetrieveBlocks() throws {
+    func test_HandleRefresh_RetrieveBlocks_Uses20AsBlocksQuantity() throws {
         // Given
-        let mockCompletion = MockFunction<(UInt, RetrieveBlocksHandler), Void>()
-        retrieveBlocks.mock_execute = .init(mockCompletion.execute)
-        
         let observableHandler = MockFunction<[BlockListViewModel.Item], Void>()
-        sut.blocks.observe(observableHandler.execute)
+        subscriptions.append(sut.blocks.sink(receiveValue: observableHandler.execute))
         
         // When
         sut.handleRefresh()
         
-        guard let receivedBlocksQuantity = mockCompletion.popFirstInvocationInput()?.0 else {
+        guard let receivedBlocksQuantity = retrieveBlocks.mock_execute.popLastInvocationInput()?.0 else {
             XCTFail("It must call the retrieve blocks usecase")
             return
         }
         // Then
-        XCTAssertEqual(receivedBlocksQuantity, 20,
+        XCTAssertEqual(receivedBlocksQuantity, UInt(20),
                        "It must call the retrieve blocks usecase with 20 as quantity argument")
     }
     
@@ -73,7 +74,7 @@ final class BlockListMVVMViewModelTests: XCTestCase {
         mockRetrieveBlocksSuccess(block: givenBlock)
         
         let observableHandler = MockFunction<[BlockListViewModel.Item], Void>()
-        sut.blocks.observe(observableHandler.execute)
+        subscriptions.append(sut.blocks.sink(receiveValue: observableHandler.execute))
         
         // When
         sut.handleRefresh()
@@ -81,20 +82,20 @@ final class BlockListMVVMViewModelTests: XCTestCase {
         // Then
         let expectedBlockViewModel: BlockListViewModel.Item = .init(id: givenBlock.id,
                                                            producer: givenBlock.producer)
-        XCTAssertEqual(observableHandler.popFLastInvocationInput(), [expectedBlockViewModel],
+        XCTAssertEqual(observableHandler.popLastInvocationInput(), [expectedBlockViewModel],
                        "The received viewModel is not valid")
     }
     
     func test_HandleRefresh_UpdatesSceneStateToRefreshing() throws {
         // Given
         let observableHandler = MockFunction<BlockListMVVMViewModel.State, Void>()
-        sut.state.observe(observableHandler.execute)
+        subscriptions.append(sut.state.sink(receiveValue: observableHandler.execute))
         
         // When
         sut.handleRefresh()
         
         // Then
-        guard case .refreshing = observableHandler.popFirstInvocationInput() else {
+        guard case .refreshing = observableHandler.popLastInvocationInput() else {
             XCTFail("When refrshing, the state must be updated to refreshing")
             return
         }
@@ -106,15 +107,14 @@ final class BlockListMVVMViewModelTests: XCTestCase {
         mockRetrieveBlocksSuccess(block: givenBlock)
         
         let observableHandler = MockFunction<BlockListMVVMViewModel.State, Void>()
-        sut.state.observe(observableHandler.execute)
-        
+        subscriptions.append(sut.state.sink(receiveValue: observableHandler.execute))
         sut.handleRefresh()
         
         // When
         sut.handleSelectedBlock(at: .init(row: 0, section: 0))
         
         // Then
-        guard case .showing(let scene) = observableHandler.popFLastInvocationInput() else {
+        guard case .showing(let scene) = observableHandler.popLastInvocationInput() else {
             XCTFail("The received state must be showing an scene")
             return
         }
@@ -126,13 +126,13 @@ final class BlockListMVVMViewModelTests: XCTestCase {
         // Given
         mockRetrieveBlocksSuccess(refreshingStatus: .finished)
         let observableHandler = MockFunction<BlockListMVVMViewModel.State, Void>()
-        sut.state.observe(observableHandler.execute)
+        subscriptions.append(sut.state.sink(receiveValue: observableHandler.execute))
         
         // When
         sut.handleRefresh()
         
         // Then
-        guard case .idle = observableHandler.popFLastInvocationInput() else {
+        guard case .idle = observableHandler.popLastInvocationInput() else {
             XCTFail("When refrshing finishes, the state must be updated to idle")
             return
         }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 final class BlockListMVVMViewModel: MVVMViewModel {
     typealias Configuration = Void
@@ -17,16 +18,27 @@ final class BlockListMVVMViewModel: MVVMViewModel {
         case showing(scene: BlockDetailScene)
     }
     
-    
     struct Dependencies {
         var stringsProvider: StringsProviding = StringsProvider()
         var retrieveBlocks: RetrieveBlocks = RetrieveBlocksAdapter()
         var blockDetailSceneDependencies: BlockDetailScene.ViewModel.Dependencies = .init()
     }
     
-    var state = Observable<State>(.idle)
-    var titleLabel = Observable<String>("")
-    var blocks = Observable<[BlockListViewModel.Item]>([])
+    private var stateValueSubject = CurrentValueSubject<State, Never>(.idle)
+    private var titleLabelValueSubject = CurrentValueSubject<String, Never>("")
+    private var blocksValueSubject = CurrentValueSubject<[BlockListViewModel.Item], Never>([])
+    
+    lazy var state: AnyPublisher<State, Never> = {
+        stateValueSubject.eraseToAnyPublisher()
+    }()
+    
+    lazy var titleLabel: AnyPublisher<String, Never> = {
+        titleLabelValueSubject.eraseToAnyPublisher()
+    }()
+    
+    lazy var blocks: AnyPublisher<[BlockListViewModel.Item], Never> = {
+        blocksValueSubject.eraseToAnyPublisher()
+    }()
     
     private var blockEntities: [Block] = []
     
@@ -39,24 +51,24 @@ final class BlockListMVVMViewModel: MVVMViewModel {
 
 extension BlockListMVVMViewModel {
     func sceneDidLoad() {
-        titleLabel.value = dependencies.stringsProvider.blockListTitle
+        titleLabelValueSubject.send(dependencies.stringsProvider.blockListTitle)
     }
     
     func handleRefresh() {
-        state.value = .refreshing
+        stateValueSubject.send(.refreshing)
         refreshBlocks()
     }
     
     func handleSelectedBlock(at indexPath: IndexPath) {
         let scene = BlockDetailScene(configuration: .init(block: blockEntities[indexPath.row]),
                                      dependencies: self.dependencies.blockDetailSceneDependencies)
-        self.state.value = .showing(scene: scene)
+        stateValueSubject.send(.showing(scene: scene))
     }
 }
 
 private extension BlockListMVVMViewModel {
     func refreshBlocks() {
-        self.blocks.value = []
+        self.blocksValueSubject.send([])
         dependencies.retrieveBlocks.execute(quantityOfBlocksToBeRetrieved: 20) { result in
             self.handle(retrieveBlocksResult: result)
         }
@@ -75,9 +87,9 @@ private extension BlockListMVVMViewModel {
     func handle(blocksRetrievingInfo: BlocksRetrievingInfo) {
         let block = blocksRetrievingInfo.lastRetrievedBlock
         blockEntities.append(block)
-        blocks.value.append(.init(block: block))
+        blocksValueSubject.value.append(.init(block: block))
         if blocksRetrievingInfo.status == .finished {
-            self.state.value = .idle
+            self.stateValueSubject.send(.idle)
         }
     }
 }

@@ -23,7 +23,6 @@
 		677B766024525382004B27CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677B765E24525382004B27CB /* Main.storyboard */; };
 		677B766224525385004B27CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 677B766124525385004B27CB /* Assets.xcassets */; };
 		677B766524525385004B27CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677B766324525385004B27CB /* LaunchScreen.storyboard */; };
-		677B767E2453A3A1004B27CB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B767D2453A3A1004B27CB /* Observable.swift */; };
 		677B76842453A414004B27CB /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76832453A414004B27CB /* Block.swift */; };
 		677B76862453A457004B27CB /* BlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76852453A457004B27CB /* BlockListViewModel.swift */; };
 		677B76882453A462004B27CB /* BlockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B76872453A462004B27CB /* BlockListViewController.swift */; };
@@ -44,7 +43,6 @@
 		67AFC13A24563A66006E020F /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AFC13924563A66006E020F /* Scene.swift */; };
 		67AFC13C24563A96006E020F /* BlockDetailMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AFC13B24563A96006E020F /* BlockDetailMVVMViewModel.swift */; };
 		67AFC13E24563AB2006E020F /* BlockDetailScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AFC13D24563AB2006E020F /* BlockDetailScene.swift */; };
-		67AFC140245640DD006E020F /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AFC13F245640DD006E020F /* ObservableTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +76,6 @@
 		677B766624525385004B27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		677B766B24525385004B27CB /* Eos BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eos BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		677B767124525385004B27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		677B767D2453A3A1004B27CB /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		677B76832453A414004B27CB /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		677B76852453A457004B27CB /* BlockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewModel.swift; sourceTree = "<group>"; };
 		677B76872453A462004B27CB /* BlockListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +96,6 @@
 		67AFC13924563A66006E020F /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		67AFC13B24563A96006E020F /* BlockDetailMVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailMVVMViewModel.swift; sourceTree = "<group>"; };
 		67AFC13D24563AB2006E020F /* BlockDetailScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDetailScene.swift; sourceTree = "<group>"; };
-		67AFC13F245640DD006E020F /* ObservableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,7 +217,6 @@
 				6764C26B2454E29E003C3A29 /* Mocks */,
 				6764C2652454D888003C3A29 /* Usecases */,
 				677B767124525385004B27CB /* Info.plist */,
-				67AFC13F245640DD006E020F /* ObservableTests.swift */,
 			);
 			path = "Eos BrowserTests";
 			sourceTree = "<group>";
@@ -229,7 +224,6 @@
 		677B767C24539394004B27CB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				677B767D2453A3A1004B27CB /* Observable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -459,7 +453,6 @@
 				677B768D2453A590004B27CB /* BlockListMVVMViewModel.swift in Sources */,
 				677B76A42454BE79004B27CB /* URLSessionURLRequester.swift in Sources */,
 				677B824624575B7E0045B483 /* UIKit+Scene.swift in Sources */,
-				677B767E2453A3A1004B27CB /* Observable.swift in Sources */,
 				677B76862453A457004B27CB /* BlockListViewModel.swift in Sources */,
 				67AFC13C24563A96006E020F /* BlockDetailMVVMViewModel.swift in Sources */,
 				67AFC13724562F4D006E020F /* BlockDetailViewController.swift in Sources */,
@@ -487,7 +480,6 @@
 				67674B062458CE5B0098A8B2 /* RestBlocksServiceTests.swift in Sources */,
 				677B824A24575E2B0045B483 /* MockStringsProvider.swift in Sources */,
 				67674B0A2458CE7A0098A8B2 /* MockEndpointProvider.swift in Sources */,
-				67AFC140245640DD006E020F /* ObservableTests.swift in Sources */,
 				6764C26A2454E284003C3A29 /* MockBlocksService.swift in Sources */,
 				677B8241245747AF0045B483 /* BlockListMVVMViewModelTests.swift in Sources */,
 				67674B0C2458D8B30098A8B2 /* MockFunction.swift in Sources */,
