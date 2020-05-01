@@ -17,6 +17,10 @@ final class MockFunction<Input, Output> {
         self.function = function
     }
     
+    init(_ output: Output) {
+        self.function = { _ in output }
+    }
+    
     @discardableResult
     func execute(_ input: Input) -> Output {
         receivedInvocations.append(input)
@@ -29,5 +33,19 @@ final class MockFunction<Input, Output> {
             return nil
         }
         return receivedInvocations.removeFirst()
+    }
+    
+    @discardableResult
+    func popFLastInvocationInput() -> Input? {
+        guard !receivedInvocations.isEmpty else {
+            return nil
+        }
+        return receivedInvocations.removeLast()
+    }
+}
+
+extension MockFunction where Output == Void {
+    convenience init() {
+        self.init({ _ in () })
     }
 }

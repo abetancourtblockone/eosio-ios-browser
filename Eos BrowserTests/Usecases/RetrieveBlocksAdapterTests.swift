@@ -36,12 +36,10 @@ final class RetrieveBlocksAdapterTests: XCTestCase {
     func test_OneBlockAndBlockchainServiceSucceed_Execute_ReturnsFinishedStatus() throws {
         // Given
         let mockBlock: Block = .mock
-        let mockBlcokchain: Blockchain = .init(headBlockId: mockBlock.id)
-        blocksService.mock_retrieveBlockchain = .init({ $0(.success(mockBlcokchain)) })
-        blocksService.mock_retrieveBlock = .init({ $1(.success(mockBlock)) })
+        mockServicesSucceed(block: mockBlock)
         
         // When
-        let mockCompletion: MockFunction<RetrieveBlocksResult, Void> = .init({ _ in })
+        let mockCompletion = MockFunction<RetrieveBlocksResult, Void>()
         sut.execute(quantityOfBlocksToBeRetrieved: 1, completion: mockCompletion.execute)
         
         // Then
@@ -59,12 +57,10 @@ final class RetrieveBlocksAdapterTests: XCTestCase {
     func test_MoreThanOneBlockAndBlockchainServiceSucceed_Execute_ReturnsRetrievingStatus() throws {
         // Given
         let mockBlock: Block = .mock
-        let mockBlcokchain: Blockchain = .init(headBlockId: mockBlock.id)
-        blocksService.mock_retrieveBlockchain = .init({ $0(.success(mockBlcokchain)) })
-        blocksService.mock_retrieveBlock = .init({ $1(.success(mockBlock)) })
+        mockServicesSucceed(block: mockBlock)
         
         // When
-        let mockCompletion: MockFunction<RetrieveBlocksResult, Void> = .init({ _ in })
+        let mockCompletion = MockFunction<RetrieveBlocksResult, Void>()
         sut.execute(quantityOfBlocksToBeRetrieved: 2, completion: mockCompletion.execute)
         
         // Then
@@ -79,7 +75,7 @@ final class RetrieveBlocksAdapterTests: XCTestCase {
     
     func test_MoreThanOneBlockAndBlockServiceSucceed_Execute_CallsBlockServiceInOrder() throws {
         // Given
-        let givenNumberOfBlocksToBeRetrieved = 20
+        let givenNumberOfBlocksToBeRetrieved = 1
         
         let headBlock: Block = .mock
         let mockBlcokchain: Blockchain = .init(headBlockId: headBlock.id)
@@ -109,5 +105,58 @@ final class RetrieveBlocksAdapterTests: XCTestCase {
         let expectedInvokedBlockIds = returnedBlocks.dropLast().map { $0.previousBlockId }
         XCTAssertEqual(subsequentInvokedBlockIds, expectedInvokedBlockIds,
                        "The invoked block ids are either different or are not in the expected order. The blocks must be invoked using the previousBlockId of the returned blocks in the order the blocks were returned")
+    }
+    
+    func test_BlockchainInfoFails_Execute_CompletionFails() {
+        let givenError = ServiceError(message: "Mock error message")
+        blocksService.mock_retrieveBlockchain = .init({ $0(.failure(givenError)) })
+        
+        // When
+        let mockCompletion = MockFunction<RetrieveBlocksResult, Void>()
+        sut.execute(quantityOfBlocksToBeRetrieved: 2, completion: mockCompletion.execute)
+        
+        // Then
+        XCTAssertSutFail(givenError: givenError, mockCompletion: mockCompletion)
+    }
+    
+    func test_GetBlockckFails_Execute_CompletionFails() {
+        
+        let mockBlcokchain: Blockchain = .init(headBlockId: "")
+        blocksService.mock_retrieveBlockchain = .init({ $0(.success(mockBlcokchain)) })
+        
+        let givenError = ServiceError(message: "Mock error message")
+        blocksService.mock_retrieveBlock = .init({ $1(.failure(givenError)) })
+        
+        // When
+        let mockCompletion = MockFunction<RetrieveBlocksResult, Void>()
+        sut.execute(quantityOfBlocksToBeRetrieved: 2, completion: mockCompletion.execute)
+        
+        // Then
+        XCTAssertSutFail(givenError: givenError, mockCompletion: mockCompletion)
+    }
+}
+
+private extension RetrieveBlocksAdapterTests {
+    func mockServicesSucceed(block: Block) {
+        let mockBlcokchain: Blockchain = .init(headBlockId: block.id)
+        blocksService.mock_retrieveBlockchain = .init({ $0(.success(mockBlcokchain)) })
+        blocksService.mock_retrieveBlock = .init({ $1(.success(block)) })
+    }
+    
+    func XCTAssertSutFail(givenError: ServiceError,
+                          mockCompletion: MockFunction<RetrieveBlocksResult, Void>,
+                          file: StaticString = #file,
+                          line: UInt = #line) {
+        guard case .failure(let receivedError) = mockCompletion.popFirstInvocationInput() else {
+            XCTFail("The result must be a error response",
+                    file: file,
+                    line: line)
+            return
+        }
+        
+        XCTAssertEqual(receivedError.localizedDescription, givenError.localizedDescription,
+                       "The received error must be the error given by the service",
+                       file: file,
+                       line: line)
     }
 }

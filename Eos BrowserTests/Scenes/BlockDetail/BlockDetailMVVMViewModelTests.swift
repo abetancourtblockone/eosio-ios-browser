@@ -30,110 +30,110 @@ final class BlockDetailMVVMViewModelTests: XCTestCase {
     func test_SceneDidLoad_UpdateTitle() throws {
         // Given
         let givenBlock = block
-        let observable = MockObservable<String>()
-        sut.titleLabel.observe(observable.handler)
+        let observableHandler = MockFunction<String, Void>()
+        sut.titleLabel.observe(observableHandler.execute)
         
         // When
         sut.sceneDidLoad()
         
         // Then
-        XCTAssertEqual(observable.receivedValue, givenBlock?.shortId,
+        XCTAssertEqual(observableHandler.popFirstInvocationInput(), givenBlock?.shortId,
                        "The received Title must be the given block short id")
     }
     
     func test_SceneDidLoad_UpdateProducerLabel() throws {
         // Given
         let givenBlock = block
-        let observable = MockObservable<String>()
-        sut.producerLabel.observe(observable.handler)
+        let observableHandler = MockFunction<String, Void>()
+        sut.producerLabel.observe(observableHandler.execute)
         
         // When
         sut.sceneDidLoad()
         
         // Then
-        XCTAssertEqual(observable.receivedValue, givenBlock?.producer,
+        XCTAssertEqual(observableHandler.popFirstInvocationInput(), givenBlock?.producer,
                        "The received Title must be the given block producer")
     }
     
     func test_SceneDidLoad_UpdateProducerSignatureLabel() throws {
         // Given
         let givenBlock = block
-        let observable = MockObservable<String>()
-        sut.producerSignatureLabel.observe(observable.handler)
+        let observableHandler = MockFunction<String, Void>()
+        sut.producerSignatureLabel.observe(observableHandler.execute)
         
         // When
         sut.sceneDidLoad()
         
         // Then
-        XCTAssertEqual(observable.receivedValue, givenBlock?.producerSignature,
+        XCTAssertEqual(observableHandler.popFirstInvocationInput(), givenBlock?.producerSignature,
                        "The received Title must be the given block producer signature")
     }
     
     func test_SceneDidLoad_UpdateNumberOfTransactionsLabel() throws {
         // Given
         let givenBlock = block!
-        let observable = MockObservable<String>()
-        sut.numberOfTransactionsLabel.observe(observable.handler)
+        let observableHandler = MockFunction<String, Void>()
+        sut.numberOfTransactionsLabel.observe(observableHandler.execute)
         
         // When
         sut.sceneDidLoad()
         
         // Then
-        XCTAssertEqual(observable.receivedValue, "\(givenBlock.transactionsCount)",
+        XCTAssertEqual(observableHandler.popFirstInvocationInput(), "\(givenBlock.transactionsCount)",
                        "The received Title must be the given block transactions count")
     }
     
     func test_SceneDidLoad_UpdateJsonVisibility() throws {
         // Given
-        let observable = MockObservable<Bool>()
-        sut.jsonIsVisible.observe(observable.handler)
+        let observableHandler = MockFunction<Bool, Void>()
+        sut.jsonIsVisible.observe(observableHandler.execute)
         
         // When
         sut.sceneDidLoad()
         
         // Then
-        XCTAssertFalse(observable.receivedValue!,
+        XCTAssertFalse(observableHandler.popFirstInvocationInput()!,
                        "Json must be hiden when scene did load")
     }
     
     func test_SceneDidLoad_UpdateJsonSwitchButtonTitle() throws {
         // Given
-        let observable = MockObservable<String>()
-        sut.switchJsonVisibilityButtonTitle.observe(observable.handler)
+        let observableHandler = MockFunction<String, Void>()
+        sut.switchJsonVisibilityButtonTitle.observe(observableHandler.execute)
         
         // When
         sut.sceneDidLoad()
         
         // Then
-        XCTAssertEqual(observable.receivedValue, stringsProvider.showJsonButtonTitle,
+        XCTAssertEqual(observableHandler.popFirstInvocationInput(), stringsProvider.showJsonButtonTitle,
             "It must set the showJsonButtonTitle as the button title when scene did load")
     }
     
     func test_SceneDidLoad_UpdateJsonText() throws {
         // Given
         let givenBlock = block
-        let observable = MockObservable<String>()
-        sut.jsonText.observe(observable.handler)
+        let observableHandler = MockFunction<String, Void>()
+        sut.jsonText.observe(observableHandler.execute)
         
         // When
         sut.sceneDidLoad()
         
         // Then
-        XCTAssertEqual(observable.receivedValue, givenBlock?.json,
+        XCTAssertEqual(observableHandler.popFirstInvocationInput(), givenBlock?.json,
             "The received json text must be the block json")
     }
     
     func test_HandleSwitchJsonVisibility_UpdateJsonVisibility() throws {
         // Given
-        let observable = MockObservable<Bool>()
-        sut.jsonIsVisible.observe(observable.handler)
+        let observableHandler = MockFunction<Bool, Void>()
+        sut.jsonIsVisible.observe(observableHandler.execute)
         let givenCurrentVisibilityStatus = sut.jsonIsVisible.value
         
         // When
         sut.handleSwitchJsonVisibility()
         
         // Then
-        XCTAssertEqual(observable.receivedValue, !givenCurrentVisibilityStatus,
+        XCTAssertEqual(observableHandler.popFirstInvocationInput(), !givenCurrentVisibilityStatus,
                        "The received JsonVisibility status must be the negation of the current status")
     }
 }

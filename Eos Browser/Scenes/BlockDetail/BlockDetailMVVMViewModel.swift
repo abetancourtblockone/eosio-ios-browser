@@ -54,9 +54,3 @@ private extension BlockDetailMVVMViewModel {
         jsonText.value = configuration.block.json
     }
 }
-
-extension BlockDetailMVVMViewModel: Equatable {
-    static func == (lhs: BlockDetailMVVMViewModel, rhs: BlockDetailMVVMViewModel) -> Bool {
-        lhs.configuration == rhs.configuration
-    }
-}

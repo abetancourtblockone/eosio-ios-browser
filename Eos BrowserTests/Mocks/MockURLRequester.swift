@@ -10,8 +10,8 @@ import Foundation
 @testable import Eos_Browser
 
 final class MockURLRequester: URLRequester {
-    var mock_request: MockFunction<(URLRequest, URLRequestHandler), Void> = .init({ _,_ in })
-    var mock_cancelRequests: MockFunction<Void, Void> = .init({ _ in })
+    var mock_request = MockFunction<(URLRequest, URLRequestHandler), Void>()
+    var mock_cancelRequests = MockFunction<Void, Void>()
     
     func request(urlRequest: URLRequest, completion: @escaping URLRequestHandler) {
         mock_request.execute((urlRequest, completion))
