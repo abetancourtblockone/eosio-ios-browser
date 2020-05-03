@@ -24,25 +24,17 @@ final class BlockListMVVMViewModel: MVVMViewModel {
         var blockDetailSceneDependencies: BlockDetailScene.ViewModel.Dependencies = .init()
     }
     
-    private var stateValueSubject = CurrentValueSubject<State, Never>(.idle)
-    private var titleLabelValueSubject = CurrentValueSubject<String, Never>("")
-    private var blocksValueSubject = CurrentValueSubject<[BlockListViewModel.Item], Never>([])
-    
-    lazy var state: AnyPublisher<State, Never> = {
-        stateValueSubject.eraseToAnyPublisher()
-    }()
-    
-    lazy var titleLabel: AnyPublisher<String, Never> = {
-        titleLabelValueSubject.eraseToAnyPublisher()
-    }()
-    
-    lazy var blocks: AnyPublisher<[BlockListViewModel.Item], Never> = {
-        blocksValueSubject.eraseToAnyPublisher()
-    }()
-    
     private var blockEntities: [Block] = []
-    
+    private var blockItems: [BlockListViewModel.Item] = []
     private let dependencies: Dependencies
+    
+    private let stateValueSubject = PassthroughSubject<State, Never>()
+    private let titleLabelValueSubject = PassthroughSubject<String?, Never>()
+    private let blocksValueSubject = PassthroughSubject<[BlockListViewModel.Item], Never>()
+    
+    lazy var state: AnyPublisher<State, Never> = stateValueSubject.eraseToAnyPublisher()
+    lazy var titleLabel: AnyPublisher<String?, Never> = titleLabelValueSubject.eraseToAnyPublisher()
+    lazy var blocks: AnyPublisher<[BlockListViewModel.Item], Never> = blocksValueSubject.eraseToAnyPublisher()
     
     init(configuration: Configuration = (), dependencies: Dependencies = .init()) {
         self.dependencies = dependencies
@@ -61,7 +53,7 @@ extension BlockListMVVMViewModel {
     
     func handleSelectedBlock(at indexPath: IndexPath) {
         let scene = BlockDetailScene(configuration: .init(block: blockEntities[indexPath.row]),
-                                     dependencies: self.dependencies.blockDetailSceneDependencies)
+                                     dependencies: dependencies.blockDetailSceneDependencies)
         stateValueSubject.send(.showing(scene: scene))
     }
 }
@@ -78,7 +70,6 @@ private extension BlockListMVVMViewModel {
         switch retrieveBlocksResult {
         case .success(let retrievingInfo):
             handle(blocksRetrievingInfo: retrievingInfo)
-            
         case .failure(let error):
             print("Couldn't retrieve the blockchain info. Error: \(error.localizedDescription)")
         }
@@ -87,7 +78,8 @@ private extension BlockListMVVMViewModel {
     func handle(blocksRetrievingInfo: BlocksRetrievingInfo) {
         let block = blocksRetrievingInfo.lastRetrievedBlock
         blockEntities.append(block)
-        blocksValueSubject.value.append(.init(block: block))
+        blockItems.append(.init(block: block))
+        blocksValueSubject.send(blockItems)
         if blocksRetrievingInfo.status == .finished {
             self.stateValueSubject.send(.idle)
         }

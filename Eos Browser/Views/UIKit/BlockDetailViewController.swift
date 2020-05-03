@@ -30,32 +30,15 @@ final class BlockDetailViewController: UIViewController, MVVMView {
     }
     
     func bind() {
-        viewModel?.titleLabel.sink { [weak self] label in
-            self?.title = label
-        }.store(in: &subscriptions)
-        
-        viewModel?.producerLabel.sink { [weak self] label in
-            self?.producerLabel.text = label
-        }.store(in: &subscriptions)
-        
-        viewModel?.producerSignatureLabel.sink { [weak self] label in
-            self?.producerSignatureLabel.text = label
-        }.store(in: &subscriptions)
-        
-        viewModel?.numberOfTransactionsLabel.sink { [weak self] label in
-            self?.numberOfTransactionsLabel.text = label
-        }.store(in: &subscriptions)
+        viewModel?.titleLabel.assign(to: \.title, on: self).store(in: &subscriptions)
+        viewModel?.producerLabel.assign(to: \.text, on: producerLabel).store(in: &subscriptions)
+        viewModel?.producerSignatureLabel.assign(to: \.text, on: producerSignatureLabel).store(in: &subscriptions)
+        viewModel?.numberOfTransactionsLabel.assign(to: \.text, on: numberOfTransactionsLabel).store(in: &subscriptions)
+        viewModel?.jsonText.assign(to: \.text, on: jsonTextView).store(in: &subscriptions)
+        viewModel?.jsonIsHidden.assign(to: \.isHidden, on: jsonTextView).store(in: &subscriptions)
         
         viewModel?.switchJsonVisibilityButtonTitle.sink { [weak self] label in
             self?.switchJsonVisibilityButton.setTitle(label, for: .normal)
-        }.store(in: &subscriptions)
-        
-        viewModel?.jsonText.sink { [weak self] text in
-            self?.jsonTextView.text = text
-        }.store(in: &subscriptions)
-        
-        viewModel?.jsonIsVisible.sink { [weak self] isVisible in
-            self?.jsonTextView.isHidden = !isVisible
         }.store(in: &subscriptions)
     }
 }

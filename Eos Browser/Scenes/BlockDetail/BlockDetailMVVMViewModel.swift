@@ -21,13 +21,21 @@ final class BlockDetailMVVMViewModel: MVVMViewModel {
     private let configuration: Configuration
     private let dependencies: Dependencies
     
-    var titleLabel = CurrentValueSubject<String, Never>("")
-    var producerLabel = CurrentValueSubject<String, Never>("")
-    var producerSignatureLabel = CurrentValueSubject<String, Never>("")
-    var numberOfTransactionsLabel = CurrentValueSubject<String, Never>("")
-    var switchJsonVisibilityButtonTitle = CurrentValueSubject<String, Never>("")
-    var jsonText = CurrentValueSubject<String, Never>("")
-    var jsonIsVisible = CurrentValueSubject<Bool, Never>(false)
+    private let titleLabelSubject = PassthroughSubject<String?, Never>()
+    private let producerLabelSubject = PassthroughSubject<String?, Never>()
+    private let producerSignatureLabelSubject = PassthroughSubject<String?, Never>()
+    private let numberOfTransactionsLabelSubject = PassthroughSubject<String?, Never>()
+    private let switchJsonVisibilityButtonTitleSubject = PassthroughSubject<String?, Never>()
+    private let jsonTextSubject = PassthroughSubject<String?, Never>()
+    private let jsonIsHiddenSubject = CurrentValueSubject<Bool, Never>(true)
+    
+    lazy var titleLabel: AnyPublisher<String?, Never> = titleLabelSubject.eraseToAnyPublisher()
+    lazy var producerLabel: AnyPublisher<String?, Never> = producerLabelSubject.eraseToAnyPublisher()
+    lazy var producerSignatureLabel: AnyPublisher<String?, Never> = producerSignatureLabelSubject.eraseToAnyPublisher()
+    lazy var numberOfTransactionsLabel: AnyPublisher<String?, Never> = numberOfTransactionsLabelSubject.eraseToAnyPublisher()
+    lazy var switchJsonVisibilityButtonTitle: AnyPublisher<String?, Never> = switchJsonVisibilityButtonTitleSubject.eraseToAnyPublisher()
+    lazy var jsonText: AnyPublisher<String?, Never> = jsonTextSubject.eraseToAnyPublisher()
+    lazy var jsonIsHidden: AnyPublisher<Bool, Never> = jsonIsHiddenSubject.eraseToAnyPublisher()
     
     init(configuration: Configuration, dependencies: Dependencies = .init()) {
         self.configuration = configuration
@@ -39,19 +47,19 @@ final class BlockDetailMVVMViewModel: MVVMViewModel {
     }
     
     func handleSwitchJsonVisibility() {
-        jsonIsVisible.value = jsonIsVisible.value ? false : true
-        switchJsonVisibilityButtonTitle.value = jsonIsVisible.value ? dependencies.stringsProvider.hideJsonButtonTitle : dependencies.stringsProvider.showJsonButtonTitle
+        jsonIsHiddenSubject.value = !jsonIsHiddenSubject.value
+        let buttonTitle = jsonIsHiddenSubject.value ? dependencies.stringsProvider.showJsonButtonTitle : dependencies.stringsProvider.hideJsonButtonTitle
+        switchJsonVisibilityButtonTitleSubject.send(buttonTitle)
     }
 }
 
 private extension BlockDetailMVVMViewModel {
     func setup() {
-        titleLabel.value = configuration.block.shortId
-        producerLabel.value = configuration.block.producer
-        producerSignatureLabel.value = configuration.block.producerSignature
-        numberOfTransactionsLabel.value = "\(configuration.block.transactionsCount)"
-        switchJsonVisibilityButtonTitle.value = dependencies.stringsProvider.showJsonButtonTitle
-        jsonIsVisible.value = false
-        jsonText.value = configuration.block.json
+        titleLabelSubject.send(configuration.block.shortId)
+        producerLabelSubject.send(configuration.block.producer)
+        producerSignatureLabelSubject.send(configuration.block.producerSignature)
+        numberOfTransactionsLabelSubject.send("\(configuration.block.transactionsCount)")
+        switchJsonVisibilityButtonTitleSubject.send(dependencies.stringsProvider.showJsonButtonTitle)
+        jsonTextSubject.send(configuration.block.json)
     }
 }

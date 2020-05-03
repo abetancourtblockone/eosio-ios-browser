@@ -48,8 +48,7 @@ extension BlockListViewController: UITableViewDelegate {
 
 private extension BlockListViewController {
     func bind() {
-        viewModel.blocks.eraseToAnyPublisher().sink {[weak self] blocks in
-            
+        viewModel.blocks.sink {[weak self] blocks in
             var snapshot = NSDiffableDataSourceSnapshot<BlockListViewModel.Section, BlockListViewModel.Item>()
             snapshot.appendSections(BlockListViewModel.Section.allCases)
             snapshot.appendItems(blocks)
@@ -58,9 +57,7 @@ private extension BlockListViewController {
                                             completion: nil)
         }.store(in: &subscriptions)
         
-        viewModel.titleLabel.sink {[weak self] title in
-            self?.title = title
-        }.store(in: &subscriptions)
+        viewModel.titleLabel.assign(to: \.title, on: self).store(in: &subscriptions)
         
         viewModel.state.sink { [weak self] state in
             guard let self = self else {
