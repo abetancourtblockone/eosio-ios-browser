@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import EOSIOSDomain
 
 final class RestBlocksService: BlocksService {
     struct Dependencies {
@@ -69,17 +70,17 @@ final class RestBlocksService: BlocksService {
 
 private extension Blockchain {
     init(dictionary: [String: Any]) {
-        self.headBlockId = dictionary["head_block_id"] as? String ?? ""
+        self.init(headBlockId: dictionary["head_block_id"] as? String ?? "")
     }
 }
 
 private extension Block {
     init(dictionary: [String: Any]) {
-        self.id = dictionary["id"] as? String ?? ""
-        self.producer = dictionary["producer"] as? String ?? ""
-        self.producerSignature = dictionary["producer_signature"] as? String ?? ""
-        self.transactionsCount = (dictionary["transactions"] as? [[String: Any]])?.count ?? 0
-        self.previousBlockId = dictionary["previous"] as? String ?? ""
-        self.json = dictionary.description
+        self.init(id: dictionary["id"] as? String ?? "",
+                  producer: dictionary["producer"] as? String ?? "",
+                  producerSignature: dictionary["producer_signature"] as? String ?? "",
+                  transactionsCount: (dictionary["transactions"] as? [[String: Any]])?.count ?? 0,
+                  previousBlockId: dictionary["previous"] as? String ?? "",
+                  json: dictionary.description)
     }
 }

@@ -7,7 +7,7 @@
 //
 
 
-protocol MVVMViewModel {
+public protocol MVVMViewModel {
     associatedtype Configuration
     associatedtype Dependencies
     
@@ -21,13 +21,12 @@ extension MVVMViewModel where Configuration == Void {
     }
 }
 
-protocol MVVMView: Equatable {
+public protocol MVVMView: Equatable {
     associatedtype ViewModel: MVVMViewModel
-    var viewModel: ViewModel? { get set }
+    var viewModel: ViewModel { get set }
 }
 
-protocol Scene {
-    associatedtype View: MVVMView
+public protocol Scene {
     associatedtype ViewModel: MVVMViewModel
     
     typealias Dependencies = ViewModel.Dependencies

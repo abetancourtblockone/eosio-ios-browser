@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct BlockListViewModel {
-    enum Section: CaseIterable {
+public struct BlockListViewModel {
+    public enum Section: CaseIterable {
         case blocks
     }
-    struct Item: Hashable {
-        let id: String
-        let producer: String
+    public struct Item: Hashable {
+        public let id: String
+        public let producer: String
     }
 }

@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct BlocksRetrievingInfo: Equatable {
-    enum Status {
+public struct BlocksRetrievingInfo: Equatable {
+    public enum Status {
         case fetchingPrevious
         case finished
     }
@@ -17,9 +17,9 @@ struct BlocksRetrievingInfo: Equatable {
     let lastRetrievedBlock: Block
 }
 
-typealias RetrieveBlocksResult = Result<BlocksRetrievingInfo, Error>
-typealias RetrieveBlocksHandler = (RetrieveBlocksResult) -> ()
+public typealias RetrieveBlocksResult = Result<BlocksRetrievingInfo, Error>
+public typealias RetrieveBlocksHandler = (RetrieveBlocksResult) -> ()
 
-protocol RetrieveBlocks {
+public protocol RetrieveBlocks {
     func execute(quantityOfBlocksToBeRetrieved: UInt, completion: @escaping RetrieveBlocksHandler)
 }

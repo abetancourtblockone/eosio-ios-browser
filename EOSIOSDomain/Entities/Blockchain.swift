@@ -8,6 +8,9 @@
 
 import Foundation
 
-struct Blockchain: Equatable {
-    let headBlockId: String
+public struct Blockchain: Equatable {
+    public let headBlockId: String
+    public init(headBlockId: String) {
+        self.headBlockId = headBlockId
+    }
 }

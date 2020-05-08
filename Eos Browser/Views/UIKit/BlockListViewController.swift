@@ -8,6 +8,7 @@
 
 import UIKit
 import Combine
+import EOSIOSDomain
 
 final class BlockListTableViewDiffableDataSource: UITableViewDiffableDataSource<BlockListViewModel.Section, BlockListViewModel.Item> {
     
@@ -24,7 +25,7 @@ final class BlockListViewController: UIViewController {
         return refreshControl
     }()
     
-    private lazy var viewModel = BlockListMVVMViewModel()
+    private var viewModel: BlockListMVVMViewModel
     private var subscriptions = [AnyCancellable]()
     
     override func viewDidLoad() {
@@ -37,6 +38,15 @@ final class BlockListViewController: UIViewController {
     
     @IBAction func refreshButtonTouchedUp(_ sender: UIBarButtonItem) {
         viewModel.handleRefresh()
+    }
+    
+    init?(coder: NSCoder, viewModel: BlockListMVVMViewModel) {
+        self.viewModel = viewModel
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 

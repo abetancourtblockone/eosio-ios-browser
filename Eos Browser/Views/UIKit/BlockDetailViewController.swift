@@ -8,6 +8,7 @@
 
 import UIKit
 import Combine
+import EOSIOSDomain
 
 final class BlockDetailViewController: UIViewController, MVVMView {
     @IBOutlet weak var producerLabel: UILabel!
@@ -16,28 +17,38 @@ final class BlockDetailViewController: UIViewController, MVVMView {
     @IBOutlet weak var switchJsonVisibilityButton: UIButton!
     @IBOutlet weak var jsonTextView: UITextView!
     
-    var viewModel: BlockDetailMVVMViewModel?
+    var viewModel: BlockDetailMVVMViewModel
+    
     private var subscriptions = [AnyCancellable]()
+    
+    init?(coder: NSCoder, viewModel: BlockDetailMVVMViewModel) {
+        self.viewModel = viewModel
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
-        viewModel?.sceneDidLoad()
+        viewModel.sceneDidLoad()
     }
     
     @IBAction func jsonButtonTouchedUp(_ sender: Any) {
-        viewModel?.handleSwitchJsonVisibility()
+        viewModel.handleSwitchJsonVisibility()
     }
     
     func bind() {
-        viewModel?.titleLabel.assign(to: \.title, on: self).store(in: &subscriptions)
-        viewModel?.producerLabel.assign(to: \.text, on: producerLabel).store(in: &subscriptions)
-        viewModel?.producerSignatureLabel.assign(to: \.text, on: producerSignatureLabel).store(in: &subscriptions)
-        viewModel?.numberOfTransactionsLabel.assign(to: \.text, on: numberOfTransactionsLabel).store(in: &subscriptions)
-        viewModel?.jsonText.assign(to: \.text, on: jsonTextView).store(in: &subscriptions)
-        viewModel?.jsonIsHidden.assign(to: \.isHidden, on: jsonTextView).store(in: &subscriptions)
+        viewModel.titleLabel.assign(to: \.title, on: self).store(in: &subscriptions)
+        viewModel.producerLabel.assign(to: \.text, on: producerLabel).store(in: &subscriptions)
+        viewModel.producerSignatureLabel.assign(to: \.text, on: producerSignatureLabel).store(in: &subscriptions)
+        viewModel.numberOfTransactionsLabel.assign(to: \.text, on: numberOfTransactionsLabel).store(in: &subscriptions)
+        viewModel.jsonText.assign(to: \.text, on: jsonTextView).store(in: &subscriptions)
+        viewModel.jsonIsHidden.assign(to: \.isHidden, on: jsonTextView).store(in: &subscriptions)
         
-        viewModel?.switchJsonVisibilityButtonTitle.sink { [weak self] label in
+        viewModel.switchJsonVisibilityButtonTitle.sink { [weak self] label in
             self?.switchJsonVisibilityButton.setTitle(label, for: .normal)
         }.store(in: &subscriptions)
     }

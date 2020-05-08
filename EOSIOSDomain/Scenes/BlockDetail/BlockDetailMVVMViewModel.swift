@@ -9,13 +9,16 @@
 import Foundation
 import Combine
 
-final class BlockDetailMVVMViewModel: MVVMViewModel {
-    struct Configuration: Equatable {
+public final class BlockDetailMVVMViewModel: MVVMViewModel {
+    public struct Configuration: Equatable {
         var block: Block
     }
     
-    struct Dependencies {
-        var stringsProvider: StringsProviding = StringsProvider()
+    public struct Dependencies {
+        var stringsProvider: StringsProviding
+        public init(stringsProvider: StringsProviding) {
+            self.stringsProvider = stringsProvider
+        }
     }
         
     private let configuration: Configuration
@@ -29,24 +32,24 @@ final class BlockDetailMVVMViewModel: MVVMViewModel {
     private let jsonTextSubject = PassthroughSubject<String?, Never>()
     private let jsonIsHiddenSubject = CurrentValueSubject<Bool, Never>(true)
     
-    lazy var titleLabel: AnyPublisher<String?, Never> = titleLabelSubject.eraseToAnyPublisher()
-    lazy var producerLabel: AnyPublisher<String?, Never> = producerLabelSubject.eraseToAnyPublisher()
-    lazy var producerSignatureLabel: AnyPublisher<String?, Never> = producerSignatureLabelSubject.eraseToAnyPublisher()
-    lazy var numberOfTransactionsLabel: AnyPublisher<String?, Never> = numberOfTransactionsLabelSubject.eraseToAnyPublisher()
-    lazy var switchJsonVisibilityButtonTitle: AnyPublisher<String?, Never> = switchJsonVisibilityButtonTitleSubject.eraseToAnyPublisher()
-    lazy var jsonText: AnyPublisher<String?, Never> = jsonTextSubject.eraseToAnyPublisher()
-    lazy var jsonIsHidden: AnyPublisher<Bool, Never> = jsonIsHiddenSubject.eraseToAnyPublisher()
+    public lazy var titleLabel: AnyPublisher<String?, Never> = titleLabelSubject.eraseToAnyPublisher()
+    public lazy var producerLabel: AnyPublisher<String?, Never> = producerLabelSubject.eraseToAnyPublisher()
+    public lazy var producerSignatureLabel: AnyPublisher<String?, Never> = producerSignatureLabelSubject.eraseToAnyPublisher()
+    public lazy var numberOfTransactionsLabel: AnyPublisher<String?, Never> = numberOfTransactionsLabelSubject.eraseToAnyPublisher()
+    public lazy var switchJsonVisibilityButtonTitle: AnyPublisher<String?, Never> = switchJsonVisibilityButtonTitleSubject.eraseToAnyPublisher()
+    public lazy var jsonText: AnyPublisher<String?, Never> = jsonTextSubject.eraseToAnyPublisher()
+    public lazy var jsonIsHidden: AnyPublisher<Bool, Never> = jsonIsHiddenSubject.eraseToAnyPublisher()
     
-    init(configuration: Configuration, dependencies: Dependencies = .init()) {
+    public init(configuration: Configuration, dependencies: Dependencies) {
         self.configuration = configuration
         self.dependencies = dependencies
     }
     
-    func sceneDidLoad() {
+    public func sceneDidLoad() {
         setup()
     }
     
-    func handleSwitchJsonVisibility() {
+    public func handleSwitchJsonVisibility() {
         jsonIsHiddenSubject.value = !jsonIsHiddenSubject.value
         let buttonTitle = jsonIsHiddenSubject.value ? dependencies.stringsProvider.showJsonButtonTitle : dependencies.stringsProvider.hideJsonButtonTitle
         switchJsonVisibilityButtonTitleSubject.send(buttonTitle)

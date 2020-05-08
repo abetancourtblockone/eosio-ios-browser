@@ -9,19 +9,26 @@
 import Foundation
 import Combine
 
-final class BlockListMVVMViewModel: MVVMViewModel {
-    typealias Configuration = Void
+public final class BlockListMVVMViewModel: MVVMViewModel {
+    public typealias Configuration = Void
     
-    enum State {
+    public enum State {
         case refreshing
         case idle
         case showing(scene: BlockDetailScene)
     }
     
-    struct Dependencies {
-        var stringsProvider: StringsProviding = StringsProvider()
-        var retrieveBlocks: RetrieveBlocks = RetrieveBlocksAdapter()
-        var blockDetailSceneDependencies: BlockDetailScene.ViewModel.Dependencies = .init()
+    public struct Dependencies {
+        var stringsProvider: StringsProviding
+        var retrieveBlocks: RetrieveBlocks
+        var blockDetailSceneDependencies: BlockDetailScene.ViewModel.Dependencies
+        public init(stringsProvider: StringsProviding,
+                    retrieveBlocks: RetrieveBlocks,
+                    blockDetailSceneDependencies: BlockDetailScene.ViewModel.Dependencies) {
+            self.stringsProvider = stringsProvider
+            self.retrieveBlocks = retrieveBlocks
+            self.blockDetailSceneDependencies = blockDetailSceneDependencies
+        }
     }
     
     private var blockEntities: [Block] = []
@@ -32,27 +39,27 @@ final class BlockListMVVMViewModel: MVVMViewModel {
     private let titleLabelValueSubject = PassthroughSubject<String?, Never>()
     private let blocksValueSubject = PassthroughSubject<[BlockListViewModel.Item], Never>()
     
-    lazy var state: AnyPublisher<State, Never> = stateValueSubject.eraseToAnyPublisher()
-    lazy var titleLabel: AnyPublisher<String?, Never> = titleLabelValueSubject.eraseToAnyPublisher()
-    lazy var blocks: AnyPublisher<[BlockListViewModel.Item], Never> = blocksValueSubject.eraseToAnyPublisher()
+    public lazy var state: AnyPublisher<State, Never> = stateValueSubject.eraseToAnyPublisher()
+    public lazy var titleLabel: AnyPublisher<String?, Never> = titleLabelValueSubject.eraseToAnyPublisher()
+    public lazy var blocks: AnyPublisher<[BlockListViewModel.Item], Never> = blocksValueSubject.eraseToAnyPublisher()
     
-    init(configuration: Configuration = (), dependencies: Dependencies = .init()) {
+    public init(configuration: Configuration = (), dependencies: Dependencies) {
         self.dependencies = dependencies
     }
 }
 
 extension BlockListMVVMViewModel {
-    func sceneDidLoad() {
+    public func sceneDidLoad() {
         titleLabelValueSubject.send(dependencies.stringsProvider.blockListTitle)
     }
     
-    func handleRefresh() {
+    public func handleRefresh() {
         stateValueSubject.send(.refreshing)
         refreshBlocks()
     }
     
-    func handleSelectedBlock(at indexPath: IndexPath) {
-        let scene = BlockDetailScene(configuration: .init(block: blockEntities[indexPath.row]),
+    public func handleSelectedBlock(at indexPath: IndexPath) {
+        let scene = BlockDetailScene(configuration: .init(block: blockEntities[0]),
                                      dependencies: dependencies.blockDetailSceneDependencies)
         stateValueSubject.send(.showing(scene: scene))
     }

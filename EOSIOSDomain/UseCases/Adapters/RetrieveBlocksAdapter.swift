@@ -8,19 +8,22 @@
 
 import Foundation
 
-final class RetrieveBlocksAdapter: RetrieveBlocks {
-    struct Dependencies {
-        var blocksService: BlocksService = RestBlocksService()
+public final class RetrieveBlocksAdapter: RetrieveBlocks {
+    public struct Dependencies {
+        var blocksService: BlocksService
+        public init(blocksService: BlocksService) {
+            self.blocksService = blocksService
+        }
     }
     
     private var pendingBlocksToBeRetrived: UInt = 0
     private let dependencies: Dependencies
     
-    init(dependencies: Dependencies = .init()) {
+    public init(dependencies: Dependencies) {
         self.dependencies = dependencies
     }
     
-    func execute(quantityOfBlocksToBeRetrieved: UInt, completion: @escaping RetrieveBlocksHandler) {
+    public func execute(quantityOfBlocksToBeRetrieved: UInt, completion: @escaping RetrieveBlocksHandler) {
         dependencies.blocksService.cancelRequests()
         pendingBlocksToBeRetrived = quantityOfBlocksToBeRetrieved
         dependencies.blocksService.retrieveBlockchain {[weak self] result in
