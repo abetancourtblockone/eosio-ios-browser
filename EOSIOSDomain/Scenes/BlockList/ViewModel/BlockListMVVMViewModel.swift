@@ -59,7 +59,7 @@ extension BlockListMVVMViewModel {
     }
     
     public func handleSelectedBlock(at indexPath: IndexPath) {
-        let scene = BlockDetailScene(configuration: .init(block: blockEntities[0]),
+        let scene = BlockDetailScene(configuration: .init(block: blockEntities[indexPath.row]),
                                      dependencies: dependencies.blockDetailSceneDependencies)
         stateValueSubject.send(.showing(scene: scene))
     }

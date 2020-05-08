@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67782CA0246600D300169598 /* BlockListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67782C9F246600D300169598 /* BlockListScene.swift */; };
 		67E6F2842463B54500D737D4 /* EOSIOSDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E6F27A2463B54500D737D4 /* EOSIOSDomain.framework */; };
 		67E6F28B2463B54500D737D4 /* EOSIOSDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6F27D2463B54500D737D4 /* EOSIOSDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		67E6F2C92463B71800D737D4 /* RetrieveBlocksAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2BB2463B71800D737D4 /* RetrieveBlocksAdapterTests.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		67782C9F246600D300169598 /* BlockListScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListScene.swift; sourceTree = "<group>"; };
 		67E6F27A2463B54500D737D4 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E6F27D2463B54500D737D4 /* EOSIOSDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOSIOSDomain.h; sourceTree = "<group>"; };
 		67E6F27E2463B54500D737D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				67E6F2DB2463B73300D737D4 /* ViewModel */,
+				67782C9F246600D300169598 /* BlockListScene.swift */,
 			);
 			path = BlockList;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67782CA0246600D300169598 /* BlockListScene.swift in Sources */,
 				67E6F2E92463B73300D737D4 /* Block.swift in Sources */,
 				67E6F2F22463B73300D737D4 /* BlocksService.swift in Sources */,
 				67E6F2F42463B73300D737D4 /* RetrieveBlocks.swift in Sources */,
