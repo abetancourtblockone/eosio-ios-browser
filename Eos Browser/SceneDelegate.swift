@@ -14,7 +14,7 @@ extension UIStoryboard {
 }
 
 final class SceneBuilder {
-    
+    private lazy var storyboard: UIStoryboard = .main
     private lazy var stringsProvider = StringsProvider()
     private lazy var restBlocksService = RestBlocksService()
     private lazy var retrieveBlocks: RetrieveBlocksAdapter = .init(dependencies: .init(blocksService: restBlocksService))
@@ -23,17 +23,15 @@ final class SceneBuilder {
                                                                                        retrieveBlocks: retrieveBlocks,
                                                                                        blockDetailSceneDependencies: blockDetailSceneDependencies)
     
-    lazy var rootViewController: UIViewController? = {
-        let homelistViewController = UIStoryboard.main.instantiateViewController(identifier: "BlockListViewController") {
+    var rootViewController: UIViewController? {
+        let homelistViewController = storyboard.instantiateViewController(identifier: "BlockListViewController") {
             let viewController = BlockListViewController(coder: $0,
                                                          viewModel: .init(configuration: (),
                                                                           dependencies: self.blockListSceneDependencies))
             return viewController
         }
         return UINavigationController(rootViewController: homelistViewController)
-    }()
-    
-    private let storyboard: UIStoryboard = .main
+    }
 }
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -46,7 +44,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
         self.window = window ?? UIWindow(windowScene: windowScene)
         self.window?.rootViewController = SceneBuilder().rootViewController
         self.window?.makeKeyAndVisible()
@@ -74,7 +71,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
     }
-
+    
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
@@ -82,19 +79,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     
-}
-
-extension UIViewController {
-    func show<S: Scene>(scene: S)
-        where S.ViewModel: BlockDetailScene.ViewModel  {
-            guard let viewController = storyboard?.instantiateViewController(identifier: "BlockDetailViewController",
-                                                                             creator: { coder -> UIViewController? in
-                                                                                return BlockDetailViewController(coder: coder, viewModel: .init(configuration: scene.configuration,
-                                                                                                                                                dependencies: scene.dependencies))
-            }) else {
-                return
-            }
-            show(viewController, sender: self)
-    }
 }
 
