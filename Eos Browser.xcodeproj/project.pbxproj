@@ -79,7 +79,6 @@
 		677B766B24525385004B27CB /* Eos BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eos BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		677B767124525385004B27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67E6F2942463B55C00D737D4 /* EOSIOSDomain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EOSIOSDomain.xcodeproj; path = EOSIOSDomain/EOSIOSDomain.xcodeproj; sourceTree = "<group>"; };
-		67E6F29D2463B56000D737D4 /* Eos Browser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Eos Browser.xcodeproj"; sourceTree = "<group>"; };
 		67E6F2A62463B6C900D737D4 /* RestBlocksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestBlocksService.swift; sourceTree = "<group>"; };
 		67E6F2A72463B6C900D737D4 /* URLSessionURLRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionURLRequester.swift; sourceTree = "<group>"; };
 		67E6F2A82463B6C900D737D4 /* ClassEndpointProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassEndpointProvider.swift; sourceTree = "<group>"; };
@@ -129,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				67E6F2942463B55C00D737D4 /* EOSIOSDomain.xcodeproj */,
-				67E6F29D2463B56000D737D4 /* Eos Browser.xcodeproj */,
 				677B765724525382004B27CB /* Eos Browser */,
 				677B766E24525385004B27CB /* Eos BrowserTests */,
 				677B765624525382004B27CB /* Products */,
@@ -176,11 +174,6 @@
 				67E6F29A2463B55C00D737D4 /* EOSIOSDomain.framework */,
 				67E6F29C2463B55C00D737D4 /* EOSIOSDomainTests.xctest */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		67E6F29E2463B56000D737D4 /* Products */ = {
-			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
 		};
@@ -309,10 +302,6 @@
 			productRefGroup = 677B765624525382004B27CB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
-				{
-					ProductGroup = 67E6F29E2463B56000D737D4 /* Products */;
-					ProjectRef = 67E6F29D2463B56000D737D4 /* Eos Browser.xcodeproj */;
-				},
 				{
 					ProductGroup = 67E6F2952463B55C00D737D4 /* Products */;
 					ProjectRef = 67E6F2942463B55C00D737D4 /* EOSIOSDomain.xcodeproj */;
