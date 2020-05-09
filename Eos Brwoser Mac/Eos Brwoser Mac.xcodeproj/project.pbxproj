@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		675E52A424662A850096B295 /* EOSIOSDomainMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675E52A124662A810096B295 /* EOSIOSDomainMac.framework */; };
+		675E52A524662A850096B295 /* EOSIOSDomainMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 675E52A124662A810096B295 /* EOSIOSDomainMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		67782CAE24661BA500169598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67782CAD24661BA500169598 /* AppDelegate.swift */; };
+		67782CB024661BA500169598 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67782CAF24661BA500169598 /* ViewController.swift */; };
+		67782CB224661BAD00169598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67782CB124661BAD00169598 /* Assets.xcassets */; };
+		67782CB524661BAD00169598 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67782CB324661BAD00169598 /* Main.storyboard */; };
+		67782CC124661BAD00169598 /* Eos_Brwoser_MacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67782CC024661BAD00169598 /* Eos_Brwoser_MacTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67309F682466225C00C3D0F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67309F632466225C00C3D0F1 /* EOSIOSDomain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 67E6F27A2463B54500D737D4;
+			remoteInfo = EOSIOSDomain;
+		};
+		67309F6A2466225C00C3D0F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67309F632466225C00C3D0F1 /* EOSIOSDomain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 67E6F2832463B54500D737D4;
+			remoteInfo = EOSIOSDomainTests;
+		};
+		675E52A024662A810096B295 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67309F632466225C00C3D0F1 /* EOSIOSDomain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 675E528624662A2F0096B295;
+			remoteInfo = EOSIOSDomainMac;
+		};
+		675E52A224662A810096B295 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67309F632466225C00C3D0F1 /* EOSIOSDomain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 675E528E24662A300096B295;
+			remoteInfo = EOSIOSDomainMacTests;
+		};
+		67782CBD24661BAD00169598 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67782CA224661BA500169598 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67782CA924661BA500169598;
+			remoteInfo = "Eos Brwoser Mac";
+		};
+		67782CD124661C3600169598 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67782CCC24661C3600169598 /* EOSIOSDomain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 67E6F27A2463B54500D737D4;
+			remoteInfo = EOSIOSDomain;
+		};
+		67782CD324661C3600169598 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67782CCC24661C3600169598 /* EOSIOSDomain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 67E6F2832463B54500D737D4;
+			remoteInfo = EOSIOSDomainTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		675E52A624662A850096B295 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				675E52A524662A850096B295 /* EOSIOSDomainMac.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		67309F59246621A900C3D0F1 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67309F5D2466220600C3D0F1 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67309F612466224100C3D0F1 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67309F632466225C00C3D0F1 /* EOSIOSDomain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EOSIOSDomain.xcodeproj; path = ../EOSIOSDomain/EOSIOSDomain.xcodeproj; sourceTree = "<group>"; };
+		67782CAA24661BA500169598 /* Eos Brwoser Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eos Brwoser Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67782CAD24661BA500169598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		67782CAF24661BA500169598 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		67782CB124661BAD00169598 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67782CB424661BAD00169598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		67782CB624661BAD00169598 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67782CB724661BAD00169598 /* Eos_Brwoser_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eos_Brwoser_Mac.entitlements; sourceTree = "<group>"; };
+		67782CBC24661BAD00169598 /* Eos Brwoser MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eos Brwoser MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67782CC024661BAD00169598 /* Eos_Brwoser_MacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eos_Brwoser_MacTests.swift; sourceTree = "<group>"; };
+		67782CC224661BAD00169598 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67782CCC24661C3600169598 /* EOSIOSDomain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EOSIOSDomain.xcodeproj; path = "../Eos Browser/EOSIOSDomain/EOSIOSDomain.xcodeproj"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		67782CA724661BA500169598 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				675E52A424662A850096B295 /* EOSIOSDomainMac.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67782CB924661BAD00169598 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		67309F642466225C00C3D0F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67309F692466225C00C3D0F1 /* EOSIOSDomain.framework */,
+				67309F6B2466225C00C3D0F1 /* EOSIOSDomainTests.xctest */,
+				675E52A124662A810096B295 /* EOSIOSDomainMac.framework */,
+				675E52A324662A810096B295 /* EOSIOSDomainMacTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67782CA124661BA500169598 = {
+			isa = PBXGroup;
+			children = (
+				67782CAC24661BA500169598 /* Eos Brwoser Mac */,
+				67782CBF24661BAD00169598 /* Eos Brwoser MacTests */,
+				67782CAB24661BA500169598 /* Products */,
+				67782CCB24661C3600169598 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		67782CAB24661BA500169598 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67782CAA24661BA500169598 /* Eos Brwoser Mac.app */,
+				67782CBC24661BAD00169598 /* Eos Brwoser MacTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67782CAC24661BA500169598 /* Eos Brwoser Mac */ = {
+			isa = PBXGroup;
+			children = (
+				67782CAD24661BA500169598 /* AppDelegate.swift */,
+				67782CAF24661BA500169598 /* ViewController.swift */,
+				67782CB124661BAD00169598 /* Assets.xcassets */,
+				67782CB324661BAD00169598 /* Main.storyboard */,
+				67782CB624661BAD00169598 /* Info.plist */,
+				67782CB724661BAD00169598 /* Eos_Brwoser_Mac.entitlements */,
+			);
+			path = "Eos Brwoser Mac";
+			sourceTree = "<group>";
+		};
+		67782CBF24661BAD00169598 /* Eos Brwoser MacTests */ = {
+			isa = PBXGroup;
+			children = (
+				67782CC024661BAD00169598 /* Eos_Brwoser_MacTests.swift */,
+				67782CC224661BAD00169598 /* Info.plist */,
+			);
+			path = "Eos Brwoser MacTests";
+			sourceTree = "<group>";
+		};
+		67782CCB24661C3600169598 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67309F632466225C00C3D0F1 /* EOSIOSDomain.xcodeproj */,
+				67309F612466224100C3D0F1 /* EOSIOSDomain.framework */,
+				67309F5D2466220600C3D0F1 /* EOSIOSDomain.framework */,
+				67309F59246621A900C3D0F1 /* EOSIOSDomain.framework */,
+				67782CCC24661C3600169598 /* EOSIOSDomain.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67782CCD24661C3600169598 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67782CD224661C3600169598 /* EOSIOSDomain.framework */,
+				67782CD424661C3600169598 /* EOSIOSDomainTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		67782CA924661BA500169598 /* Eos Brwoser Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67782CC524661BAD00169598 /* Build configuration list for PBXNativeTarget "Eos Brwoser Mac" */;
+			buildPhases = (
+				67782CA624661BA500169598 /* Sources */,
+				67782CA724661BA500169598 /* Frameworks */,
+				67782CA824661BA500169598 /* Resources */,
+				675E52A624662A850096B295 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Eos Brwoser Mac";
+			productName = "Eos Brwoser Mac";
+			productReference = 67782CAA24661BA500169598 /* Eos Brwoser Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		67782CBB24661BAD00169598 /* Eos Brwoser MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67782CC824661BAD00169598 /* Build configuration list for PBXNativeTarget "Eos Brwoser MacTests" */;
+			buildPhases = (
+				67782CB824661BAD00169598 /* Sources */,
+				67782CB924661BAD00169598 /* Frameworks */,
+				67782CBA24661BAD00169598 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67782CBE24661BAD00169598 /* PBXTargetDependency */,
+			);
+			name = "Eos Brwoser MacTests";
+			productName = "Eos Brwoser MacTests";
+			productReference = 67782CBC24661BAD00169598 /* Eos Brwoser MacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		67782CA224661BA500169598 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = EOSIOS;
+				TargetAttributes = {
+					67782CA924661BA500169598 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					67782CBB24661BAD00169598 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 67782CA924661BA500169598;
+					};
+				};
+			};
+			buildConfigurationList = 67782CA524661BA500169598 /* Build configuration list for PBXProject "Eos Brwoser Mac" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 67782CA124661BA500169598;
+			productRefGroup = 67782CAB24661BA500169598 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 67782CCD24661C3600169598 /* Products */;
+					ProjectRef = 67782CCC24661C3600169598 /* EOSIOSDomain.xcodeproj */;
+				},
+				{
+					ProductGroup = 67309F642466225C00C3D0F1 /* Products */;
+					ProjectRef = 67309F632466225C00C3D0F1 /* EOSIOSDomain.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				67782CA924661BA500169598 /* Eos Brwoser Mac */,
+				67782CBB24661BAD00169598 /* Eos Brwoser MacTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		67309F692466225C00C3D0F1 /* EOSIOSDomain.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EOSIOSDomain.framework;
+			remoteRef = 67309F682466225C00C3D0F1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		67309F6B2466225C00C3D0F1 /* EOSIOSDomainTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EOSIOSDomainTests.xctest;
+			remoteRef = 67309F6A2466225C00C3D0F1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		675E52A124662A810096B295 /* EOSIOSDomainMac.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EOSIOSDomainMac.framework;
+			remoteRef = 675E52A024662A810096B295 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		675E52A324662A810096B295 /* EOSIOSDomainMacTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EOSIOSDomainMacTests.xctest;
+			remoteRef = 675E52A224662A810096B295 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		67782CD224661C3600169598 /* EOSIOSDomain.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EOSIOSDomain.framework;
+			remoteRef = 67782CD124661C3600169598 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		67782CD424661C3600169598 /* EOSIOSDomainTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EOSIOSDomainTests.xctest;
+			remoteRef = 67782CD324661C3600169598 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		67782CA824661BA500169598 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67782CB224661BAD00169598 /* Assets.xcassets in Resources */,
+				67782CB524661BAD00169598 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67782CBA24661BAD00169598 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67782CA624661BA500169598 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67782CB024661BA500169598 /* ViewController.swift in Sources */,
+				67782CAE24661BA500169598 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67782CB824661BAD00169598 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67782CC124661BAD00169598 /* Eos_Brwoser_MacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67782CBE24661BAD00169598 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67782CA924661BA500169598 /* Eos Brwoser Mac */;
+			targetProxy = 67782CBD24661BAD00169598 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		67782CB324661BAD00169598 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67782CB424661BAD00169598 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		67782CC324661BAD00169598 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		67782CC424661BAD00169598 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		67782CC624661BAD00169598 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Eos Brwoser Mac/Eos_Brwoser_Mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 86PMDM3J26;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Eos Brwoser Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.io.eos.Eos-Brwoser-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		67782CC724661BAD00169598 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Eos Brwoser Mac/Eos_Brwoser_Mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 86PMDM3J26;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Eos Brwoser Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.io.eos.Eos-Brwoser-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		67782CC924661BAD00169598 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 86PMDM3J26;
+				INFOPLIST_FILE = "Eos Brwoser MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.io.eos.Eos-Brwoser-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eos Brwoser Mac.app/Contents/MacOS/Eos Brwoser Mac";
+			};
+			name = Debug;
+		};
+		67782CCA24661BAD00169598 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 86PMDM3J26;
+				INFOPLIST_FILE = "Eos Brwoser MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.io.eos.Eos-Brwoser-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eos Brwoser Mac.app/Contents/MacOS/Eos Brwoser Mac";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		67782CA524661BA500169598 /* Build configuration list for PBXProject "Eos Brwoser Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67782CC324661BAD00169598 /* Debug */,
+				67782CC424661BAD00169598 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67782CC524661BAD00169598 /* Build configuration list for PBXNativeTarget "Eos Brwoser Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67782CC624661BAD00169598 /* Debug */,
+				67782CC724661BAD00169598 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67782CC824661BAD00169598 /* Build configuration list for PBXNativeTarget "Eos Brwoser MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67782CC924661BAD00169598 /* Debug */,
+				67782CCA24661BAD00169598 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 67782CA224661BA500169598 /* Project object */;
+}

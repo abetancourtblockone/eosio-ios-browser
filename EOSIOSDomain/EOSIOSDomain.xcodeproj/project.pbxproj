@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		675E528F24662A300096B295 /* EOSIOSDomainMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675E528624662A2F0096B295 /* EOSIOSDomainMac.framework */; };
+		675E529424662A300096B295 /* EOSIOSDomainMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675E529324662A300096B295 /* EOSIOSDomainMacTests.swift */; };
+		675E529624662A300096B295 /* EOSIOSDomainMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 675E528824662A2F0096B295 /* EOSIOSDomainMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		675E52AB24662B410096B295 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2D42463B73300D737D4 /* Block.swift */; };
+		675E52AC24662B4F0096B295 /* Blockchain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2D52463B73300D737D4 /* Blockchain.swift */; };
+		675E52AD24662B7C0096B295 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2D82463B73300D737D4 /* Scene.swift */; };
+		675E52AE24662B7C0096B295 /* StringsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2D92463B73300D737D4 /* StringsProvider.swift */; };
+		675E52AF24662B9B0096B295 /* BlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2DC2463B73300D737D4 /* BlockListViewModel.swift */; };
+		675E52B024662B9B0096B295 /* BlockListMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2DD2463B73300D737D4 /* BlockListMVVMViewModel.swift */; };
+		675E52B124662B9B0096B295 /* BlockListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67782C9F246600D300169598 /* BlockListScene.swift */; };
+		675E52B224662B9B0096B295 /* BlockDetailScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2DF2463B73300D737D4 /* BlockDetailScene.swift */; };
+		675E52B324662B9B0096B295 /* BlockDetailMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2E02463B73300D737D4 /* BlockDetailMVVMViewModel.swift */; };
+		675E52B424662B9B0096B295 /* BlocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2E32463B73300D737D4 /* BlocksService.swift */; };
+		675E52B524662B9B0096B295 /* RetrieveBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2E62463B73300D737D4 /* RetrieveBlocks.swift */; };
+		675E52B624662B9B0096B295 /* RetrieveBlocksAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2E82463B73300D737D4 /* RetrieveBlocksAdapter.swift */; };
 		67782CA0246600D300169598 /* BlockListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67782C9F246600D300169598 /* BlockListScene.swift */; };
 		67E6F2842463B54500D737D4 /* EOSIOSDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E6F27A2463B54500D737D4 /* EOSIOSDomain.framework */; };
 		67E6F28B2463B54500D737D4 /* EOSIOSDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6F27D2463B54500D737D4 /* EOSIOSDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +49,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		675E529024662A300096B295 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67E6F2712463B54500D737D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 675E528524662A2F0096B295;
+			remoteInfo = EOSIOSDomainMac;
+		};
 		67E6F2852463B54500D737D4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 67E6F2712463B54500D737D4 /* Project object */;
@@ -44,6 +66,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		675E528624662A2F0096B295 /* EOSIOSDomainMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EOSIOSDomainMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		675E528824662A2F0096B295 /* EOSIOSDomainMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOSIOSDomainMac.h; sourceTree = "<group>"; };
+		675E528924662A2F0096B295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		675E528E24662A300096B295 /* EOSIOSDomainMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EOSIOSDomainMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		675E529324662A300096B295 /* EOSIOSDomainMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOSIOSDomainMacTests.swift; sourceTree = "<group>"; };
+		675E529524662A300096B295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67782C9F246600D300169598 /* BlockListScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListScene.swift; sourceTree = "<group>"; };
 		67E6F27A2463B54500D737D4 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E6F27D2463B54500D737D4 /* EOSIOSDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOSIOSDomain.h; sourceTree = "<group>"; };
@@ -74,6 +102,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		675E528324662A2F0096B295 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		675E528B24662A300096B295 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				675E528F24662A300096B295 /* EOSIOSDomainMac.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67E6F2772463B54500D737D4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -92,11 +135,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		675E528724662A2F0096B295 /* EOSIOSDomainMac */ = {
+			isa = PBXGroup;
+			children = (
+				675E528824662A2F0096B295 /* EOSIOSDomainMac.h */,
+				675E528924662A2F0096B295 /* Info.plist */,
+			);
+			path = EOSIOSDomainMac;
+			sourceTree = "<group>";
+		};
+		675E529224662A300096B295 /* EOSIOSDomainMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				675E529324662A300096B295 /* EOSIOSDomainMacTests.swift */,
+				675E529524662A300096B295 /* Info.plist */,
+			);
+			path = EOSIOSDomainMacTests;
+			sourceTree = "<group>";
+		};
 		67E6F2702463B54500D737D4 = {
 			isa = PBXGroup;
 			children = (
 				67E6F27C2463B54500D737D4 /* EOSIOSDomain */,
 				67E6F2872463B54500D737D4 /* EOSIOSDomainTests */,
+				675E528724662A2F0096B295 /* EOSIOSDomainMac */,
+				675E529224662A300096B295 /* EOSIOSDomainMacTests */,
 				67E6F27B2463B54500D737D4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +169,8 @@
 			children = (
 				67E6F27A2463B54500D737D4 /* EOSIOSDomain.framework */,
 				67E6F2832463B54500D737D4 /* EOSIOSDomainTests.xctest */,
+				675E528624662A2F0096B295 /* EOSIOSDomainMac.framework */,
+				675E528E24662A300096B295 /* EOSIOSDomainMacTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,6 +329,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		675E528124662A2F0096B295 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				675E529624662A300096B295 /* EOSIOSDomainMac.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67E6F2752463B54500D737D4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,6 +348,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		675E528524662A2F0096B295 /* EOSIOSDomainMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 675E529724662A300096B295 /* Build configuration list for PBXNativeTarget "EOSIOSDomainMac" */;
+			buildPhases = (
+				675E528124662A2F0096B295 /* Headers */,
+				675E528224662A2F0096B295 /* Sources */,
+				675E528324662A2F0096B295 /* Frameworks */,
+				675E528424662A2F0096B295 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EOSIOSDomainMac;
+			productName = EOSIOSDomainMac;
+			productReference = 675E528624662A2F0096B295 /* EOSIOSDomainMac.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		675E528D24662A300096B295 /* EOSIOSDomainMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 675E529A24662A300096B295 /* Build configuration list for PBXNativeTarget "EOSIOSDomainMacTests" */;
+			buildPhases = (
+				675E528A24662A300096B295 /* Sources */,
+				675E528B24662A300096B295 /* Frameworks */,
+				675E528C24662A300096B295 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				675E529124662A300096B295 /* PBXTargetDependency */,
+			);
+			name = EOSIOSDomainMacTests;
+			productName = EOSIOSDomainMacTests;
+			productReference = 675E528E24662A300096B295 /* EOSIOSDomainMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		67E6F2792463B54500D737D4 /* EOSIOSDomain */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67E6F28E2463B54500D737D4 /* Build configuration list for PBXNativeTarget "EOSIOSDomain" */;
@@ -321,6 +430,12 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = EOSIOS;
 				TargetAttributes = {
+					675E528524662A2F0096B295 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					675E528D24662A300096B295 = {
+						CreatedOnToolsVersion = 11.4;
+					};
 					67E6F2792463B54500D737D4 = {
 						CreatedOnToolsVersion = 11.4;
 					};
@@ -344,11 +459,27 @@
 			targets = (
 				67E6F2792463B54500D737D4 /* EOSIOSDomain */,
 				67E6F2822463B54500D737D4 /* EOSIOSDomainTests */,
+				675E528524662A2F0096B295 /* EOSIOSDomainMac */,
+				675E528D24662A300096B295 /* EOSIOSDomainMacTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		675E528424662A2F0096B295 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		675E528C24662A300096B295 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67E6F2782463B54500D737D4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -366,6 +497,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		675E528224662A2F0096B295 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				675E52AB24662B410096B295 /* Block.swift in Sources */,
+				675E52B424662B9B0096B295 /* BlocksService.swift in Sources */,
+				675E52B124662B9B0096B295 /* BlockListScene.swift in Sources */,
+				675E52AF24662B9B0096B295 /* BlockListViewModel.swift in Sources */,
+				675E52B024662B9B0096B295 /* BlockListMVVMViewModel.swift in Sources */,
+				675E52AE24662B7C0096B295 /* StringsProvider.swift in Sources */,
+				675E52B224662B9B0096B295 /* BlockDetailScene.swift in Sources */,
+				675E52B624662B9B0096B295 /* RetrieveBlocksAdapter.swift in Sources */,
+				675E52B524662B9B0096B295 /* RetrieveBlocks.swift in Sources */,
+				675E52AC24662B4F0096B295 /* Blockchain.swift in Sources */,
+				675E52B324662B9B0096B295 /* BlockDetailMVVMViewModel.swift in Sources */,
+				675E52AD24662B7C0096B295 /* Scene.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		675E528A24662A300096B295 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				675E529424662A300096B295 /* EOSIOSDomainMacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67E6F2762463B54500D737D4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -405,6 +563,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		675E529124662A300096B295 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 675E528524662A2F0096B295 /* EOSIOSDomainMac */;
+			targetProxy = 675E529024662A300096B295 /* PBXContainerItemProxy */;
+		};
 		67E6F2862463B54500D737D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 67E6F2792463B54500D737D4 /* EOSIOSDomain */;
@@ -413,6 +576,92 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		675E529824662A300096B295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 86PMDM3J26;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = EOSIOSDomainMac/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.io.eos.EOSIOSDomainMac;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		675E529924662A300096B295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 86PMDM3J26;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = EOSIOSDomainMac/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.io.eos.EOSIOSDomainMac;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		675E529B24662A300096B295 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 86PMDM3J26;
+				INFOPLIST_FILE = EOSIOSDomainMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.io.eos.EOSIOSDomainMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		675E529C24662A300096B295 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 86PMDM3J26;
+				INFOPLIST_FILE = EOSIOSDomainMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.io.eos.EOSIOSDomainMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		67E6F28C2463B54500D737D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -465,12 +714,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -522,11 +774,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -551,7 +806,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.io.eos.EOSIOSDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -575,7 +832,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.io.eos.EOSIOSDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -622,6 +881,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		675E529724662A300096B295 /* Build configuration list for PBXNativeTarget "EOSIOSDomainMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				675E529824662A300096B295 /* Debug */,
+				675E529924662A300096B295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		675E529A24662A300096B295 /* Build configuration list for PBXNativeTarget "EOSIOSDomainMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				675E529B24662A300096B295 /* Debug */,
+				675E529C24662A300096B295 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		67E6F2742463B54500D737D4 /* Build configuration list for PBXProject "EOSIOSDomain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		675E52A824662A900096B295 /* EOSIOSDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675E52A724662A900096B295 /* EOSIOSDomain.framework */; };
+		675E52A924662A900096B295 /* EOSIOSDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 675E52A724662A900096B295 /* EOSIOSDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		67674B062458CE5B0098A8B2 /* RestBlocksServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B052458CE5B0098A8B2 /* RestBlocksServiceTests.swift */; };
 		67782C962464640D00169598 /* EndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67782C922464640D00169598 /* EndpointProvider.swift */; };
 		67782C972464640D00169598 /* URLRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67782C952464640D00169598 /* URLRequester.swift */; };
@@ -15,7 +17,6 @@
 		677B765B24525382004B27CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B765A24525382004B27CB /* SceneDelegate.swift */; };
 		677B766224525385004B27CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 677B766124525385004B27CB /* Assets.xcassets */; };
 		677B766524525385004B27CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677B766324525385004B27CB /* LaunchScreen.storyboard */; };
-		67E6F2A22463B5A300D737D4 /* EOSIOSDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 67E6F29A2463B55C00D737D4 /* EOSIOSDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		67E6F2B22463B6C900D737D4 /* RestBlocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2A62463B6C900D737D4 /* RestBlocksService.swift */; };
 		67E6F2B32463B6C900D737D4 /* URLSessionURLRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2A72463B6C900D737D4 /* URLSessionURLRequester.swift */; };
 		67E6F2B42463B6C900D737D4 /* ClassEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2A82463B6C900D737D4 /* ClassEndpointProvider.swift */; };
@@ -24,7 +25,6 @@
 		67E6F2B72463B6C900D737D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E6F2AD2463B6C900D737D4 /* Main.storyboard */; };
 		67E6F2B82463B6C900D737D4 /* BlockListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2AF2463B6C900D737D4 /* BlockListViewController.swift */; };
 		67E6F2B92463B6C900D737D4 /* BlockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2B12463B6C900D737D4 /* BlockListView.swift */; };
-		67E6F2F6246460D900D737D4 /* EOSIOSDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E6F29A2463B55C00D737D4 /* EOSIOSDomain.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,30 +35,16 @@
 			remoteGlobalIDString = 677B765424525382004B27CB;
 			remoteInfo = "Eos Browser";
 		};
-		67E6F2992463B55C00D737D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 67E6F2942463B55C00D737D4 /* EOSIOSDomain.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 67E6F27A2463B54500D737D4;
-			remoteInfo = EOSIOSDomain;
-		};
-		67E6F29B2463B55C00D737D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 67E6F2942463B55C00D737D4 /* EOSIOSDomain.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 67E6F2832463B54500D737D4;
-			remoteInfo = EOSIOSDomainTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		67E6F2A32463B5A300D737D4 /* Embed Frameworks */ = {
+		675E52AA24662A910096B295 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				67E6F2A22463B5A300D737D4 /* EOSIOSDomain.framework in Embed Frameworks */,
+				675E52A924662A900096B295 /* EOSIOSDomain.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +52,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		67309F552466207100C3D0F1 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		675E527D2466278A0096B295 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		675E52A724662A900096B295 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67674B052458CE5B0098A8B2 /* RestBlocksServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestBlocksServiceTests.swift; sourceTree = "<group>"; };
 		67782C922464640D00169598 /* EndpointProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointProvider.swift; sourceTree = "<group>"; };
 		67782C952464640D00169598 /* URLRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequester.swift; sourceTree = "<group>"; };
@@ -78,7 +67,6 @@
 		677B766624525385004B27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		677B766B24525385004B27CB /* Eos BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eos BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		677B767124525385004B27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		67E6F2942463B55C00D737D4 /* EOSIOSDomain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EOSIOSDomain.xcodeproj; path = EOSIOSDomain/EOSIOSDomain.xcodeproj; sourceTree = "<group>"; };
 		67E6F2A62463B6C900D737D4 /* RestBlocksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestBlocksService.swift; sourceTree = "<group>"; };
 		67E6F2A72463B6C900D737D4 /* URLSessionURLRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionURLRequester.swift; sourceTree = "<group>"; };
 		67E6F2A82463B6C900D737D4 /* ClassEndpointProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassEndpointProvider.swift; sourceTree = "<group>"; };
@@ -94,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67E6F2F6246460D900D737D4 /* EOSIOSDomain.framework in Frameworks */,
+				675E52A824662A900096B295 /* EOSIOSDomain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +115,6 @@
 		677B764C24525382004B27CB = {
 			isa = PBXGroup;
 			children = (
-				67E6F2942463B55C00D737D4 /* EOSIOSDomain.xcodeproj */,
 				677B765724525382004B27CB /* Eos Browser */,
 				677B766E24525385004B27CB /* Eos BrowserTests */,
 				677B765624525382004B27CB /* Products */,
@@ -168,18 +155,12 @@
 			path = "Eos BrowserTests";
 			sourceTree = "<group>";
 		};
-		67E6F2952463B55C00D737D4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				67E6F29A2463B55C00D737D4 /* EOSIOSDomain.framework */,
-				67E6F29C2463B55C00D737D4 /* EOSIOSDomainTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		67E6F2A02463B5A300D737D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				675E52A724662A900096B295 /* EOSIOSDomain.framework */,
+				675E527D2466278A0096B295 /* EOSIOSDomain.framework */,
+				67309F552466207100C3D0F1 /* EOSIOSDomain.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -242,7 +223,7 @@
 				677B765124525382004B27CB /* Sources */,
 				677B765224525382004B27CB /* Frameworks */,
 				677B765324525382004B27CB /* Resources */,
-				67E6F2A32463B5A300D737D4 /* Embed Frameworks */,
+				675E52AA24662A910096B295 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,12 +282,6 @@
 			mainGroup = 677B764C24525382004B27CB;
 			productRefGroup = 677B765624525382004B27CB /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 67E6F2952463B55C00D737D4 /* Products */;
-					ProjectRef = 67E6F2942463B55C00D737D4 /* EOSIOSDomain.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				677B765424525382004B27CB /* Eos Browser */,
@@ -314,23 +289,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		67E6F29A2463B55C00D737D4 /* EOSIOSDomain.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = EOSIOSDomain.framework;
-			remoteRef = 67E6F2992463B55C00D737D4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		67E6F29C2463B55C00D737D4 /* EOSIOSDomainTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = EOSIOSDomainTests.xctest;
-			remoteRef = 67E6F29B2463B55C00D737D4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		677B765324525382004B27CB /* Resources */ = {

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 public final class BlockDetailScene: Scene {
     public typealias ViewModel = BlockDetailMVVMViewModel
