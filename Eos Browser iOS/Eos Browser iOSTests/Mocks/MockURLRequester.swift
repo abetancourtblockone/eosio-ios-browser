@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import Eos_Browser
+@testable import Eos_Browser_iOS
 
 final class MockURLRequester: URLRequester {
     var mock_request = MockFunction<(URLRequest, URLRequestHandler), Void>()

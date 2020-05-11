@@ -6,7 +6,7 @@
 //  Copyright © 2020 EOSIOS. All rights reserved.
 //
 
-@testable import Eos_Browser
+@testable import Eos_Browser_iOS
 
 final class MockEndpointProvider: EndpointProvider {
     var mock_getBlock = ""

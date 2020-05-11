@@ -8,7 +8,7 @@
 
 import XCTest
 import Combine
-@testable import Eos_Browser
+@testable import Eos_Browser_iOS
 @testable import EOSIOSDomain
 
 final class BlockListMVVMViewModelTests: XCTestCase {

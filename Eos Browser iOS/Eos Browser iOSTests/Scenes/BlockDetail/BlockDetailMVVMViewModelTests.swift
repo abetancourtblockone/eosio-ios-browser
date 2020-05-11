@@ -9,7 +9,7 @@
 import XCTest
 import Combine
 @testable import EOSIOSDomain
-@testable import Eos_Browser
+@testable import Eos_Browser_iOS
 
 final class BlockDetailMVVMViewModelTests: XCTestCase {
     var block: Block!

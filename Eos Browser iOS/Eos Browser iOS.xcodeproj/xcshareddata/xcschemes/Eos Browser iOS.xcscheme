@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "677B766A24525385004B27CB"
-               BuildableName = "Eos BrowserTests.xctest"
-               BlueprintName = "Eos BrowserTests"
-               ReferencedContainer = "container:Eos Browser.xcodeproj">
+               BuildableName = "Eos Browser iOSTests.xctest"
+               BlueprintName = "Eos Browser iOSTests"
+               ReferencedContainer = "container:Eos Browser iOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
