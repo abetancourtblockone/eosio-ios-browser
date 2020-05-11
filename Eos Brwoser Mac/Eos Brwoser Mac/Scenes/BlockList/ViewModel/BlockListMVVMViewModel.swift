@@ -8,7 +8,7 @@
 
 import Foundation
 import Combine
-import EOSIOSDomainMac
+import EOSIOSDomain
 
 final class BlockListMVVMViewModel: MVVMViewModel {
     typealias Configuration = Void

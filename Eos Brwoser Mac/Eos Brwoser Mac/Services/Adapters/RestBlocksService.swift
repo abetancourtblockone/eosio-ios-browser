@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import EOSIOSDomainMac
+import EOSIOSDomain
 
 final class RestBlocksService: BlocksService {
     struct Dependencies {

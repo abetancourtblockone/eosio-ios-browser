@@ -18,8 +18,8 @@
 		67782CB224661BAD00169598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67782CB124661BAD00169598 /* Assets.xcassets */; };
 		67782CB524661BAD00169598 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67782CB324661BAD00169598 /* Main.storyboard */; };
 		67782CC124661BAD00169598 /* Eos_Brwoser_MacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67782CC024661BAD00169598 /* Eos_Brwoser_MacTests.swift */; };
-		67C906F22469FB20009B24A7 /* EOSIOSDomainMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67C906F12469FB20009B24A7 /* EOSIOSDomainMac.framework */; };
-		67C906F32469FB20009B24A7 /* EOSIOSDomainMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 67C906F12469FB20009B24A7 /* EOSIOSDomainMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		67BCF4D5246A172B00C166F6 /* EOSIOSDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BCF4D4246A172B00C166F6 /* EOSIOSDomain.framework */; };
+		67BCF4D6246A172B00C166F6 /* EOSIOSDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 67BCF4D4246A172B00C166F6 /* EOSIOSDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		67C90716246A012A009B24A7 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C9070C246A012A009B24A7 /* Scene.swift */; };
 		67C90718246A012A009B24A7 /* BlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C90710246A012A009B24A7 /* BlockListViewModel.swift */; };
 		67C90719246A012A009B24A7 /* BlockListMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C90711246A012A009B24A7 /* BlockListMVVMViewModel.swift */; };
@@ -37,13 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		675E52A624662A850096B295 /* Embed Frameworks */ = {
+		67BCF4D7246A172B00C166F6 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				67C906F32469FB20009B24A7 /* EOSIOSDomainMac.framework in Embed Frameworks */,
+				67BCF4D6246A172B00C166F6 /* EOSIOSDomain.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +67,7 @@
 		67782CBC24661BAD00169598 /* Eos Brwoser MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eos Brwoser MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67782CC024661BAD00169598 /* Eos_Brwoser_MacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eos_Brwoser_MacTests.swift; sourceTree = "<group>"; };
 		67782CC224661BAD00169598 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67BCF4D4246A172B00C166F6 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67C906F12469FB20009B24A7 /* EOSIOSDomainMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOSIOSDomainMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67C9070C246A012A009B24A7 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		67C90710246A012A009B24A7 /* BlockListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockListViewModel.swift; sourceTree = "<group>"; };
@@ -79,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67C906F22469FB20009B24A7 /* EOSIOSDomainMac.framework in Frameworks */,
+				67BCF4D5246A172B00C166F6 /* EOSIOSDomain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +177,7 @@
 		67782CCB24661C3600169598 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				67BCF4D4246A172B00C166F6 /* EOSIOSDomain.framework */,
 				67C906F12469FB20009B24A7 /* EOSIOSDomainMac.framework */,
 			);
 			name = Frameworks;
@@ -226,7 +228,7 @@
 				67782CA624661BA500169598 /* Sources */,
 				67782CA724661BA500169598 /* Frameworks */,
 				67782CA824661BA500169598 /* Resources */,
-				675E52A624662A850096B295 /* Embed Frameworks */,
+				67BCF4D7246A172B00C166F6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

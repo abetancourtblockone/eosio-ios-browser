@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import EOSIOSDomainMac
+import EOSIOSDomain
 
 extension NSStoryboard {
     static let main = NSStoryboard.init(name: "Main", bundle: .main)

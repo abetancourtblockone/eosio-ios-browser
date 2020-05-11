@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		675E528F24662A300096B295 /* EOSIOSDomainMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675E528624662A2F0096B295 /* EOSIOSDomainMac.framework */; };
-		675E529424662A300096B295 /* EOSIOSDomainMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675E529324662A300096B295 /* EOSIOSDomainMacTests.swift */; };
-		675E529624662A300096B295 /* EOSIOSDomainMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 675E528824662A2F0096B295 /* EOSIOSDomainMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		675E528F24662A300096B295 /* EOSIOSDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675E528624662A2F0096B295 /* EOSIOSDomain.framework */; };
 		675E52AB24662B410096B295 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2D42463B73300D737D4 /* Block.swift */; };
 		675E52AC24662B4F0096B295 /* Blockchain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2D52463B73300D737D4 /* Blockchain.swift */; };
 		675E52B424662B9B0096B295 /* BlocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2E32463B73300D737D4 /* BlocksService.swift */; };
@@ -47,12 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		675E528624662A2F0096B295 /* EOSIOSDomainMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EOSIOSDomainMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		675E528824662A2F0096B295 /* EOSIOSDomainMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOSIOSDomainMac.h; sourceTree = "<group>"; };
-		675E528924662A2F0096B295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		675E528624662A2F0096B295 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		675E528E24662A300096B295 /* EOSIOSDomainMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EOSIOSDomainMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		675E529324662A300096B295 /* EOSIOSDomainMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOSIOSDomainMacTests.swift; sourceTree = "<group>"; };
-		675E529524662A300096B295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67782C9F246600D300169598 /* BlockListScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListScene.swift; sourceTree = "<group>"; };
 		67E6F27A2463B54500D737D4 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E6F27D2463B54500D737D4 /* EOSIOSDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOSIOSDomain.h; sourceTree = "<group>"; };
@@ -89,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				675E528F24662A300096B295 /* EOSIOSDomainMac.framework in Frameworks */,
+				675E528F24662A300096B295 /* EOSIOSDomain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,31 +105,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		675E528724662A2F0096B295 /* EOSIOSDomainMac */ = {
-			isa = PBXGroup;
-			children = (
-				675E528824662A2F0096B295 /* EOSIOSDomainMac.h */,
-				675E528924662A2F0096B295 /* Info.plist */,
-			);
-			path = EOSIOSDomainMac;
-			sourceTree = "<group>";
-		};
-		675E529224662A300096B295 /* EOSIOSDomainMacTests */ = {
-			isa = PBXGroup;
-			children = (
-				675E529324662A300096B295 /* EOSIOSDomainMacTests.swift */,
-				675E529524662A300096B295 /* Info.plist */,
-			);
-			path = EOSIOSDomainMacTests;
-			sourceTree = "<group>";
-		};
 		67E6F2702463B54500D737D4 = {
 			isa = PBXGroup;
 			children = (
 				67E6F27C2463B54500D737D4 /* EOSIOSDomain */,
 				67E6F2872463B54500D737D4 /* EOSIOSDomainTests */,
-				675E528724662A2F0096B295 /* EOSIOSDomainMac */,
-				675E529224662A300096B295 /* EOSIOSDomainMacTests */,
 				67E6F27B2463B54500D737D4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -145,7 +119,7 @@
 			children = (
 				67E6F27A2463B54500D737D4 /* EOSIOSDomain.framework */,
 				67E6F2832463B54500D737D4 /* EOSIOSDomainTests.xctest */,
-				675E528624662A2F0096B295 /* EOSIOSDomainMac.framework */,
+				675E528624662A2F0096B295 /* EOSIOSDomain.framework */,
 				675E528E24662A300096B295 /* EOSIOSDomainMacTests.xctest */,
 			);
 			name = Products;
@@ -296,7 +270,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				675E529624662A300096B295 /* EOSIOSDomainMac.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +299,7 @@
 			);
 			name = EOSIOSDomainMac;
 			productName = EOSIOSDomainMac;
-			productReference = 675E528624662A2F0096B295 /* EOSIOSDomainMac.framework */;
+			productReference = 675E528624662A2F0096B295 /* EOSIOSDomain.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		675E528D24662A300096B295 /* EOSIOSDomainMacTests */ = {
@@ -476,7 +449,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				675E529424662A300096B295 /* EOSIOSDomainMacTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,7 +502,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = EOSIOSDomainMac/Info.plist;
+				INFOPLIST_FILE = EOSIOSDomain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -538,7 +510,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.io.eos.EOSIOSDomainMac;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = EOSIOSDomain;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -554,7 +526,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = EOSIOSDomainMac/Info.plist;
+				INFOPLIST_FILE = EOSIOSDomain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -562,7 +534,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.io.eos.EOSIOSDomainMac;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = EOSIOSDomain;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -575,7 +547,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 86PMDM3J26;
-				INFOPLIST_FILE = EOSIOSDomainMacTests/Info.plist;
+				INFOPLIST_FILE = EOSIOSDomainTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -594,7 +566,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 86PMDM3J26;
-				INFOPLIST_FILE = EOSIOSDomainMacTests/Info.plist;
+				INFOPLIST_FILE = EOSIOSDomainTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

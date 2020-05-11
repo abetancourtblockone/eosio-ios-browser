@@ -8,7 +8,7 @@
 
 import Cocoa
 import Combine
-import EOSIOSDomainMac
+import EOSIOSDomain
 
 @available(OSX 10.15.1, *)
 final class BlockListTableViewDiffableDataSource: NSCollectionViewDiffableDataSource<BlockListViewModel.Section, BlockListViewModel.Item> {
