@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import EOSIOSDomain
+import EOSIOSDomain
 
 extension Block {
     static var mock: Block {

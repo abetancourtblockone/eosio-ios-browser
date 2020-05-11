@@ -8,8 +8,8 @@
 
 import XCTest
 import Combine
+import EOSIOSDomain
 @testable import Eos_Browser_iOS
-@testable import EOSIOSDomain
 
 final class BlockListMVVMViewModelTests: XCTestCase {
     private var stringsProvider: MockStringsProvider!

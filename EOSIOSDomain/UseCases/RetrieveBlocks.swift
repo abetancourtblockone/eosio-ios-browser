@@ -15,6 +15,11 @@ public struct BlocksRetrievingInfo: Equatable {
     }
     public let status: Status
     public let lastRetrievedBlock: Block
+    
+    public init(status: Status, lastRetrievedBlock: Block) {
+        self.status = status
+        self.lastRetrievedBlock = lastRetrievedBlock
+    }
 }
 
 public typealias RetrieveBlocksResult = Result<BlocksRetrievingInfo, Error>

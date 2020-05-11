@@ -7,8 +7,8 @@
 //
 
 import XCTest
+import EOSIOSDomain
 @testable import Eos_Browser_iOS
-@testable import EOSIOSDomain
 
 final class RestBlocksServiceTests: XCTestCase {
     

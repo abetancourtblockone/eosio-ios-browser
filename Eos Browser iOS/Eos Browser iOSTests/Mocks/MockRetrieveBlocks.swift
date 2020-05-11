@@ -6,7 +6,7 @@
 //  Copyright © 2020 EOSIOS. All rights reserved.
 //
 
-@testable import EOSIOSDomain
+import EOSIOSDomain
 
 final class MockRetrieveBlocks: RetrieveBlocks {
     
