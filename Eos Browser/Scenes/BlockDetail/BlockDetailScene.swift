@@ -8,13 +8,13 @@
 
 import Foundation
 
-public final class BlockDetailScene: Scene {
-    public typealias ViewModel = BlockDetailMVVMViewModel
+final class BlockDetailScene: Scene {
+    typealias ViewModel = BlockDetailMVVMViewModel
     
-    public var configuration: Configuration
-    public var dependencies: Dependencies
+    var configuration: Configuration
+    var dependencies: Dependencies
     
-    public init(configuration: Configuration, dependencies: Dependencies) {
+    init(configuration: Configuration, dependencies: Dependencies) {
         self.configuration = configuration
         self.dependencies = dependencies
     }

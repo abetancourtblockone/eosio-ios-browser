@@ -6,7 +6,7 @@
 //  Copyright © 2020 EOSIOS. All rights reserved.
 //
 
-@testable import EOSIOSDomain
+@testable import Eos_Browser
 
 final class MockBlocksService: BlocksService {
     var mock_retrieveBlock = MockFunction<(String, RetrieveBlockHandler), Void>()

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Eos_Browser
+@testable import EOSIOSDomain
 
 final class RetrieveBlocksAdapterTests: XCTestCase {
     

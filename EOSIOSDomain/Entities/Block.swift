@@ -9,12 +9,12 @@
 import Foundation
 
 public struct Block: Equatable {
-    let id: String
-    let producer: String
-    let producerSignature: String
-    let transactionsCount: Int
-    let previousBlockId: String
-    let json: String
+    public let id: String
+    public let producer: String
+    public let producerSignature: String
+    public let transactionsCount: Int
+    public let previousBlockId: String
+    public let json: String
     
     public init(id: String,
                 producer: String,
@@ -32,5 +32,5 @@ public struct Block: Equatable {
 }
 
 extension Block {
-    var shortId: String { .init(id.suffix(4)) }
+    public var shortId: String { .init(id.suffix(4)) }
 }

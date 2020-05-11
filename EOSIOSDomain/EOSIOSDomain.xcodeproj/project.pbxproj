@@ -12,37 +12,18 @@
 		675E529624662A300096B295 /* EOSIOSDomainMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 675E528824662A2F0096B295 /* EOSIOSDomainMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		675E52AB24662B410096B295 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2D42463B73300D737D4 /* Block.swift */; };
 		675E52AC24662B4F0096B295 /* Blockchain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2D52463B73300D737D4 /* Blockchain.swift */; };
-		675E52AD24662B7C0096B295 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2D82463B73300D737D4 /* Scene.swift */; };
-		675E52AE24662B7C0096B295 /* StringsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2D92463B73300D737D4 /* StringsProvider.swift */; };
-		675E52AF24662B9B0096B295 /* BlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2DC2463B73300D737D4 /* BlockListViewModel.swift */; };
-		675E52B024662B9B0096B295 /* BlockListMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2DD2463B73300D737D4 /* BlockListMVVMViewModel.swift */; };
-		675E52B124662B9B0096B295 /* BlockListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67782C9F246600D300169598 /* BlockListScene.swift */; };
-		675E52B224662B9B0096B295 /* BlockDetailScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2DF2463B73300D737D4 /* BlockDetailScene.swift */; };
-		675E52B324662B9B0096B295 /* BlockDetailMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2E02463B73300D737D4 /* BlockDetailMVVMViewModel.swift */; };
 		675E52B424662B9B0096B295 /* BlocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2E32463B73300D737D4 /* BlocksService.swift */; };
 		675E52B524662B9B0096B295 /* RetrieveBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2E62463B73300D737D4 /* RetrieveBlocks.swift */; };
 		675E52B624662B9B0096B295 /* RetrieveBlocksAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2E82463B73300D737D4 /* RetrieveBlocksAdapter.swift */; };
-		67782CA0246600D300169598 /* BlockListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67782C9F246600D300169598 /* BlockListScene.swift */; };
 		67E6F2842463B54500D737D4 /* EOSIOSDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E6F27A2463B54500D737D4 /* EOSIOSDomain.framework */; };
 		67E6F28B2463B54500D737D4 /* EOSIOSDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E6F27D2463B54500D737D4 /* EOSIOSDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		67E6F2C92463B71800D737D4 /* RetrieveBlocksAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2BB2463B71800D737D4 /* RetrieveBlocksAdapterTests.swift */; };
-		67E6F2CA2463B71800D737D4 /* BlockListMVVMViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2BE2463B71800D737D4 /* BlockListMVVMViewModelTests.swift */; };
-		67E6F2CB2463B71800D737D4 /* BlockDetailMVVMViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2C02463B71800D737D4 /* BlockDetailMVVMViewModelTests.swift */; };
-		67E6F2CC2463B71800D737D4 /* MockEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2C22463B71800D737D4 /* MockEndpointProvider.swift */; };
-		67E6F2CD2463B71800D737D4 /* MockURLRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2C32463B71800D737D4 /* MockURLRequester.swift */; };
-		67E6F2CE2463B71800D737D4 /* MockStringsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2C42463B71800D737D4 /* MockStringsProvider.swift */; };
 		67E6F2CF2463B71800D737D4 /* MockBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2C52463B71800D737D4 /* MockBlock.swift */; };
 		67E6F2D02463B71800D737D4 /* MockRetrieveBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2C62463B71800D737D4 /* MockRetrieveBlocks.swift */; };
 		67E6F2D12463B71800D737D4 /* MockBlocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2C72463B71800D737D4 /* MockBlocksService.swift */; };
 		67E6F2D22463B71800D737D4 /* MockFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2C82463B71800D737D4 /* MockFunction.swift */; };
 		67E6F2E92463B73300D737D4 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2D42463B73300D737D4 /* Block.swift */; };
 		67E6F2EA2463B73300D737D4 /* Blockchain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2D52463B73300D737D4 /* Blockchain.swift */; };
-		67E6F2EB2463B73300D737D4 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2D82463B73300D737D4 /* Scene.swift */; };
-		67E6F2EC2463B73300D737D4 /* StringsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2D92463B73300D737D4 /* StringsProvider.swift */; };
-		67E6F2ED2463B73300D737D4 /* BlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2DC2463B73300D737D4 /* BlockListViewModel.swift */; };
-		67E6F2EE2463B73300D737D4 /* BlockListMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2DD2463B73300D737D4 /* BlockListMVVMViewModel.swift */; };
-		67E6F2EF2463B73300D737D4 /* BlockDetailScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2DF2463B73300D737D4 /* BlockDetailScene.swift */; };
-		67E6F2F02463B73300D737D4 /* BlockDetailMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2E02463B73300D737D4 /* BlockDetailMVVMViewModel.swift */; };
 		67E6F2F22463B73300D737D4 /* BlocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2E32463B73300D737D4 /* BlocksService.swift */; };
 		67E6F2F42463B73300D737D4 /* RetrieveBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2E62463B73300D737D4 /* RetrieveBlocks.swift */; };
 		67E6F2F52463B73300D737D4 /* RetrieveBlocksAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2E82463B73300D737D4 /* RetrieveBlocksAdapter.swift */; };
@@ -81,17 +62,12 @@
 		67E6F2BB2463B71800D737D4 /* RetrieveBlocksAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveBlocksAdapterTests.swift; sourceTree = "<group>"; };
 		67E6F2BE2463B71800D737D4 /* BlockListMVVMViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockListMVVMViewModelTests.swift; sourceTree = "<group>"; };
 		67E6F2C02463B71800D737D4 /* BlockDetailMVVMViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockDetailMVVMViewModelTests.swift; sourceTree = "<group>"; };
-		67E6F2C22463B71800D737D4 /* MockEndpointProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockEndpointProvider.swift; sourceTree = "<group>"; };
-		67E6F2C32463B71800D737D4 /* MockURLRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLRequester.swift; sourceTree = "<group>"; };
-		67E6F2C42463B71800D737D4 /* MockStringsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockStringsProvider.swift; sourceTree = "<group>"; };
 		67E6F2C52463B71800D737D4 /* MockBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBlock.swift; sourceTree = "<group>"; };
 		67E6F2C62463B71800D737D4 /* MockRetrieveBlocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRetrieveBlocks.swift; sourceTree = "<group>"; };
 		67E6F2C72463B71800D737D4 /* MockBlocksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBlocksService.swift; sourceTree = "<group>"; };
 		67E6F2C82463B71800D737D4 /* MockFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFunction.swift; sourceTree = "<group>"; };
 		67E6F2D42463B73300D737D4 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		67E6F2D52463B73300D737D4 /* Blockchain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blockchain.swift; sourceTree = "<group>"; };
-		67E6F2D82463B73300D737D4 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
-		67E6F2D92463B73300D737D4 /* StringsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringsProvider.swift; sourceTree = "<group>"; };
 		67E6F2DC2463B73300D737D4 /* BlockListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockListViewModel.swift; sourceTree = "<group>"; };
 		67E6F2DD2463B73300D737D4 /* BlockListMVVMViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockListMVVMViewModel.swift; sourceTree = "<group>"; };
 		67E6F2DF2463B73300D737D4 /* BlockDetailScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockDetailScene.swift; sourceTree = "<group>"; };
@@ -235,9 +211,6 @@
 		67E6F2C12463B71800D737D4 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				67E6F2C22463B71800D737D4 /* MockEndpointProvider.swift */,
-				67E6F2C32463B71800D737D4 /* MockURLRequester.swift */,
-				67E6F2C42463B71800D737D4 /* MockStringsProvider.swift */,
 				67E6F2C52463B71800D737D4 /* MockBlock.swift */,
 				67E6F2C62463B71800D737D4 /* MockRetrieveBlocks.swift */,
 				67E6F2C72463B71800D737D4 /* MockBlocksService.swift */,
@@ -258,21 +231,11 @@
 		67E6F2D62463B73300D737D4 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				67E6F2D72463B73300D737D4 /* Shared */,
 				67E6F2DA2463B73300D737D4 /* BlockList */,
 				67E6F2DE2463B73300D737D4 /* BlockDetail */,
 			);
 			path = Scenes;
 			sourceTree = SOURCE_ROOT;
-		};
-		67E6F2D72463B73300D737D4 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				67E6F2D82463B73300D737D4 /* Scene.swift */,
-				67E6F2D92463B73300D737D4 /* StringsProvider.swift */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
 		};
 		67E6F2DA2463B73300D737D4 /* BlockList */ = {
 			isa = PBXGroup;
@@ -503,16 +466,9 @@
 			files = (
 				675E52AB24662B410096B295 /* Block.swift in Sources */,
 				675E52B424662B9B0096B295 /* BlocksService.swift in Sources */,
-				675E52B124662B9B0096B295 /* BlockListScene.swift in Sources */,
-				675E52AF24662B9B0096B295 /* BlockListViewModel.swift in Sources */,
-				675E52B024662B9B0096B295 /* BlockListMVVMViewModel.swift in Sources */,
-				675E52AE24662B7C0096B295 /* StringsProvider.swift in Sources */,
-				675E52B224662B9B0096B295 /* BlockDetailScene.swift in Sources */,
 				675E52B624662B9B0096B295 /* RetrieveBlocksAdapter.swift in Sources */,
 				675E52B524662B9B0096B295 /* RetrieveBlocks.swift in Sources */,
 				675E52AC24662B4F0096B295 /* Blockchain.swift in Sources */,
-				675E52B324662B9B0096B295 /* BlockDetailMVVMViewModel.swift in Sources */,
-				675E52AD24662B7C0096B295 /* Scene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,18 +484,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67782CA0246600D300169598 /* BlockListScene.swift in Sources */,
 				67E6F2E92463B73300D737D4 /* Block.swift in Sources */,
 				67E6F2F22463B73300D737D4 /* BlocksService.swift in Sources */,
 				67E6F2F42463B73300D737D4 /* RetrieveBlocks.swift in Sources */,
-				67E6F2F02463B73300D737D4 /* BlockDetailMVVMViewModel.swift in Sources */,
-				67E6F2ED2463B73300D737D4 /* BlockListViewModel.swift in Sources */,
-				67E6F2EE2463B73300D737D4 /* BlockListMVVMViewModel.swift in Sources */,
-				67E6F2EC2463B73300D737D4 /* StringsProvider.swift in Sources */,
 				67E6F2EA2463B73300D737D4 /* Blockchain.swift in Sources */,
 				67E6F2F52463B73300D737D4 /* RetrieveBlocksAdapter.swift in Sources */,
-				67E6F2EB2463B73300D737D4 /* Scene.swift in Sources */,
-				67E6F2EF2463B73300D737D4 /* BlockDetailScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,15 +496,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67E6F2CA2463B71800D737D4 /* BlockListMVVMViewModelTests.swift in Sources */,
 				67E6F2D22463B71800D737D4 /* MockFunction.swift in Sources */,
 				67E6F2D02463B71800D737D4 /* MockRetrieveBlocks.swift in Sources */,
-				67E6F2CE2463B71800D737D4 /* MockStringsProvider.swift in Sources */,
 				67E6F2C92463B71800D737D4 /* RetrieveBlocksAdapterTests.swift in Sources */,
-				67E6F2CD2463B71800D737D4 /* MockURLRequester.swift in Sources */,
 				67E6F2CF2463B71800D737D4 /* MockBlock.swift in Sources */,
-				67E6F2CB2463B71800D737D4 /* BlockDetailMVVMViewModelTests.swift in Sources */,
-				67E6F2CC2463B71800D737D4 /* MockEndpointProvider.swift in Sources */,
 				67E6F2D12463B71800D737D4 /* MockBlocksService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -854,6 +798,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.io.eos.EOSIOSDomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -873,6 +819,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.io.eos.EOSIOSDomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

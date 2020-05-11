@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import EOSIOSDomain
+@testable import Eos_Browser
 
 extension Block {
     static var mock: Block {

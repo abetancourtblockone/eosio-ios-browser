@@ -8,7 +8,6 @@
 
 import UIKit
 import Combine
-import EOSIOSDomain
 
 final class BlockDetailViewController: UIViewController, MVVMView {
     @IBOutlet weak var producerLabel: UILabel!

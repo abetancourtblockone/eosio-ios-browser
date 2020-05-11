@@ -13,8 +13,8 @@ public struct BlocksRetrievingInfo: Equatable {
         case fetchingPrevious
         case finished
     }
-    let status: Status
-    let lastRetrievedBlock: Block
+    public let status: Status
+    public let lastRetrievedBlock: Block
 }
 
 public typealias RetrieveBlocksResult = Result<BlocksRetrievingInfo, Error>

@@ -8,7 +8,6 @@
 
 import UIKit
 import Combine
-import EOSIOSDomain
 
 final class BlockListTableViewDiffableDataSource: UITableViewDiffableDataSource<BlockListViewModel.Section, BlockListViewModel.Item> {
     

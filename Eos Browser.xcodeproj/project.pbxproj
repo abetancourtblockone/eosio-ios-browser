@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		675E52A824662A900096B295 /* EOSIOSDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675E52A724662A900096B295 /* EOSIOSDomain.framework */; };
-		675E52A924662A900096B295 /* EOSIOSDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 675E52A724662A900096B295 /* EOSIOSDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		67674B062458CE5B0098A8B2 /* RestBlocksServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67674B052458CE5B0098A8B2 /* RestBlocksServiceTests.swift */; };
 		67782C962464640D00169598 /* EndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67782C922464640D00169598 /* EndpointProvider.swift */; };
 		67782C972464640D00169598 /* URLRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67782C952464640D00169598 /* URLRequester.swift */; };
@@ -17,6 +15,22 @@
 		677B765B24525382004B27CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B765A24525382004B27CB /* SceneDelegate.swift */; };
 		677B766224525385004B27CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 677B766124525385004B27CB /* Assets.xcassets */; };
 		677B766524525385004B27CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677B766324525385004B27CB /* LaunchScreen.storyboard */; };
+		67C906EF2469FB18009B24A7 /* EOSIOSDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67C906EE2469FB18009B24A7 /* EOSIOSDomain.framework */; };
+		67C906F02469FB18009B24A7 /* EOSIOSDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 67C906EE2469FB18009B24A7 /* EOSIOSDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		67C90701246A00BD009B24A7 /* MockEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C906F5246A00BD009B24A7 /* MockEndpointProvider.swift */; };
+		67C90702246A00BD009B24A7 /* MockURLRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C906F6246A00BD009B24A7 /* MockURLRequester.swift */; };
+		67C90703246A00BD009B24A7 /* MockStringsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C906F7246A00BD009B24A7 /* MockStringsProvider.swift */; };
+		67C90704246A00BD009B24A7 /* MockBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C906F8246A00BD009B24A7 /* MockBlock.swift */; };
+		67C90705246A00BD009B24A7 /* MockRetrieveBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C906F9246A00BD009B24A7 /* MockRetrieveBlocks.swift */; };
+		67C90707246A00BD009B24A7 /* MockFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C906FB246A00BD009B24A7 /* MockFunction.swift */; };
+		67C90708246A00BD009B24A7 /* BlockListMVVMViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C906FE246A00BD009B24A7 /* BlockListMVVMViewModelTests.swift */; };
+		67C90709246A00BD009B24A7 /* BlockDetailMVVMViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C90700246A00BD009B24A7 /* BlockDetailMVVMViewModelTests.swift */; };
+		67C90729246A01B6009B24A7 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C9071F246A01B6009B24A7 /* Scene.swift */; };
+		67C9072E246A01B6009B24A7 /* BlockDetailScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C90727246A01B6009B24A7 /* BlockDetailScene.swift */; };
+		67C9072F246A01B6009B24A7 /* BlockDetailMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C90728246A01B6009B24A7 /* BlockDetailMVVMViewModel.swift */; };
+		67C90738246A036C009B24A7 /* BlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C90735246A036C009B24A7 /* BlockListViewModel.swift */; };
+		67C90739246A036C009B24A7 /* BlockListMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C90736246A036C009B24A7 /* BlockListMVVMViewModel.swift */; };
+		67C9073A246A036C009B24A7 /* BlockListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C90737246A036C009B24A7 /* BlockListScene.swift */; };
 		67E6F2B22463B6C900D737D4 /* RestBlocksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2A62463B6C900D737D4 /* RestBlocksService.swift */; };
 		67E6F2B32463B6C900D737D4 /* URLSessionURLRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2A72463B6C900D737D4 /* URLSessionURLRequester.swift */; };
 		67E6F2B42463B6C900D737D4 /* ClassEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E6F2A82463B6C900D737D4 /* ClassEndpointProvider.swift */; };
@@ -44,7 +58,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				675E52A924662A900096B295 /* EOSIOSDomain.framework in Embed Frameworks */,
+				67C906F02469FB18009B24A7 /* EOSIOSDomain.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,9 +66,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		67309F552466207100C3D0F1 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		675E527D2466278A0096B295 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		675E52A724662A900096B295 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67674B052458CE5B0098A8B2 /* RestBlocksServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestBlocksServiceTests.swift; sourceTree = "<group>"; };
 		67782C922464640D00169598 /* EndpointProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointProvider.swift; sourceTree = "<group>"; };
 		67782C952464640D00169598 /* URLRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequester.swift; sourceTree = "<group>"; };
@@ -67,6 +78,21 @@
 		677B766624525385004B27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		677B766B24525385004B27CB /* Eos BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eos BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		677B767124525385004B27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67C906EE2469FB18009B24A7 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67C906F5246A00BD009B24A7 /* MockEndpointProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockEndpointProvider.swift; sourceTree = "<group>"; };
+		67C906F6246A00BD009B24A7 /* MockURLRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLRequester.swift; sourceTree = "<group>"; };
+		67C906F7246A00BD009B24A7 /* MockStringsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockStringsProvider.swift; sourceTree = "<group>"; };
+		67C906F8246A00BD009B24A7 /* MockBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBlock.swift; sourceTree = "<group>"; };
+		67C906F9246A00BD009B24A7 /* MockRetrieveBlocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRetrieveBlocks.swift; sourceTree = "<group>"; };
+		67C906FB246A00BD009B24A7 /* MockFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFunction.swift; sourceTree = "<group>"; };
+		67C906FE246A00BD009B24A7 /* BlockListMVVMViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockListMVVMViewModelTests.swift; sourceTree = "<group>"; };
+		67C90700246A00BD009B24A7 /* BlockDetailMVVMViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockDetailMVVMViewModelTests.swift; sourceTree = "<group>"; };
+		67C9071F246A01B6009B24A7 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		67C90727246A01B6009B24A7 /* BlockDetailScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockDetailScene.swift; sourceTree = "<group>"; };
+		67C90728246A01B6009B24A7 /* BlockDetailMVVMViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockDetailMVVMViewModel.swift; sourceTree = "<group>"; };
+		67C90735246A036C009B24A7 /* BlockListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockListViewModel.swift; sourceTree = "<group>"; };
+		67C90736246A036C009B24A7 /* BlockListMVVMViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockListMVVMViewModel.swift; sourceTree = "<group>"; };
+		67C90737246A036C009B24A7 /* BlockListScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockListScene.swift; sourceTree = "<group>"; };
 		67E6F2A62463B6C900D737D4 /* RestBlocksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestBlocksService.swift; sourceTree = "<group>"; };
 		67E6F2A72463B6C900D737D4 /* URLSessionURLRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionURLRequester.swift; sourceTree = "<group>"; };
 		67E6F2A82463B6C900D737D4 /* ClassEndpointProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassEndpointProvider.swift; sourceTree = "<group>"; };
@@ -82,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				675E52A824662A900096B295 /* EOSIOSDomain.framework in Frameworks */,
+				67C906EF2469FB18009B24A7 /* EOSIOSDomain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +160,7 @@
 		677B765724525382004B27CB /* Eos Browser */ = {
 			isa = PBXGroup;
 			children = (
+				67C9071D246A01B6009B24A7 /* Scenes */,
 				67782C9824646C1500169598 /* Presentation */,
 				67E6F2A42463B6C900D737D4 /* Services */,
 				67E6F2A92463B6C900D737D4 /* Views */,
@@ -149,18 +176,101 @@
 		677B766E24525385004B27CB /* Eos BrowserTests */ = {
 			isa = PBXGroup;
 			children = (
+				67C906F4246A00BD009B24A7 /* Mocks */,
+				67C906FC246A00BD009B24A7 /* Scenes */,
 				67674B042458CE390098A8B2 /* Services */,
 				677B767124525385004B27CB /* Info.plist */,
 			);
 			path = "Eos BrowserTests";
 			sourceTree = "<group>";
 		};
+		67C906F4246A00BD009B24A7 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				67C906F5246A00BD009B24A7 /* MockEndpointProvider.swift */,
+				67C906F6246A00BD009B24A7 /* MockURLRequester.swift */,
+				67C906F7246A00BD009B24A7 /* MockStringsProvider.swift */,
+				67C906F8246A00BD009B24A7 /* MockBlock.swift */,
+				67C906F9246A00BD009B24A7 /* MockRetrieveBlocks.swift */,
+				67C906FB246A00BD009B24A7 /* MockFunction.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		67C906FC246A00BD009B24A7 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				67C906FD246A00BD009B24A7 /* BlockList */,
+				67C906FF246A00BD009B24A7 /* BlockDetail */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		67C906FD246A00BD009B24A7 /* BlockList */ = {
+			isa = PBXGroup;
+			children = (
+				67C906FE246A00BD009B24A7 /* BlockListMVVMViewModelTests.swift */,
+			);
+			path = BlockList;
+			sourceTree = "<group>";
+		};
+		67C906FF246A00BD009B24A7 /* BlockDetail */ = {
+			isa = PBXGroup;
+			children = (
+				67C90700246A00BD009B24A7 /* BlockDetailMVVMViewModelTests.swift */,
+			);
+			path = BlockDetail;
+			sourceTree = "<group>";
+		};
+		67C9071D246A01B6009B24A7 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				67C90733246A036C009B24A7 /* BlockList */,
+				67C9071E246A01B6009B24A7 /* Shared */,
+				67C90726246A01B6009B24A7 /* BlockDetail */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		67C9071E246A01B6009B24A7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				67C9071F246A01B6009B24A7 /* Scene.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		67C90726246A01B6009B24A7 /* BlockDetail */ = {
+			isa = PBXGroup;
+			children = (
+				67C90727246A01B6009B24A7 /* BlockDetailScene.swift */,
+				67C90728246A01B6009B24A7 /* BlockDetailMVVMViewModel.swift */,
+			);
+			path = BlockDetail;
+			sourceTree = "<group>";
+		};
+		67C90733246A036C009B24A7 /* BlockList */ = {
+			isa = PBXGroup;
+			children = (
+				67C90734246A036C009B24A7 /* ViewModel */,
+				67C90737246A036C009B24A7 /* BlockListScene.swift */,
+			);
+			path = BlockList;
+			sourceTree = "<group>";
+		};
+		67C90734246A036C009B24A7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				67C90735246A036C009B24A7 /* BlockListViewModel.swift */,
+				67C90736246A036C009B24A7 /* BlockListMVVMViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		67E6F2A02463B5A300D737D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				675E52A724662A900096B295 /* EOSIOSDomain.framework */,
-				675E527D2466278A0096B295 /* EOSIOSDomain.framework */,
-				67309F552466207100C3D0F1 /* EOSIOSDomain.framework */,
+				67C906EE2469FB18009B24A7 /* EOSIOSDomain.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -316,15 +426,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				67E6F2B42463B6C900D737D4 /* ClassEndpointProvider.swift in Sources */,
+				67C90739246A036C009B24A7 /* BlockListMVVMViewModel.swift in Sources */,
 				67782C972464640D00169598 /* URLRequester.swift in Sources */,
 				67782C962464640D00169598 /* EndpointProvider.swift in Sources */,
+				67C9072F246A01B6009B24A7 /* BlockDetailMVVMViewModel.swift in Sources */,
 				67E6F2B52463B6C900D737D4 /* BlockDetailViewController.swift in Sources */,
+				67C9073A246A036C009B24A7 /* BlockListScene.swift in Sources */,
+				67C90729246A01B6009B24A7 /* Scene.swift in Sources */,
+				67C90738246A036C009B24A7 /* BlockListViewModel.swift in Sources */,
 				67E6F2B62463B6C900D737D4 /* UIKit+Scene.swift in Sources */,
 				67E6F2B92463B6C900D737D4 /* BlockListView.swift in Sources */,
 				677B765924525382004B27CB /* AppDelegate.swift in Sources */,
 				67E6F2B32463B6C900D737D4 /* URLSessionURLRequester.swift in Sources */,
 				677B765B24525382004B27CB /* SceneDelegate.swift in Sources */,
 				67782C9A24646C2400169598 /* StringsProvider.swift in Sources */,
+				67C9072E246A01B6009B24A7 /* BlockDetailScene.swift in Sources */,
 				67E6F2B82463B6C900D737D4 /* BlockListViewController.swift in Sources */,
 				67E6F2B22463B6C900D737D4 /* RestBlocksService.swift in Sources */,
 			);
@@ -335,6 +451,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				67674B062458CE5B0098A8B2 /* RestBlocksServiceTests.swift in Sources */,
+				67C90709246A00BD009B24A7 /* BlockDetailMVVMViewModelTests.swift in Sources */,
+				67C90702246A00BD009B24A7 /* MockURLRequester.swift in Sources */,
+				67C90701246A00BD009B24A7 /* MockEndpointProvider.swift in Sources */,
+				67C90704246A00BD009B24A7 /* MockBlock.swift in Sources */,
+				67C90707246A00BD009B24A7 /* MockFunction.swift in Sources */,
+				67C90708246A00BD009B24A7 /* BlockListMVVMViewModelTests.swift in Sources */,
+				67C90703246A00BD009B24A7 /* MockStringsProvider.swift in Sources */,
+				67C90705246A00BD009B24A7 /* MockRetrieveBlocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,27 +8,19 @@
 
 import Foundation
 import Combine
+import EOSIOSDomainMac
 
-public final class BlockListMVVMViewModel: MVVMViewModel {
-    public typealias Configuration = Void
+final class BlockListMVVMViewModel: MVVMViewModel {
+    typealias Configuration = Void
     
-    public enum State {
+    enum State {
         case refreshing
         case idle
-        case showing(scene: BlockDetailScene)
     }
     
-    public struct Dependencies {
+    struct Dependencies {
         var stringsProvider: StringsProviding
         var retrieveBlocks: RetrieveBlocks
-        var blockDetailSceneDependencies: BlockDetailScene.ViewModel.Dependencies
-        public init(stringsProvider: StringsProviding,
-                    retrieveBlocks: RetrieveBlocks,
-                    blockDetailSceneDependencies: BlockDetailScene.ViewModel.Dependencies) {
-            self.stringsProvider = stringsProvider
-            self.retrieveBlocks = retrieveBlocks
-            self.blockDetailSceneDependencies = blockDetailSceneDependencies
-        }
     }
     
     private var blockEntities: [Block] = []
@@ -39,29 +31,26 @@ public final class BlockListMVVMViewModel: MVVMViewModel {
     private let titleLabelValueSubject = PassthroughSubject<String?, Never>()
     private let blocksValueSubject = PassthroughSubject<[BlockListViewModel.Item], Never>()
     
-    public lazy var state: AnyPublisher<State, Never> = stateValueSubject.eraseToAnyPublisher()
-    public lazy var titleLabel: AnyPublisher<String?, Never> = titleLabelValueSubject.eraseToAnyPublisher()
-    public lazy var blocks: AnyPublisher<[BlockListViewModel.Item], Never> = blocksValueSubject.eraseToAnyPublisher()
+    lazy var state: AnyPublisher<State, Never> = stateValueSubject.eraseToAnyPublisher()
+    lazy var titleLabel: AnyPublisher<String?, Never> = titleLabelValueSubject.eraseToAnyPublisher()
+    lazy var blocks: AnyPublisher<[BlockListViewModel.Item], Never> = blocksValueSubject.eraseToAnyPublisher()
     
-    public init(configuration: Configuration = (), dependencies: Dependencies) {
+    init(configuration: Configuration = (), dependencies: Dependencies) {
         self.dependencies = dependencies
     }
 }
 
 extension BlockListMVVMViewModel {
-    public func sceneDidLoad() {
+    func sceneDidLoad() {
         titleLabelValueSubject.send(dependencies.stringsProvider.blockListTitle)
     }
     
-    public func handleRefresh() {
+    func handleRefresh() {
         stateValueSubject.send(.refreshing)
         refreshBlocks()
     }
     
-    public func handleSelectedBlock(at indexPath: IndexPath) {
-        let scene = BlockDetailScene(configuration: .init(block: blockEntities[0]),
-                                     dependencies: dependencies.blockDetailSceneDependencies)
-        stateValueSubject.send(.showing(scene: scene))
+    func handleSelectedBlock(at indexPath: IndexPath) {
     }
 }
 
@@ -97,5 +86,9 @@ private extension BlockListViewModel.Item {
     init(block: Block) {
         self.id = block.id
         self.producer = block.producer
+        self.producerSignature = block.producerSignature
+        self.transactionsCount = block.transactionsCount
+        self.previousBlockId = block.previousBlockId
+        self.json = block.json
     }
 }
