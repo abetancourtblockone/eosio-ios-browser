@@ -15,6 +15,7 @@
 		677B765B24525382004B27CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677B765A24525382004B27CB /* SceneDelegate.swift */; };
 		677B766224525385004B27CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 677B766124525385004B27CB /* Assets.xcassets */; };
 		677B766524525385004B27CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677B766324525385004B27CB /* LaunchScreen.storyboard */; };
+		67BCF4D2246A0F4500C166F6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67BCF4D1246A0F4500C166F6 /* Default-568h@2x.png */; };
 		67C906EF2469FB18009B24A7 /* EOSIOSDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67C906EE2469FB18009B24A7 /* EOSIOSDomain.framework */; };
 		67C906F02469FB18009B24A7 /* EOSIOSDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 67C906EE2469FB18009B24A7 /* EOSIOSDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		67C90701246A00BD009B24A7 /* MockEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C906F5246A00BD009B24A7 /* MockEndpointProvider.swift */; };
@@ -70,14 +71,15 @@
 		67782C922464640D00169598 /* EndpointProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointProvider.swift; sourceTree = "<group>"; };
 		67782C952464640D00169598 /* URLRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequester.swift; sourceTree = "<group>"; };
 		67782C9924646C2400169598 /* StringsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsProvider.swift; sourceTree = "<group>"; };
-		677B765524525382004B27CB /* Eos Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eos Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		677B765524525382004B27CB /* Eos Browser iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eos Browser iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		677B765824525382004B27CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		677B765A24525382004B27CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		677B766124525385004B27CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		677B766424525385004B27CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		677B766624525385004B27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		677B766B24525385004B27CB /* Eos BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eos BrowserTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		677B766B24525385004B27CB /* Eos Browser iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eos Browser iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		677B767124525385004B27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67BCF4D1246A0F4500C166F6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		67C906EE2469FB18009B24A7 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67C906F5246A00BD009B24A7 /* MockEndpointProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockEndpointProvider.swift; sourceTree = "<group>"; };
 		67C906F6246A00BD009B24A7 /* MockURLRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLRequester.swift; sourceTree = "<group>"; };
@@ -141,8 +143,9 @@
 		677B764C24525382004B27CB = {
 			isa = PBXGroup;
 			children = (
-				677B765724525382004B27CB /* Eos Browser */,
-				677B766E24525385004B27CB /* Eos BrowserTests */,
+				67BCF4D1246A0F4500C166F6 /* Default-568h@2x.png */,
+				677B765724525382004B27CB /* Eos Browser iOS */,
+				677B766E24525385004B27CB /* Eos Browser iOSTests */,
 				677B765624525382004B27CB /* Products */,
 				67E6F2A02463B5A300D737D4 /* Frameworks */,
 			);
@@ -151,13 +154,13 @@
 		677B765624525382004B27CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				677B765524525382004B27CB /* Eos Browser.app */,
-				677B766B24525385004B27CB /* Eos BrowserTests.xctest */,
+				677B765524525382004B27CB /* Eos Browser iOS.app */,
+				677B766B24525385004B27CB /* Eos Browser iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		677B765724525382004B27CB /* Eos Browser */ = {
+		677B765724525382004B27CB /* Eos Browser iOS */ = {
 			isa = PBXGroup;
 			children = (
 				67C9071D246A01B6009B24A7 /* Scenes */,
@@ -170,10 +173,10 @@
 				677B766324525385004B27CB /* LaunchScreen.storyboard */,
 				677B766624525385004B27CB /* Info.plist */,
 			);
-			path = "Eos Browser";
+			path = "Eos Browser iOS";
 			sourceTree = "<group>";
 		};
-		677B766E24525385004B27CB /* Eos BrowserTests */ = {
+		677B766E24525385004B27CB /* Eos Browser iOSTests */ = {
 			isa = PBXGroup;
 			children = (
 				67C906F4246A00BD009B24A7 /* Mocks */,
@@ -181,7 +184,7 @@
 				67674B042458CE390098A8B2 /* Services */,
 				677B767124525385004B27CB /* Info.plist */,
 			);
-			path = "Eos BrowserTests";
+			path = "Eos Browser iOSTests";
 			sourceTree = "<group>";
 		};
 		67C906F4246A00BD009B24A7 /* Mocks */ = {
@@ -326,9 +329,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		677B765424525382004B27CB /* Eos Browser */ = {
+		677B765424525382004B27CB /* Eos Browser iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 677B767424525385004B27CB /* Build configuration list for PBXNativeTarget "Eos Browser" */;
+			buildConfigurationList = 677B767424525385004B27CB /* Build configuration list for PBXNativeTarget "Eos Browser iOS" */;
 			buildPhases = (
 				677B765124525382004B27CB /* Sources */,
 				677B765224525382004B27CB /* Frameworks */,
@@ -339,14 +342,14 @@
 			);
 			dependencies = (
 			);
-			name = "Eos Browser";
+			name = "Eos Browser iOS";
 			productName = "Eos Browser";
-			productReference = 677B765524525382004B27CB /* Eos Browser.app */;
+			productReference = 677B765524525382004B27CB /* Eos Browser iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		677B766A24525385004B27CB /* Eos BrowserTests */ = {
+		677B766A24525385004B27CB /* Eos Browser iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 677B767724525385004B27CB /* Build configuration list for PBXNativeTarget "Eos BrowserTests" */;
+			buildConfigurationList = 677B767724525385004B27CB /* Build configuration list for PBXNativeTarget "Eos Browser iOSTests" */;
 			buildPhases = (
 				677B766724525385004B27CB /* Sources */,
 				677B766824525385004B27CB /* Frameworks */,
@@ -357,9 +360,9 @@
 			dependencies = (
 				677B766D24525385004B27CB /* PBXTargetDependency */,
 			);
-			name = "Eos BrowserTests";
+			name = "Eos Browser iOSTests";
 			productName = "Eos BrowserTests";
-			productReference = 677B766B24525385004B27CB /* Eos BrowserTests.xctest */;
+			productReference = 677B766B24525385004B27CB /* Eos Browser iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -381,7 +384,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 677B765024525382004B27CB /* Build configuration list for PBXProject "Eos Browser" */;
+			buildConfigurationList = 677B765024525382004B27CB /* Build configuration list for PBXProject "Eos Browser iOS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -394,8 +397,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				677B765424525382004B27CB /* Eos Browser */,
-				677B766A24525385004B27CB /* Eos BrowserTests */,
+				677B765424525382004B27CB /* Eos Browser iOS */,
+				677B766A24525385004B27CB /* Eos Browser iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -406,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67E6F2B72463B6C900D737D4 /* Main.storyboard in Resources */,
+				67BCF4D2246A0F4500C166F6 /* Default-568h@2x.png in Resources */,
 				677B766524525385004B27CB /* LaunchScreen.storyboard in Resources */,
 				677B766224525385004B27CB /* Assets.xcassets in Resources */,
 			);
@@ -467,7 +471,7 @@
 /* Begin PBXTargetDependency section */
 		677B766D24525385004B27CB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 677B765424525382004B27CB /* Eos Browser */;
+			target = 677B765424525382004B27CB /* Eos Browser iOS */;
 			targetProxy = 677B766C24525385004B27CB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -612,14 +616,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86PMDM3J26;
-				INFOPLIST_FILE = "Eos Browser/Info.plist";
+				INFOPLIST_FILE = "Eos Browser iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.io.eos.Eos-Browser";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.io.eos.Eos-Browser-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -632,14 +636,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86PMDM3J26;
-				INFOPLIST_FILE = "Eos Browser/Info.plist";
+				INFOPLIST_FILE = "Eos Browser iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.io.eos.Eos-Browser";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.io.eos.Eos-Browser-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -653,7 +657,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86PMDM3J26;
-				INFOPLIST_FILE = "Eos BrowserTests/Info.plist";
+				INFOPLIST_FILE = "Eos Browser iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -664,7 +668,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eos Browser.app/Eos Browser";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eos Browser iOS.app/Eos Browser iOS";
 			};
 			name = Debug;
 		};
@@ -675,7 +679,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86PMDM3J26;
-				INFOPLIST_FILE = "Eos BrowserTests/Info.plist";
+				INFOPLIST_FILE = "Eos Browser iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -686,14 +690,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eos Browser.app/Eos Browser";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eos Browser iOS.app/Eos Browser iOS";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		677B765024525382004B27CB /* Build configuration list for PBXProject "Eos Browser" */ = {
+		677B765024525382004B27CB /* Build configuration list for PBXProject "Eos Browser iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				677B767224525385004B27CB /* Debug */,
@@ -702,7 +706,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		677B767424525385004B27CB /* Build configuration list for PBXNativeTarget "Eos Browser" */ = {
+		677B767424525385004B27CB /* Build configuration list for PBXNativeTarget "Eos Browser iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				677B767524525385004B27CB /* Debug */,
@@ -711,7 +715,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		677B767724525385004B27CB /* Build configuration list for PBXNativeTarget "Eos BrowserTests" */ = {
+		677B767724525385004B27CB /* Build configuration list for PBXNativeTarget "Eos Browser iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				677B767824525385004B27CB /* Debug */,

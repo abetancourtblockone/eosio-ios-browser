@@ -56,11 +56,20 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "677B765424525382004B27CB"
+            BuildableName = "Eos Browser iOS.app"
+            BlueprintName = "Eos Browser iOS"
+            ReferencedContainer = "container:Eos Browser iOS.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "677B765424525382004B27CB"
             BuildableName = "Eos Browser.app"
             BlueprintName = "Eos Browser"
             ReferencedContainer = "container:Eos Browser.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
