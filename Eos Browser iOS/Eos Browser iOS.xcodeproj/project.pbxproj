@@ -16,6 +16,9 @@
 		677B766224525385004B27CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 677B766124525385004B27CB /* Assets.xcassets */; };
 		677B766524525385004B27CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 677B766324525385004B27CB /* LaunchScreen.storyboard */; };
 		67BCF4D2246A0F4500C166F6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67BCF4D1246A0F4500C166F6 /* Default-568h@2x.png */; };
+		67BCF509246B566600C166F6 /* BlocksStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BCF508246B566600C166F6 /* BlocksStorage.swift */; };
+		67BCF50C246B57EB00C166F6 /* RetrieveBlocksDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BCF50B246B57EB00C166F6 /* RetrieveBlocksDecorator.swift */; };
+		67BCF50E246B65DE00C166F6 /* InMemoryBlocksStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BCF50D246B65DE00C166F6 /* InMemoryBlocksStorage.swift */; };
 		67C906EF2469FB18009B24A7 /* EOSIOSDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67C906EE2469FB18009B24A7 /* EOSIOSDomain.framework */; };
 		67C906F02469FB18009B24A7 /* EOSIOSDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 67C906EE2469FB18009B24A7 /* EOSIOSDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		67C90701246A00BD009B24A7 /* MockEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C906F5246A00BD009B24A7 /* MockEndpointProvider.swift */; };
@@ -80,6 +83,9 @@
 		677B766B24525385004B27CB /* Eos Browser iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eos Browser iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		677B767124525385004B27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67BCF4D1246A0F4500C166F6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		67BCF508246B566600C166F6 /* BlocksStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksStorage.swift; sourceTree = "<group>"; };
+		67BCF50B246B57EB00C166F6 /* RetrieveBlocksDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveBlocksDecorator.swift; sourceTree = "<group>"; };
+		67BCF50D246B65DE00C166F6 /* InMemoryBlocksStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryBlocksStorage.swift; sourceTree = "<group>"; };
 		67C906EE2469FB18009B24A7 /* EOSIOSDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EOSIOSDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67C906F5246A00BD009B24A7 /* MockEndpointProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockEndpointProvider.swift; sourceTree = "<group>"; };
 		67C906F6246A00BD009B24A7 /* MockURLRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLRequester.swift; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 		677B765724525382004B27CB /* Eos Browser iOS */ = {
 			isa = PBXGroup;
 			children = (
+				67BCF50A246B57DD00C166F6 /* UseCases */,
 				67C9071D246A01B6009B24A7 /* Scenes */,
 				67782C9824646C1500169598 /* Presentation */,
 				67E6F2A42463B6C900D737D4 /* Services */,
@@ -185,6 +192,14 @@
 				677B767124525385004B27CB /* Info.plist */,
 			);
 			path = "Eos Browser iOSTests";
+			sourceTree = "<group>";
+		};
+		67BCF50A246B57DD00C166F6 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				67BCF50B246B57EB00C166F6 /* RetrieveBlocksDecorator.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		67C906F4246A00BD009B24A7 /* Mocks */ = {
@@ -284,6 +299,7 @@
 				67782C922464640D00169598 /* EndpointProvider.swift */,
 				67782C952464640D00169598 /* URLRequester.swift */,
 				67E6F2A52463B6C900D737D4 /* Adapters */,
+				67BCF508246B566600C166F6 /* BlocksStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -294,6 +310,7 @@
 				67E6F2A62463B6C900D737D4 /* RestBlocksService.swift */,
 				67E6F2A72463B6C900D737D4 /* URLSessionURLRequester.swift */,
 				67E6F2A82463B6C900D737D4 /* ClassEndpointProvider.swift */,
+				67BCF50D246B65DE00C166F6 /* InMemoryBlocksStorage.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -440,11 +457,14 @@
 				67C90738246A036C009B24A7 /* BlockListViewModel.swift in Sources */,
 				67E6F2B62463B6C900D737D4 /* UIKit+Scene.swift in Sources */,
 				67E6F2B92463B6C900D737D4 /* BlockListView.swift in Sources */,
+				67BCF50C246B57EB00C166F6 /* RetrieveBlocksDecorator.swift in Sources */,
 				677B765924525382004B27CB /* AppDelegate.swift in Sources */,
 				67E6F2B32463B6C900D737D4 /* URLSessionURLRequester.swift in Sources */,
 				677B765B24525382004B27CB /* SceneDelegate.swift in Sources */,
 				67782C9A24646C2400169598 /* StringsProvider.swift in Sources */,
 				67C9072E246A01B6009B24A7 /* BlockDetailScene.swift in Sources */,
+				67BCF509246B566600C166F6 /* BlocksStorage.swift in Sources */,
+				67BCF50E246B65DE00C166F6 /* InMemoryBlocksStorage.swift in Sources */,
 				67E6F2B82463B6C900D737D4 /* BlockListViewController.swift in Sources */,
 				67E6F2B22463B6C900D737D4 /* RestBlocksService.swift in Sources */,
 			);

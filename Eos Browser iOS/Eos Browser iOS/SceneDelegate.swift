@@ -10,7 +10,7 @@ import UIKit
 import EOSIOSDomain
 
 extension UIStoryboard {
-    static let main = UIStoryboard.init(name: "Main", bundle: .main)
+    static let main: UIStoryboard = .init(name: "Main", bundle: .main)
 }
 
 final class SceneBuilder {
@@ -18,9 +18,11 @@ final class SceneBuilder {
     private lazy var stringsProvider = StringsProvider()
     private lazy var restBlocksService = RestBlocksService()
     private lazy var retrieveBlocks: RetrieveBlocksAdapter = .init(dependencies: .init(blocksService: restBlocksService))
+    private lazy var blocksStorage: BlocksStorage = InMemoryBlocksStorage()
+    private lazy var retrieveBlocksDecorator: RetrieveBlocksDecorator = .init(retrieveBlocks: retrieveBlocks, blocksStorage: blocksStorage)
     private lazy var blockDetailSceneDependencies: BlockDetailScene.ViewModel.Dependencies = .init(stringsProvider: stringsProvider)
     private lazy var blockListSceneDependencies: BlockListScene.ViewModel.Dependencies = .init(stringsProvider: stringsProvider,
-                                                                                       retrieveBlocks: retrieveBlocks,
+                                                                                       retrieveBlocks: retrieveBlocksDecorator,
                                                                                        blockDetailSceneDependencies: blockDetailSceneDependencies)
     
     var rootViewController: UIViewController? {
